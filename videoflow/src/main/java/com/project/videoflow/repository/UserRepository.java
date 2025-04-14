@@ -1,0 +1,1 @@
+// repository - Spring Data JPA interfészek
