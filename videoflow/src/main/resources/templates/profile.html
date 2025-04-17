@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoFlow - Profile</title>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+</head>
+<body>
+<header>
+    <div th:replace="~{fractions/navbar :: navbar}"></div>
+</header>
+
+<main>
+    <div class="profile-container">
+        <div class="profile-avatar">
+            <img src="/images/user_profile.webp" alt="User avatar">
+        </div>
+
+        <div class="username">
+            <h1>Eva04</h1>
+        </div>
+
+        <div class="profile-actions">
+            <button class="action-btn">
+                <img src="/images/playlists.jpg" alt="My videos">
+            </button>
+            <button class="action-btn">
+                <img src="/images/edit.png" alt="Edit profile">
+            </button>
+            <button class="action-btn">
+                <img src="/images/details.svg" alt="details">
+            </button>
+            <button class="action-btn">
+                <img src="/images/upload.png" alt="Upload video">
+            </button>
+        </div>
+
+        <form class="profile-form" th:action="@{/profile/update}" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input class="input" type="text" id="firstName" name="firstName" placeholder="Jane" value="Jane">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input class="input"  type="text" id="lastName" name="lastName" placeholder="Smitherson" value="Smitherson">
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="email">Email address</label>
+                <input class="input"  type="email" id="email" name="email" placeholder="email@genericdomain.net" value="email@genericdomain.net">
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="support">
+            <a href="mailto:support@video_flow.com">support@video_flow.com</a>
+        </div>
+        <div class="social">
+            <a href="https://twitter.com/videoflow">@videoflow</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

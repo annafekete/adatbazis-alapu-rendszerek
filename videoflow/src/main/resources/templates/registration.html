@@ -1,53 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VideoFlow - Registration</title>
+    <title>Registration</title>
     <link rel="stylesheet" th:href="@{/css/registration.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
 </head>
 <body>
 <header>
-    <div class="container">
-        <div class="header-content">
-            <a href="#" class="logo">VideoFlow</a>
-            <input type="text" class="search-bar" placeholder="Search">
-            <div class="nav-buttons">
-                <a th:href="@{/}" class="videos-btn">Videos</a>
-                <a th:href="@{/log}" class="login-btn">Log in</a>
-                <a th:href="@{/reg}" class="signup-btn">Sign in</a>
-            </div>
-        </div>
-    </div>
+    <div th:replace="~{fractions/navbar :: navbar}"></div>
 </header>
-
-<main class="container">
+<main>
     <div class="registration-container">
         <h1>Registration</h1>
 
         <form th:action="@{/register}" method="post">
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Eva04" required>
+                <label class="label" for="username">Username</label>
+                <input class="input" type="text" id="username" name="username" placeholder="Eva04" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" id="email" name="email" placeholder="evike@gmail.com" required>
+                <label class="label" for="email">Email address</label>
+                <input class="input" type="email" id="email" name="email" placeholder="evike@gmail.com" required>
             </div>
 
             <div class="form-group">
-                <label for="password">Your password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                <label class="label" for="password">Your password</label>
+                <input class="input" type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
 
             <div class="form-group">
-                <label for="confirmPassword">Password again</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Reset your password" required>
+                <label class="label" for="confirmPassword">Password again</label>
+                <input class="input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Reset your password" required>
             </div>
 
             <div class="form-group checkbox-group">
-                <input type="checkbox" id="contentCreator" name="contentCreator">
+                <input  type="checkbox" id="contentCreator" name="contentCreator">
                 <label for="contentCreator">content creator</label>
             </div>
 

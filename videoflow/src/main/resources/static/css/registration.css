@@ -1,112 +1,4 @@
-/* General reset and base styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
 
-body {
-    background-color: #a7c7e7;
-    /*min-height: 100vh;
-    display: flex;
-    flex-direction: column;*/
-}
-
-/* Header styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-header {
-    background-color: white;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-}
-
-.search-bar {
-    background-color: #f0f0f0;
-    border-radius: 40px;
-    padding: 8px 15px;
-    width: 300px;
-    border: none;
-    outline: none;
-    /*margin-right: 130px;
-    margin-left: 130px;*/
-}
-
-.nav-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.nav-buttons a {
-    text-decoration: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-}
-.nav-buttons a:hover {
-    opacity: 0.8;
-    transition: all 0.2s ease;
-}
-.nav-buttons a:active {
-    transform: scale(0.95);
-}
-
-
-.login-btn, .videos-btn {
-    color: #000;
-}
-.login-btn:hover,.videos-btn:hover {
-    background-color: #f0f0f0;
-}
-
-.signup-btn {
-    background-color: #000;
-    color: white;
-}
-.signup-btn:hover {
-    background-color: #333;
-}
-
-@media (max-width: 768px) {
-    .search-bar {
-        width: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header-content {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-bar {
-        width: 100%;
-    }
-
-    .nav-buttons {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-
-/* Main content styles */
 main {
     flex: 1;
     display: flex;
@@ -129,9 +21,20 @@ h1 {
     margin-bottom: 30px;
     font-size: 24px;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 
 .form-group {
     margin-bottom: 20px;
+}
+.label{
+    margin: 10px 0 10px 0;
+
 }
 
 label {
@@ -140,19 +43,18 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
+.input {
+
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f5f8fa;
+    border-radius: 10px;
+    background-color: #e0eeff;
 }
 
 .checkbox-group {
     display: flex;
     align-items: center;
+
 }
 
 .checkbox-group input {
@@ -162,6 +64,7 @@ input[type="password"] {
 .checkbox-group label {
     margin-bottom: 0;
     font-weight: normal;
+
 }
 
 .register-btn {

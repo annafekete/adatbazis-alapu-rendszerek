@@ -27,6 +27,7 @@
 
 </body>
 </html>-->
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -35,17 +36,14 @@
 <body>
 
 <nav th:fragment="navbar" class="navbar">
-  <div class="container">
-    <div class="navbar-content">
-      <a th:href="@{/}" class="logo">VideoFlow</a>
-      <div class="search-container">
-        <input type="text" class="search-bar" placeholder="Search">
-      </div>
-      <div class="nav-links">
-        <a th:href="@{/videos}" class="nav-link">Videos</a>
-        <a th:href="@{/login}" class="login-btn">Log in</a>
-        <a th:href="@{/signin}" class="signup-btn">Sign in</a>
-      </div>
+  <div class="navbar-container">
+    <a href="#" class="navbar-logo">VideoFlow</a>
+    <input type="text" class="navbar-search" placeholder="Search">
+
+    <div class="navbar-links">
+      <a th:href="@{/}" class="nav-btn">Videos</a>
+      <a th:href="@{/log}" class="nav-btn">Log in</a>
+      <a th:href="@{/reg}" class="nav-btn nav-btn-primary">Sign in</a>
     </div>
   </div>
 </nav>
