@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoFlow</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <a href="#" class="logo">VideoFlow</a>
+            <input type="text" class="search-bar" placeholder="Search">
+            <div class="nav-buttons">
+                <a th:href="@{/}" class="videos-btn">Videos</a>
+                <a th:href="@{/log}" class="login-btn">Log in</a>
+                <a th:href="@{/reg}" class="signup-btn">Sign in</a>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="container">
+    <div class="video-grid">
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img th:src="@{/images/olivia.jpg}" alt="olivia" class="thumbnail">
+                <div class="vevo-badge">vevo</div>
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Olivia Rodrigo - vampire (Official Video)</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img th:src="@{/images/5min.jpg}" alt="5 minute crafts" class="thumbnail">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">5 minute crafts - 🔥 TOP 10 GENIUS SHOE HACKS EVERYONE SHOULD KNOW! 🤯</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img th:src="@{/images/christmas.jpg}" alt="christmas" class="thumbnail">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Timeless Music - top 50 Christmas Songs</h3>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <div class="thumbnail-container">
+                <img th:src="@{/images/cats.jpg}" alt="cats" class="thumbnail">
+            </div>
+            <div class="video-info">
+                <h3 class="video-title">Funny Cat Fails | Funny Cat Compilation - FailArmy</h3>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="container">
+    <a href="mailto:support@video.flow.com">support@video.flow.com</a>
+    <span>@videoflow</span>
+</footer>
+</body>
+</html>

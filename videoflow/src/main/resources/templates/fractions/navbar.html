@@ -1,0 +1,53 @@
+<!--
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <title>Videoflow</title>
+</head>
+<body>
+
+  <div th:fragment="navbar">
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo">VideoFlow</a>
+          <input type="text" class="search-bar" placeholder="Search">
+          <div class="nav-buttons">
+            <a href="#" class="login-btn">Log in</a>
+            <a href="#" class="signup-btn">Sign in</a>
+            <a href="#" class="videos-btn">Videos</a>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<nav th:fragment="navbar" class="navbar">
+  <div class="container">
+    <div class="navbar-content">
+      <a th:href="@{/}" class="logo">VideoFlow</a>
+      <div class="search-container">
+        <input type="text" class="search-bar" placeholder="Search">
+      </div>
+      <div class="nav-links">
+        <a th:href="@{/videos}" class="nav-link">Videos</a>
+        <a th:href="@{/login}" class="login-btn">Log in</a>
+        <a th:href="@{/signin}" class="signup-btn">Sign in</a>
+      </div>
+    </div>
+  </div>
+</nav>
+</body>
+</html>

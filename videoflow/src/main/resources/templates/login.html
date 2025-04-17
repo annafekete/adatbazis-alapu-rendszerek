@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoFlow - Log in</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <a href="/">VideoFlow</a>
+        </div>
+        <div class="nav-links">
+            <a th:href="@{/}" class="sign-in-btn">Videos</a>
+            <a th:href="@{/log}" class="sign-in-btn">Log in</a>
+            <a th:href="@{/reg}" class="sign-in-btn">Sign in</a>
+
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="login-container">
+        <h1>Log in</h1>
+
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Eva04" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="evike@gmail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Your password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="login-btn">log in</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="support">
+            <a href="mailto:support@video_flow.com">support@video_flow.com</a>
+        </div>
+        <div class="social">
+            <a href="https://twitter.com/videoflow">@videoflow</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
