@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VideoFlow</title>
+    <link rel="stylesheet" th:href="@{/css/playlist.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all tab buttons and content
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Add click event to each tab button
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Show corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+
+    <header>
+        <div th:replace="~{fractions/navbar :: navbar}"></div>
+    </header>
+
+    <div class="content">
+        <div class="playlist-tabs">
+            <div class="tab-container">
+                <div class="playlist-icon">
+                     <img src="/images/playlists.jpg" alt="Playlist">
+                </div>
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="playlist1">Playlist01</button>
+                    <button class="tab-btn" data-tab="playlist2">Playlist02</button>
+                    <button class="tab-btn" data-tab="playlist3">Playlist03</button>
+                    <button class="tab-btn" data-tab="playlist4">Playlist04</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="playlist-content">
+            <div id="playlist1" class="tab-content active">
+                <div class="video-item">
+
+                    <div class="video-thumbnail">
+                        <img src="/images/cats.jpg" alt="Cat Video">
+                        <div class="video-actions">
+                            <button class="delete-btn"><img src="/images/trash.png" alt="Delete"></button>
+                            <button class="add-btn"><img src="/images/plus.png" alt="Add"></button>
+                        </div>
+                    </div>
+                    <div class="video-description">
+                        <p>Description - We're celebrating International Cat Day by getting an adorably close look at the planet's former apex predator. Look at all these cute cats, falling like it's their job.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="/images/concert.webp" alt="Concert">
+                        <div class="video-actions">
+                            <button class="delete-btn"><img src="/images/trash.png" alt="Delete"></button>
+                            <button class="add-btn"><img src="/images/plus.png" alt="Add"></button>
+                        </div>
+                    </div>
+                    <div class="video-description">
+                        <p>A concert is a live music performance where artists or bands entertain an audience. It can take place in small intimate venues, large stadiums, or outdoor festivals.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="/images/hamburger.jpg" alt="Hamburger">
+                        <div class="video-actions">
+                            <button class="delete-btn"><img src="/images/trash.png" alt="Delete"></button>
+                            <button class="add-btn"><img src="/images/plus.png" alt="Add"></button>
+                        </div>
+                    </div>
+                    <div class="video-description">
+                        <p>A hamburger is a popular and delicious fast-food dish consisting of a cooked ground beef patty placed inside a sliced bun. It is often accompanied by toppings like lettuce, tomato, cheese, pickles, onions, and various condiments such as ketchup, mustard, or mayonnaise.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="/images/programming.webp" alt="Programming">
+                        <div class="video-actions">
+                            <button class="delete-btn"><img src="/images/trash.png" alt="Delete"></button>
+                            <button class="add-btn"><img src="/images/plus.png" alt="Add"></button>
+                        </div>
+                    </div>
+                    <div class="video-description">
+                        <p>Programming is the process of writing, testing, and maintaining code to create software, applications, and websites. It involves using programming languages like Python, JavaScript, C++, or Java to give computers instructions and automate tasks.</p>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="/images/books.webp" alt="Books">
+                        <div class="video-actions">
+                            <button class="delete-btn"><img src="/images/trash.png" alt="Delete"></button>
+                            <button class="add-btn"><img src="/images/plus.png" alt="Add"></button>
+                        </div>
+                    </div>
+                    <div class="video-description">
+                        <p>Books are a gateway to knowledge, imagination, and adventure. They come in various genres, from fiction and fantasy to history and science.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="playlist2" class="tab-content">
+                <div class="placeholder-message">
+                    <p>Playlist02 content will appear here.</p>
+                </div>
+            </div>
+
+            <div id="playlist3" class="tab-content">
+                <div class="placeholder-message">
+                    <p>Playlist03 content will appear here.</p>
+                </div>
+            </div>
+
+            <div id="playlist4" class="tab-content">
+                <div class="placeholder-message">
+                    <p>Playlist04 content will appear here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer>
+    <div th:replace="~{fractions/footer :: footer}"></div>
+</footer>
+
+</div>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

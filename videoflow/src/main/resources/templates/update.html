@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VideoFlow - Profile</title>
+    <title>Update Profile</title>
     <link rel="stylesheet" th:href="@{/css/profile.css}">
     <link rel="stylesheet" th:href="@{/css/navbar.css}">
     <link rel="stylesheet" th:href="@{/css/footer.css}">
@@ -17,6 +17,7 @@
     <div class="profile-container">
         <div class="profile-avatar">
             <img src="/images/user_profile.webp" alt="User avatar">
+
         </div>
 
         <div class="username">
@@ -38,15 +39,29 @@
             </a>
         </div>
 
-        <!-- Profil adatok megjelenítése (szöveges formában) -->
-        <div class="user-details">
-            <p><strong>First name:</strong> <span th:text="${profile.firstName}">Jane</span></p>
-            <p><strong>Last name:</strong> <span th:text="${profile.lastName}">Smitherson</span></p>
-            <p><strong>Email:</strong> <span th:text="${profile.email}">email@genericdomain.net</span></p>
-        </div>
+
+        <form th:action="@{/profile/update}" method="post" th:object="${profile}">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input class="input" type="text" th:field="*{firstName}" id="firstName" placeholder="Jane" />
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input class="input" type="text" th:field="*{lastName}" id="lastName" placeholder="Smitherson" />
+                </div>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="email">Email Address</label>
+                <input class="input" type="email" th:field="*{email}" id="email" placeholder="email@genericdomain.net" />
+            </div>
+
+            <button type="submit">Save changes</button>
+        </form>
     </div>
 </main>
-
 <div th:replace="~{fractions/footer :: footer}"></div>
 </body>
 </html>

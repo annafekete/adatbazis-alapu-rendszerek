@@ -6,6 +6,7 @@
     <title>VideoFlow - Log in</title>
     <link rel="stylesheet" th:href="@{/css/login.css}">
     <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
 </head>
 <body>
 <header>
@@ -36,16 +37,6 @@
         </form>
     </div>
 </main>
-
-<footer>
-    <div class="footer-container">
-        <div class="support">
-            <a href="mailto:support@video_flow.com">support@video_flow.com</a>
-        </div>
-        <div class="social">
-            <a href="https://twitter.com/videoflow">@videoflow</a>
-        </div>
-    </div>
-</footer>
+<div th:replace="~{fractions/footer :: footer}"></div>
 </body>
 </html>
