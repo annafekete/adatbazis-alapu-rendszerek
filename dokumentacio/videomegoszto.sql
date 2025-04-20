@@ -1,7 +1,22 @@
 CREATE TABLE FELHASZNALO (
     email VARCHAR2(100) PRIMARY KEY,
     felhasznalonev VARCHAR2(100) UNIQUE NOT NULL,
-    jelszo VARCHAR2(100) NOT NULL
+    jelszo VARCHAR2(100) NOT NULL,
+	szerepkorid NUMBER,
+	avatarUrl VARCHAR2(1000),
+	FOREIGN KEY (szerepkorid) REFERENCES SZEREPKOR(szerepkorid) ON DELETE SET NULL
+);
+
+CREATE TABLE SZEREPE (
+	email VARCHAR2(100) PRIMARY KEY,
+	szerepkorid NUMBER GENERATED ALWAYS AS IDENTITY INCREMENT BY 1,
+	FOREIGN KEY (email) REFERENCES FELHASZNALO(email) ON DELETE CASCADE,
+	FOREIGN KEY (szerepkorid) REFERENCES SZEREPKOR(szerepkorid) ON DELETE CASCADE
+);
+
+CREATE TABLE SZEREPKOR (
+	szerepkorid NUMBER GENERATED ALWAYS AS IDENTITY INCREMENT BY 1 PRIMARY KEY,
+	szerepkornev VARCHAR2(100) UNIQUE NOT NULL
 );
 
 CREATE TABLE VIDEO (
@@ -19,7 +34,7 @@ CREATE TABLE HOZZASZOLAS (
     email VARCHAR2(100),
     tartalom VARCHAR2(1000),
     FOREIGN KEY (videoid) REFERENCES VIDEO(videoid) ON DELETE CASCADE,
-    FOREIGN KEY (email) REFERENCES FELHASZNALO(email) ON DELETE CASCADE --todo
+    FOREIGN KEY (email) REFERENCES FELHASZNALO(email) ON DELETE CASCADE
 );
 
 CREATE TABLE LEJATSZASI_LISTA (
@@ -88,11 +103,11 @@ CREATE TABLE HOZZAAD (
 
 
 -- rekordok
-INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo) VALUES ('anna@gmail.com', 'Anna', 'jelszo123');
-INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo) VALUES ('marina@gmail.com', 'Marina', 'Alma123');
-INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo) VALUES ('csaba@gmail.com', 'Csaba', 'Titok789');
-INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo) VALUES ('david@gmail.com', 'David', 'password123');
-INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo) VALUES ('erika@gmail.com', 'Erika', 'hello321');
+INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo, szerepkorid) VALUES ('anna@gmail.com', 'Anna', 'jelszo123', 1);
+INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo, szerepkorid) VALUES ('marina@gmail.com', 'Marina', 'Alma123', 2);
+INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo, szerepkorid) VALUES ('csaba@gmail.com', 'Csaba', 'Titok789', 3);
+INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo, szerepkorid) VALUES ('david@gmail.com', 'David', 'password123', 4);
+INSERT INTO FELHASZNALO (email, felhasznalonev, jelszo, szerepkorid) VALUES ('erika@gmail.com', 'Erika', 'hello321', 5);
 
 INSERT INTO VIDEO (videocim, kategoria, megtekintes_szam, kulcsszo, leiras) VALUES ('Nyaralás', 'Vlog', 482, 'nyaralas25', '2025-ös nyaralás családdal.');
 INSERT INTO VIDEO (videocim, kategoria, megtekintes_szam, kulcsszo, leiras) VALUES ('Főzés', 'Recept', 350, 'fozes', 'Finom vacsora készítése.');
@@ -130,6 +145,17 @@ INSERT INTO HOZZAAD (videoid, playlistid) VALUES (3, 3);
 INSERT INTO HOZZAAD (videoid, playlistid) VALUES (4, 4);
 INSERT INTO HOZZAAD (videoid, playlistid) VALUES (5, 5);
 
+INSERT INTO SZEREPKOR (szerepkornev) VALUES ('felhasznalo');
+INSERT INTO SZEREPKOR (szerepkornev) VALUES ('content_creator');
+INSERT INTO SZEREPKOR (szerepkornev) VALUES ('admin');
+INSERT INTO SZEREPKOR (szerepkornev) VALUES ('szuperadmin');
+INSERT INTO SZEREPKOR (szerepkornev) VALUES ('kitiltott');
+
+INSERT INTO SZEREPE (email, szerepkorid) VALUES ('anna@gmail.com', 1);
+INSERT INTO SZEREPE (email, szerepkorid) VALUES ('marina@gmail.com', 2);
+INSERT INTO SZEREPE (email, szerepkorid) VALUES ('csaba@gmail.com', 3);
+INSERT INTO SZEREPE (email, szerepkorid) VALUES ('david@gmail.com', 4);
+INSERT INTO SZEREPE (email, szerepkorid) VALUES ('erika@gmail.com', 5);
 
 SELECT * FROM FELHASZNALO;
 SELECT * FROM VIDEO;
@@ -142,3 +168,5 @@ SELECT * FROM MEGIR;
 SELECT * FROM TARTOZIK;
 SELECT * FROM LETREHOZ;
 SELECT * FROM HOZZAAD;
+SELECT * FROM SZEREPKOR;
+SELECT * FROM SZEREPE;
