@@ -10,20 +10,20 @@ import jakarta.persistence.*;
 @Table(name = "FELHASZNALO")
 public class User {
     @Id
-    @Column(nullable = false, unique = true)
-    String email;
+    @Column(name = "EMAIL", nullable = false, unique = true)
+    private String email;
 
-    @Column(nullable = false, unique = true)
-    String felhasznalonev;
+    @Column(name = "FELHASZNALONEV", nullable = false, unique = true)
+    private String felhasznalonev;
 
-    @Column(nullable = false)
-    String jelszo;
+    @Column(name = "JELSZO", nullable = false)
+    private String jelszo;
 
     @ManyToOne
-    @JoinColumn(name = "szerepkorid", nullable = false)
+    @JoinColumn(name = "SZEREPKORID", nullable = false)
     private Role szerepkor;
-    
-    @Column(nullable = true)
+
+    @Column(name = "AVATARURL")
     private String avatarUrl;
 
     public User() {
@@ -60,7 +60,14 @@ public class User {
     public void setJelszo(String password) {
         this.jelszo = password;
     }
-    
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
 
     public Role getSzerepkor() {
         return this.szerepkor;

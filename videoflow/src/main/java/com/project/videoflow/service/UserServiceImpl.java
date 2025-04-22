@@ -1,32 +1,56 @@
 package com.project.videoflow.service;
 
 import com.project.videoflow.dto.ProfileDto;
+import com.project.videoflow.model.User;
+import com.project.videoflow.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService {
 
-    private ProfileDto fakeUser = new ProfileDto();
+    @Autowired
+    private UserRepository userRepository;
 
-    public UserServiceImpl() {
-        fakeUser.setFirstName("Jane");
-        fakeUser.setLastName("Smitherson");
-        fakeUser.setEmail("email@genericdomain.net");
+    private User getLoggedInUser() {
+        String username = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepository.findByFelhasznalonev(username);
+
+        if (user == null) {
+            throw new UsernameNotFoundException("Felhasználó nem található: " + username);
+        }
+        return user;
     }
 
     @Override
     public ProfileDto getCurrentUserProfile() {
-        return fakeUser;
+        User user = getLoggedInUser();
+
+        ProfileDto profileDto = new ProfileDto();
+        profileDto.setEmail(user.getEmail());
+        profileDto.setFirstName(user.getFelhasznalonev()); // vagy ha lesz külön firstName meződ, azt is kezelhetjük
+        profileDto.setAvatarUrl(user.getAvatarUrl());
+
+        return profileDto;
     }
 
     @Override
     public void updateUser(ProfileDto profileDto) {
-        fakeUser.setFirstName(profileDto.getFirstName());
-        fakeUser.setLastName(profileDto.getLastName());
-        fakeUser.setEmail(profileDto.getEmail());
+        User user = getLoggedInUser();
+
+        user.setEmail(profileDto.getEmail());
+        user.setFelhasznalonev(profileDto.getFirstName()); // új név átírása
+
+        userRepository.save(user);
     }
+
     @Override
     public void updateProfilePicture(String imageUrl) {
-        fakeUser.setAvatarUrl(imageUrl);
+        User user = getLoggedInUser();
+
+        user.setAvatarUrl(imageUrl);
+        userRepository.save(user);
     }
 }
