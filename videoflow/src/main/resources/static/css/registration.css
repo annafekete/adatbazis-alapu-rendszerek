@@ -84,6 +84,13 @@ label {
     background-color: #333;
 }
 
+span {
+    color: red;
+    font-size: 16px;
+    margin-top: 0;
+    text-align: center;
+}
+
 
 
 /* Responsive adjustments */

@@ -16,37 +16,64 @@
     <div class="registration-container">
         <h1>Registration</h1>
 
-        <form th:action="@{/register}" method="post">
+        <form th:action="@{/reg}" method="post" onsubmit="return validatePasswords()">
             <div class="form-group">
                 <label class="label" for="username">Username</label>
-                <input class="input" type="text" id="username" name="username" placeholder="Eva04" required>
+                <input class="input" type="text" id="felhasznalonev" name="felhasznalonev" placeholder="Eva04" required>
             </div>
+            <span id="username-error" class="error"></span>
 
             <div class="form-group">
                 <label class="label" for="email">Email address</label>
                 <input class="input" type="email" id="email" name="email" placeholder="evike@gmail.com" required>
             </div>
+            <span id="email-error" class="error" style="color: red;"></span>
 
             <div class="form-group">
                 <label class="label" for="password">Your password</label>
-                <input class="input" type="password" id="password" name="password" placeholder="Enter your password" required>
+                <input class="input" type="password" id="jelszo" name="jelszo" placeholder="Enter your password" required>
             </div>
 
             <div class="form-group">
                 <label class="label" for="confirmPassword">Password again</label>
                 <input class="input" type="password" id="confirmPassword" name="confirmPassword" placeholder="Reset your password" required>
             </div>
-
+            <br>
+            <span id="passwordError" style="color: red;"></span>
             <div class="form-group checkbox-group">
                 <input  type="checkbox" id="contentCreator" name="contentCreator">
                 <label for="contentCreator">content creator</label>
             </div>
 
-            <button type="submit" class="register-btn">register</button>
+            <input class="register-btn" type="submit" value="Register">
         </form>
     </div>
 </main>
 
 <div th:replace="~{fractions/footer :: footer}"></div>
+
+<script>
+    function validatePasswords() {
+                const password = document.getElementById("jelszo").value;
+                const confirmPassword = document.getElementById("confirmPassword").value;
+                const errorMessage = document.getElementById("passwordError");
+        
+                if (password !== confirmPassword) {
+                    errorMessage.textContent = "A jelszavak nem egyeznek!";
+                    return false;
+                }
+                errorMessage.textContent = ""; 
+                return true;
+            }
+
+            const params = new URLSearchParams(window.location.search);
+            const error = params.get("error");
+
+            if (error === "email") {
+                document.getElementById("email-error").textContent = "Az email már foglalt.";
+            } else if (error === "username") {
+                document.getElementById("username-error").textContent = "A felhasználónév már foglalt.";
+            }
+</script>
 </body>
 </html>
