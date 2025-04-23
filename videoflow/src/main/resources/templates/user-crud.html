@@ -1,62 +1,59 @@
 <!DOCTYPE html>
-<html lang="hu" xmlns:th="http://www.thymeleaf.org">
-
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Admin - Felhasználók kezelése</title>
-    <link rel="stylesheet" th:href="@{/css/profile.css}">
-    <link rel="stylesheet" th:href="@{/css/userCrud.css}">
+    <title>Felhasználók kezelése</title>
+    <style>
+        body { font-family: Arial; margin: 2rem; background-color: #92c1e9}
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #aaa; padding: 0.5rem; }
+        form { margin-top: 1rem; }
+    </style>
 </head>
+<body>
 
-<main>
-    <h1>Felhasználók kezelése</h1>
+<h1>Felhasználók kezelése</h1>
 
-    <!-- Új felhasználó hozzáadása -->
-    <h2>Új felhasználó hozzáadása</h2>
-    <form th:action="@{/admin/users/add}" method="post" th:object="${newUser}">
-        <label>Email:</label>
-        <input type="email" th:field="*{email}" required><br>
+<h2>Új felhasználó</h2>
+<form th:action="@{/crud/add}" method="post" th:object="${newUser}">
+    Email: <input th:field="*{email}" required><br>
+    Felhasználónév: <input th:field="*{felhasznalonev}" required><br>
+    Jelszó: <input th:field="*{jelszo}" required><br>
+    Szerepkör:
+    <select th:field="*{szerepkor}" required>
+        <option th:each="role : ${roles}" th:value="${role}" th:text="${role.szerepkornev}"></option>
+    </select><br>
+    <button type="submit">Hozzáadás</button>
+</form>
 
-        <label>Felhasználónév:</label>
-        <input type="text" th:field="*{felhasznalonev}" required><br>
+<h2>Felhasználók listája</h2>
+<table>
+    <thead>
+    <tr><th>Email</th><th>Felhasználónév</th><th>Szerepkör</th><th>Művelet</th></tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <form th:action="@{/crud/edit/{email}(email=${user.email})}" method="post">
+            <td th:text="${user.email}"></td>
+            <td><input type="text" name="felhasznalonev" th:value="${user.felhasznalonev}" required></td>
+            <td>
+                <select name="szerepkorId">
+                    <option th:each="role : ${roles}"
+                            th:value="${role.szerepkorid}"
+                            th:text="${role.szerepkornev}"
+                            th:selected="${user.szerepkor.szerepkorid == role.szerepkorid}"></option>
+                </select>
+            </td>
+            <td>
+                <input type="text" name="jelszo" placeholder="Új jelszó">
+                <button type="submit">Mentés</button>
+                <a th:href="@{/crud/delete/{email}(email=${user.email})}" onclick="return confirm('Biztosan törölni szeretnéd?')">Törlés</a>
+            </td>
+        </form>
+    </tr>
+    </tbody>
+</table>
 
-        <label>Jelszó:</label>
-        <input type="text" th:field="*{jelszo}" required><br>
-
-        <button type="submit">Felhasználó hozzáadása</button>
-    </form>
-
-    <hr>
-
-    <!-- Meglévő felhasználók listázása -->
-    <h2>Felhasználók listája</h2>
-    <table border="1">
-        <thead>
-        <tr>
-            <th>Email</th>
-            <th>Felhasználónév</th>
-            <th>Műveletek</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="user : ${users}">
-            <form th:action="@{/admin/users/edit/{email}(email=${user.email})}" method="post">
-                <td th:text="${user.email}"></td>
-                <td><input type="text" name="felhasznalonev" th:value="${user.felhasznalonev}"></td>
-                <td>
-                    <input type="text" name="jelszo" th:placeholder="Új jelszó">
-                    <button type="submit">Mentés</button>
-                    <a th:href="@{/admin/users/delete/{email}(email=${user.email})}" onclick="return confirm('Biztosan törölni szeretnéd?')">Törlés</a>
-                </td>
-            </form>
-        </tr>
-        </tbody>
-    </table>
-</main>
-
-<footer>
-    <div th:replace="~{fractions/footer :: footer}"></div>
-</footer>
 
 </body>
 </html>
