@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Felhasználók kezelése</title>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+</head>
+<body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - Felhasználók kezelése</title>
+    <link rel="stylesheet" th:href="@{/css/profile.css}">
+    <link rel="stylesheet" th:href="@{/css/userCrud.css}">
+</head>
+
+<main>
+    <h1>Felhasználók kezelése</h1>
+
+    <!-- Új felhasználó hozzáadása -->
+    <h2>Új felhasználó hozzáadása</h2>
+    <form th:action="@{/admin/users/add}" method="post" th:object="${newUser}">
+        <label>Email:</label>
+        <input type="email" th:field="*{email}" required><br>
+
+        <label>Felhasználónév:</label>
+        <input type="text" th:field="*{felhasznalonev}" required><br>
+
+        <label>Jelszó:</label>
+        <input type="text" th:field="*{jelszo}" required><br>
+
+        <button type="submit">Felhasználó hozzáadása</button>
+    </form>
+
+    <hr>
+
+    <!-- Meglévő felhasználók listázása -->
+    <h2>Felhasználók listája</h2>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Email</th>
+            <th>Felhasználónév</th>
+            <th>Műveletek</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <form th:action="@{/admin/users/edit/{email}(email=${user.email})}" method="post">
+                <td th:text="${user.email}"></td>
+                <td><input type="text" name="felhasznalonev" th:value="${user.felhasznalonev}"></td>
+                <td>
+                    <input type="text" name="jelszo" th:placeholder="Új jelszó (opcionális)">
+                    <button type="submit">Mentés</button>
+                    <a th:href="@{/admin/users/delete/{email}(email=${user.email})}" onclick="return confirm('Biztosan törölni szeretnéd?')">Törlés</a>
+                </td>
+            </form>
+        </tr>
+        </tbody>
+    </table>
+</main>
+
+<footer>
+    <div th:replace="~{fractions/footer :: footer}"></div>
+</footer>
+
+</body>
+</html>
