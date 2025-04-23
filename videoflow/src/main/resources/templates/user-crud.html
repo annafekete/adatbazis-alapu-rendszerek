@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="hu" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Admin - Felhasználók kezelése</title>
-    <link rel="stylesheet" th:href="@{/css/profile.css}">
-</head>
-<body>
 
 <head>
     <meta charset="UTF-8">
@@ -50,7 +44,7 @@
                 <td th:text="${user.email}"></td>
                 <td><input type="text" name="felhasznalonev" th:value="${user.felhasznalonev}"></td>
                 <td>
-                    <input type="text" name="jelszo" th:placeholder="Új jelszó (opcionális)">
+                    <input type="text" name="jelszo" th:placeholder="Új jelszó">
                     <button type="submit">Mentés</button>
                     <a th:href="@{/admin/users/delete/{email}(email=${user.email})}" onclick="return confirm('Biztosan törölni szeretnéd?')">Törlés</a>
                 </td>
