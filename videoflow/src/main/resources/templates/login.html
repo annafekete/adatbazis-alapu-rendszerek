@@ -17,20 +17,22 @@
     <div class="login-container">
         <h1>Log in</h1>
 
-        <form th:action="@{/login}" method="post">
+        <div th:if="${param.error}" class="error-message">
+            <p>Hibás felhasználónév vagy jelszó.</p>
+        </div>
+        <div th:if="${param.logout}" class="info-message">
+            <p>Sikeresen kijelentkeztél.</p>
+        </div>
+
+        <form th:action="@{/log}" method="post">
             <div class="form-group">
-                <label class="label" for="username">Username</label>
-                <input class="input" type="text" id="username" name="username" placeholder="Eva04" required>
+                <label class="label" for="felhasznalonev">Username</label>
+                <input class="input" type="text" id="felhasznalonev" name="felhasznalonev" placeholder="Eva04" required>
             </div>
 
             <div class="form-group">
-                <label class="label" for="email">Email address</label>
-                <input class="input"  type="email" id="email" name="email" placeholder="evike@gmail.com" required>
-            </div>
-
-            <div class="form-group">
-                <label class="label" for="password">Your password</label>
-                <input class="input"  type="password" id="password" name="password" placeholder="Enter your password" required>
+                <label class="label" for="jelszo">Your password</label>
+                <input class="input" type="password" id="jelszo" name="jelszo" placeholder="Enter your password" required>
             </div>
 
             <button type="submit" class="login_btn">log in</button>
