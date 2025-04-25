@@ -206,32 +206,7 @@
         videoUpload.addEventListener('change', (e) => {
             if (e.target.files.length > 0) {
                 const file = e.target.files[0];
-                // You could display the file name or a preview here
                 uploadArea.innerHTML = `<p>Selected: ${file.name}</p>`;
-            }
-        });
-
-        // Drag and drop functionality
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.style.backgroundColor = '#e0eeff';
-        });
-
-        uploadArea.addEventListener('dragleave', () => {
-            uploadArea.style.backgroundColor = '';
-        });
-
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.style.backgroundColor = '';
-            if (e.dataTransfer.files.length > 0) {
-                const file = e.dataTransfer.files[0];
-                if (file.type.startsWith('video/')) {
-                    videoUpload.files = e.dataTransfer.files;
-                    uploadArea.innerHTML = `<p>Selected: ${file.name}</p>`;
-                } else {
-                    alert('Please select a video file.');
-                }
             }
         });
 
@@ -251,25 +226,19 @@
             formData.append('category', document.getElementById('category').value);
             formData.append('keyword', document.getElementById('keyword').value);
 
-            // Here you would send the formData to your server
-            console.log('Submitting video upload', formData);
-            alert('Video upload started. This is a demo implementation.');
-
-            // In a real implementation, you would use fetch or XMLHttpRequest to send the data
-            /*
             fetch('/api/videos/upload', {
-              method: 'POST',
-              body: formData
+                method: 'POST',
+                body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-              console.log('Upload successful', data);
-              window.location.href = '/videos/' + data.videoId;
-            })
-            .catch(error => {
-              console.error('Error uploading video:', error);
-            });
-            */
+                .then(response => response.text())
+                .then(data => {
+                    alert('Video uploaded successfully!');
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('There was an error uploading the video.');
+                });
         });
     });
 </script>
