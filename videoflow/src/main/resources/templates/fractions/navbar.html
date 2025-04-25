@@ -41,9 +41,21 @@
     <input type="text" class="navbar-search" placeholder="Search">
 
     <div class="navbar-links">
-      <a th:href="@{/}" class="nav-btn">Videos</a>
-      <a th:href="@{/log}" class="nav-btn">Log in</a>
-      <a th:href="@{/reg}" class="nav-btn nav-btn-primary">Sign up</a>
+        <div>
+          <a th:if="${session.isAdmin}" th:href="@{/crud}" class="nav-btn nav-btn-primary">Data modification</a>
+          <a th:href="@{/}" class="nav-btn">Videos</a>
+        </div>
+
+      <div th:if="${session.loggedInUser != null}">
+        <a th:href="@{/profile}" th:text="${session.loggedInUser.felhasznalonev}" class="nav-btn"></a>
+        <a th:href="@{/out}" class="nav-btn">Log out</a>
+      </div>
+
+      <div th:unless="${session.loggedInUser != null}">
+        <a th:href="@{/login}" class="nav-btn">Log in</a>
+        <a th:href="@{/registration}" class="nav-btn nav-btn-primary">Sign up</a>
+      </div>
+
     </div>
   </div>
 </nav>

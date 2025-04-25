@@ -24,8 +24,8 @@ public class RegistrationController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/reg")
-    public String reg() {
+    @GetMapping("/registration")
+    public String showRegistrationPage() {
         return "registration";
     }
 
@@ -35,11 +35,11 @@ public class RegistrationController {
         boolean usernameExists = userRepository.existsByFelhasznalonev(userDto.getFelhasznalonev());
 
         if(emailExists) {
-            return "redirect:/reg?error=email";
+            return "redirect:/registration?error=email";
         }
 
         if (usernameExists) {
-            return "redirect:/reg?error=username";
+            return "redirect:/registration?error=username";
         }
 
         
@@ -54,6 +54,6 @@ public class RegistrationController {
        
        
         registerService.registerUser(userDto, model);
-        return "redirect:/log?success=true";
+        return "redirect:/login?success=true";
     }
 }

@@ -18,7 +18,7 @@
 
         <form th:action="@{/reg}" method="post" onsubmit="return validatePasswords()">
             <div class="form-group">
-                <label class="label" for="username">Username</label>
+                <label class="label" for="felhasznalonev">Username</label>
                 <input class="input" type="text" id="felhasznalonev" name="felhasznalonev" placeholder="Eva04" required>
             </div>
             <span id="username-error" class="error"></span>
@@ -30,7 +30,7 @@
             <span id="email-error" class="error" style="color: red;"></span>
 
             <div class="form-group">
-                <label class="label" for="password">Your password</label>
+                <label class="label" for="jelszo">Your password</label>
                 <input class="input" type="password" id="jelszo" name="jelszo" placeholder="Enter your password" required>
             </div>
 

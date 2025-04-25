@@ -19,8 +19,8 @@ public class User {
     @Column(name = "JELSZO", nullable = false)
     private String jelszo;
 
-    @ManyToOne
-    @JoinColumn(name = "SZEREPKORID", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "SZEREPKORID")
     private Role szerepkor;
 
     @Column(name = "AVATARURL")

@@ -24,12 +24,12 @@ public class AuthServiceImpl implements AuthService {
 
         if (user == null) {
             System.out.println("Nincs ilyen felhasználó: " + request.getFelhasznalonev());
-            throw new RuntimeException("Hibás felhasználónév vagy jelszó.");
+            throw new RuntimeException("Nincs ilyen felhasználó!");
         }
 
         if (!passwordEncoder.matches(request.getJelszo(), user.getJelszo())) {
             System.out.println("Hibás jelszó!");
-            throw new RuntimeException("Hibás felhasználónév vagy jelszó.");
+            throw new RuntimeException("Hibás jelszó!");
         }
 
         System.out.println("Sikeres azonosítás!");

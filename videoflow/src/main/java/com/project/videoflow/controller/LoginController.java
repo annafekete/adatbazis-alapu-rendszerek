@@ -3,6 +3,7 @@ package com.project.videoflow.controller;
 import com.project.videoflow.dto.LoginRequest;
 import com.project.videoflow.model.User;
 import com.project.videoflow.service.AuthService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,25 +15,34 @@ public class LoginController {
     @Autowired
     private AuthService authService;
 
-    @GetMapping("/log")
+    @GetMapping("/login")
     public String loginPage() {
         return "login";
     }
 
-    @PostMapping("/log")
-    public String login(@ModelAttribute LoginRequest loginRequest, Model model) {
-        System.out.println("Beérkezett login adat: felhasznalonev=" + loginRequest.getFelhasznalonev() + ", jelszo=" + loginRequest.getJelszo());
+    @PostMapping("/login")
+    public String handleLogin(@ModelAttribute LoginRequest request, Model model, HttpSession session) {
         try {
-            User user = authService.login(loginRequest);
-            System.out.println("Sikeres login: " + user.getFelhasznalonev());
-            model.addAttribute("user", user);
+            User user = authService.login(request);
+
+            session.setAttribute("loggedInUser", user);
+            session.setAttribute("isAdmin", isAdmin(user)); // új!
+
+            System.out.println("Szerepkör: " + user.getSzerepkor());
+            System.out.println("Szerepkörnélv: " + user.getSzerepkor().getSzerepkornev());
+            System.out.println("isAdmin: " + isAdmin(user));
+
             model.addAttribute("success", "Sikeres bejelentkezés!");
             return "home";
-        } catch (Exception e) {
-            System.out.println("Login error: " + e.getMessage());
+        } catch (RuntimeException e) {
             model.addAttribute("error", e.getMessage());
             return "login";
         }
+    }
+
+    private boolean isAdmin(User user) {
+        String roleName = user.getSzerepkor().getSzerepkornev();
+        return "admin".equalsIgnoreCase(roleName) || "szuperadmin".equalsIgnoreCase(roleName);
     }
 
 }

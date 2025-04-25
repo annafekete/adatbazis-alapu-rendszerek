@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.project.videoflow.model.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, String> {
+public interface UserRepository extends JpaRepository<User, String> { //elsodleges kulcs tipusa String (email)
     User findByEmail(String email);
     boolean existsByEmail(String email);
 

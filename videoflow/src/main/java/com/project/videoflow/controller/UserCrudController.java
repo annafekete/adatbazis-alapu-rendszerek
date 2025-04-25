@@ -4,6 +4,7 @@ import com.project.videoflow.model.Role;
 import com.project.videoflow.model.User;
 import com.project.videoflow.repository.RoleRepository;
 import com.project.videoflow.repository.UserRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,12 +21,23 @@ public class UserCrudController {
     private RoleRepository roleRepository;
 
     @GetMapping
-    public String listUsers(Model model) {
+    public String listUsers(Model model, HttpSession session) {
+        User user = (User) session.getAttribute("loggedInUser");
+        if (user == null || !isAdmin(user)) {
+            return "redirect:/login";
+        }
+
         model.addAttribute("users", userRepository.findAll());
         model.addAttribute("newUser", new User());
         model.addAttribute("roles", roleRepository.findAll());
         return "user-crud";
     }
+
+    private boolean isAdmin(User user) {
+        String roleName = user.getSzerepkor().getSzerepkornev();
+        return "admin".equalsIgnoreCase(roleName) || "szuperadmin".equalsIgnoreCase(roleName);
+    }
+
 
     @PostMapping("/add")
     public String addUser(@ModelAttribute("newUser") User user) {

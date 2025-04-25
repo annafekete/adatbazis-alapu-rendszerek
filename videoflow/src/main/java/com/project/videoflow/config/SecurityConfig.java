@@ -15,18 +15,25 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/", "/home.html", "/register.html", "/login.html", "/**").permitAll()
-                                .requestMatchers("/admin/**").hasRole("ADMIN")
-                                .anyRequest().authenticated()
+                        .anyRequest().permitAll()  // ⬅️ mindenki mindent elérhet
+                )
+                .formLogin(form -> form
+                        .loginPage("/log")
+                        .loginProcessingUrl("/log")
+                        .defaultSuccessUrl("/profile", true)
+                        .permitAll()
+                )
+                .logout(logout -> logout
+                        .logoutSuccessUrl("/log?logout")
+                        .permitAll()
                 )
                 .csrf(csrf -> csrf.disable());
 
-        return http.build();   
-    }
-    
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder(); // Jelszo titkosito
+        return http.build();
     }
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 }

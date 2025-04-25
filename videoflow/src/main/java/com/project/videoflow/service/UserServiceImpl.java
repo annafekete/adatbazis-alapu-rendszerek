@@ -37,6 +37,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public ProfileDto getProfileByUser(User user) {
+        ProfileDto profileDto = new ProfileDto();
+        profileDto.setEmail(user.getEmail());
+        profileDto.setFirstName(user.getFelhasznalonev());
+        profileDto.setAvatarUrl(user.getAvatarUrl());
+        return profileDto;
+    }
+
+
+    @Override
     public void updateUser(ProfileDto profileDto) {
         User user = getLoggedInUser();
 
