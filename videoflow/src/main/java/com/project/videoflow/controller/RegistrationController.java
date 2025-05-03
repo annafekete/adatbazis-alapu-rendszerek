@@ -1,5 +1,4 @@
 package com.project.videoflow.controller;
-import com.project.videoflow.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +19,9 @@ public class RegistrationController {
     private RegisterService registerService;
     
     private UserRepository userRepository;
-    private RoleRepository roleRepository;
-    RegistrationController(UserRepository userRepository, RoleRepository roleRepository) {
+
+    RegistrationController(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
     }
 
     @GetMapping("/registration")
@@ -45,23 +43,16 @@ public class RegistrationController {
         }
 
         
-        /*if(contentCreator != null) {
+        if(contentCreator != null) {
             Role role = new Role(2, "content_creator");
             userDto.setSzerepkor(role);
             
         } else {
             Role role = new Role(1, "felhasznalo");
             userDto.setSzerepkor(role); // 1 = felhasználó szerepkör
-        }*/
-        if (contentCreator != null) {
-            Role role = roleRepository.findById(2L).orElseThrow(() -> new RuntimeException("Role not found"));
-            userDto.setSzerepkor(role);
-        } else {
-            Role role = roleRepository.findById(1L).orElseThrow(() -> new RuntimeException("Role not found"));
-            userDto.setSzerepkor(role);
         }
-
-
+       
+       
         registerService.registerUser(userDto, model);
         return "redirect:/login?success=true";
     }

@@ -95,16 +95,6 @@
 </main>
 
 <div th:replace="~{fractions/footer :: footer}"></div>
-<script>
-  fetch('/api/videos/' + videoId)
-          .then(response => response.json())
-          .then(video => {
-            document.querySelector('.video-title').innerText = video.videocim;
-            document.querySelector('.video-description').innerText = video.leiras;
-
-          })
-          .catch(error => console.error('Error fetching video:', error));
-</script>
 </body>
 </html>
 
