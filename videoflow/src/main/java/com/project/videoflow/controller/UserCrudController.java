@@ -6,6 +6,7 @@ import com.project.videoflow.repository.RoleRepository;
 import com.project.videoflow.repository.UserRepository;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("/crud")
 public class UserCrudController {
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Autowired
     private UserRepository userRepository;
@@ -41,6 +45,8 @@ public class UserCrudController {
 
     @PostMapping("/add")
     public String addUser(@ModelAttribute("newUser") User user) {
+        String hashedPassword = passwordEncoder.encode(user.getJelszo());
+        user.setJelszo(hashedPassword);
         userRepository.save(user);
         return "redirect:/crud";
     }
@@ -62,7 +68,12 @@ public class UserCrudController {
 
         if (user != null && role != null) {
             user.setFelhasznalonev(felhasznalonev);
-            user.setJelszo(jelszo);
+
+            if (jelszo != null && !jelszo.isBlank()) {
+                String hashedPassword = passwordEncoder.encode(jelszo);
+                user.setJelszo(hashedPassword);
+            }
+
             user.setSzerepkor(role);
             userRepository.save(user);
         }
