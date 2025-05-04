@@ -28,12 +28,11 @@ public class LoginController {
             session.setAttribute("loggedInUser", user);
             session.setAttribute("isAdmin", isAdmin(user)); // új!
 
-            System.out.println("Szerepkör: " + user.getSzerepkor());
-            System.out.println("Szerepkörnélv: " + user.getSzerepkor().getSzerepkornev());
+            System.out.println("Szerepkör: " + user.getSzerepkor().getSzerepkornev());
             System.out.println("isAdmin: " + isAdmin(user));
 
             model.addAttribute("success", "Sikeres bejelentkezés!");
-            return "home";
+            return "redirect:/";
         } catch (RuntimeException e) {
             model.addAttribute("error", e.getMessage());
             return "login";

@@ -13,50 +13,22 @@
     <div th:replace="~{fractions/navbar :: navbar}"></div>
 </header>
 <main class="container">
-    <main class="container">
         <div th:if="${session.loggedInUser}" class="welcome-msg">
             <h2 th:text="'Üdvözlünk, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
         </div>
         <div class="video-grid">
-        <div class="video-card">
-            <div class="thumbnail-container">
-                <img th:src="@{/images/olivia.jpg}" alt="olivia" class="thumbnail">
-                <div class="vevo-badge">vevo</div>
-            </div>
-            <div class="video-info">
-                <h3 class="video-title">Olivia Rodrigo - vampire (Official Video)</h3>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <div class="thumbnail-container">
-                <img th:src="@{/images/5min.jpg}" alt="5 minute crafts" class="thumbnail">
-            </div>
-            <div class="video-info">
-                <h3 class="video-title">5 minute crafts - 🔥 TOP 10 GENIUS SHOE HACKS EVERYONE SHOULD KNOW! 🤯</h3>
+            <div class="video-card" th:each="video : ${videos}">
+                <div class="thumbnail-container" th:if="${video.filePath != null}">
+                    <video class="thumbnail" controls
+                           th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                </div>
             </div>
         </div>
-
-        <div class="video-card">
-            <div class="thumbnail-container">
-                <img th:src="@{/images/christmas.jpg}" alt="christmas" class="thumbnail">
-            </div>
-            <div class="video-info">
-                <h3 class="video-title">Timeless Music - top 50 Christmas Songs</h3>
-            </div>
-        </div>
-
-        <div class="video-card">
-            <div class="thumbnail-container">
-                <img th:src="@{/images/cats.jpg}" alt="cats" class="thumbnail">
-            </div>
-            <div class="video-info">
-                <h3 class="video-title">Funny Cat Fails | Funny Cat Compilation - FailArmy</h3>
-            </div>
-        </div>
-    </div>
 </main>
-
 <div th:replace="~{fractions/footer :: footer}"></div>
 </body>
 </html>
