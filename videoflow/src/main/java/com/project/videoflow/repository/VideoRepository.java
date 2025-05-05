@@ -11,5 +11,4 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     //lekérdezés az aktuális videó feltöltőjének többi videojához
     @Query("SELECT v FROM Video v JOIN Upload u ON v.videoid = u.videoid WHERE u.email = :email AND v.videoid <> :excludeId")
     List<Video> findOtherVideosByUploader(@Param("email") String email, @Param("excludeId") Long excludeId);
-
 }
