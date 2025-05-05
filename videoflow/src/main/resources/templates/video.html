@@ -1,257 +1,139 @@
-
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VideoFlow - Video Player</title>
-  <link rel="stylesheet" th:href="@{/css/video.css}">
+  <title th:text="${video.videocim}">Videó lejátszása</title>
   <link rel="stylesheet" th:href="@{/css/navbar.css}">
   <link rel="stylesheet" th:href="@{/css/footer.css}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef4fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .video-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .video-meta {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .video-meta p {
+      margin: 10px 0;
+    }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-left: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .video-card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-card:active {
+      transform: scale(0.98);
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .video-info {
+      padding: 15px;
+    }
+
+    .video-title {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #000;
+    }
+
+    .other-h3 {
+      margin-left: 30px;
+    }
+
+  </style>
 </head>
 <body>
+
 <header>
   <div th:replace="~{fractions/navbar :: navbar}"></div>
 </header>
 
 <main>
   <div class="video-container">
-    <div class="video-player">
-      <img src="/images/cats.jpg" alt="Cat video" class="video-placeholder">
-      <div class="video-controls">
-        <div class="left-controls">
-          <button class="control-btn pause-btn">
-            <i class="fas fa-pause"></i>
-          </button>
-          <button class="control-btn next-btn">
-            <i class="fas fa-step-forward"></i>
-          </button>
-          <button class="control-btn volume-btn">
-            <i class="fas fa-volume-up"></i>
-          </button>
-        </div>
-        <div class="right-controls">
-          <button class="control-btn settings-btn">
-            <i class="fas fa-cog"></i>
-          </button>
-          <button class="control-btn fullscreen-btn">
-            <i class="fas fa-expand"></i>
-          </button>
-        </div>
-      </div>
+    <h1 th:text="${video.videocim}">Videó címe</h1>
+
+    <video controls th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+      A böngésződ nem támogatja a videólejátszást.
+    </video>
+
+    <div class="video-meta">
+      <p><strong>Kategória:</strong> <span th:text="${video.kategoria}"></span></p>
+      <p><strong>Kulcsszó:</strong> <span th:text="${video.kulcsszo}"></span></p>
+      <p><strong>Leírás:</strong></p>
+      <p th:text="${video.leiras}"></p>
     </div>
+  </div>
 
-    <div class="video-info">
-      <h1 class="video-title">Funny Cat Fails | Funny Cat Compilation - FailArmy</h1>
-
-      <div class="video-stats">
-        <div class="stat-item">
-          <button class="stat-btn likes-btn">
-            <i class="far fa-heart"></i>
-            <span>4,2E</span>
-          </button>
-        </div>
-        <div class="stat-item">
-          <div class="views">
-            <i class="far fa-eye"></i>
-            <span>95E</span>
+  <div class="other-videos">
+    <h3 class="other-h3">További videók ettől a feltöltőtől</h3>
+    <div class="video-grid">
+      <div class="video-card" th:each="video : ${otherVideos}">
+        <a th:href="@{'/videos/' + ${video.videoid}}">
+          <div class="thumbnail-container" th:if="${video.filePath != null}">
+            <video class="thumbnail" controls
+                   th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+            </video>
           </div>
-        </div>
-        <div class="stat-item">
-          <button class="stat-btn list-btn">
-            <i class="fas fa-list"></i>
-          </button>
-        </div>
-
-        <div class="tags">
-          <a href="/tags/cat" class="tag">cat</a>
-          <a href="/tags/funny" class="tag">funny</a>
-        </div>
-      </div>
-
-      <div class="video-description">
-        <p>Description - We're celebrating International Cat Day by getting an adorably close look at the planet's former apex predator. Look at all these cute cats, failing like it's their job.</p>
-      </div>
-
-      <div class="comments-section">
-        <div class="comment">
-          <strong>Daniel Smith</strong>
-          <p><a href="?t=8:37">8:37</a> bro learned how to double jump</p>
-        </div>
-
-        <div class="comment">
-          <strong>Amanda Watson</strong>
-          <p><a href="?t=2:50">2:50</a> The cats eyes are like "how dare you!"</p>
-        </div>
-
-        <div class="comment">
-          <strong>Adam Black</strong>
-          <p>Cats destroy your house, it's laughing.</p>
-        </div>
+          <div class="video-info">
+            <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+          </div>
+        </a>
       </div>
     </div>
   </div>
 </main>
 
-<div th:replace="~{fractions/footer :: footer}"></div>
+<footer th:replace="~{fractions/footer :: footer}"></footer>
+
 </body>
 </html>
-
-<!--
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VideoFlow - Video Burner</title>
-  <link rel="stylesheet" th:href="@{/css/video.css}">
-  <link rel="stylesheet" th:href="@{/css/video-burner.css}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-</head>
-<body>
-<header>
-  <div class="header-container">
-    <div class="logo">
-      <a href="/">VideoFlow</a>
-    </div>
-    <div class="search-container">
-      <input type="text" placeholder="Search" class="search-input">
-    </div>
-    <div class="nav-links">
-      <a href="/videos">Videos</a>
-      <a href="/burn-video" class="active">Burn Video</a>
-      <div class="user-avatar">
-        <img src="/images/avatar.svg" alt="User avatar">
-      </div>
-      <a href="/logout" class="logout-btn">Log out</a>
-    </div>
-  </div>
-</header>
-
-<main>
-  <div class="burn-video-container">
-    <h1>Video Beégetés</h1>
-
-    <div class="upload-section">
-      <h2>Videó feltöltése</h2>
-      <div class="upload-area" id="upload-area">
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>Húzd ide a videót vagy kattints a feltöltéshez</p>
-        <input type="file" id="video-upload" accept="video/*" hidden>
-      </div>
-      <button id="upload-btn" class="primary-btn">Videó kiválasztása</button>
-    </div>
-
-    <div class="preview-section hidden" id="preview-section">
-      <h2>Előnézet</h2>
-      <div class="video-preview-container">
-        <video id="video-preview" controls></video>
-      </div>
-    </div>
-
-    <div class="burning-options hidden" id="burning-options">
-      <h2>Beégetési beállítások</h2>
-      <div class="options-form">
-        <div class="form-group">
-          <label for="text-overlay">Beégetendő szöveg</label>
-          <input type="text" id="text-overlay" placeholder="Pl. © VideoFlow 2025">
-        </div>
-
-        <div class="form-group">
-          <label for="position">Pozíció</label>
-          <select id="position">
-            <option value="top-left">Bal felső</option>
-            <option value="top-right">Jobb felső</option>
-            <option value="bottom-left">Bal alsó</option>
-            <option value="bottom-right" selected>Jobb alsó</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="font-size">Betűméret</label>
-          <input type="range" id="font-size" min="12" max="36" value="18">
-          <span id="font-size-value">18px</span>
-        </div>
-
-        <div class="form-group">
-          <label for="text-color">Szöveg színe</label>
-          <input type="color" id="text-color" value="#ffffff">
-        </div>
-
-        <div class="form-group">
-          <label for="text-opacity">Átlátszóság</label>
-          <input type="range" id="text-opacity" min="0" max="1" step="0.1" value="1">
-          <span id="text-opacity-value">100%</span>
-        </div>
-
-        <div class="form-group">
-          <label for="background-color">Háttér színe</label>
-          <input type="color" id="background-color" value="#000000">
-        </div>
-
-        <div class="form-group">
-          <label for="background-opacity">Háttér átlátszósága</label>
-          <input type="range" id="background-opacity" min="0" max="1" step="0.1" value="0.5">
-          <span id="background-opacity-value">50%</span>
-        </div>
-
-        <div class="form-group">
-          <label for="output-format">Kimeneti formátum</label>
-          <select id="output-format">
-            <option value="mp4">MP4</option>
-            <option value="webm">WebM</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="output-quality">Kimeneti minőség</label>
-          <select id="output-quality">
-            <option value="high">Magas</option>
-            <option value="medium" selected>Közepes</option>
-            <option value="low">Alacsony</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="action-buttons">
-        <button id="apply-preview" class="secondary-btn">Előnézet frissítése</button>
-        <button id="process-video" class="primary-btn">Videó feldolgozása</button>
-      </div>
-    </div>
-
-    <div class="processing-section hidden" id="processing-section">
-      <h2>Feldolgozás folyamatban</h2>
-      <div class="progress-container">
-        <div class="progress-bar" id="progress-bar"></div>
-      </div>
-      <p id="progress-text">0%</p>
-    </div>
-
-    <div class="result-section hidden" id="result-section">
-      <h2>Elkészült videó</h2>
-      <div class="result-video-container">
-        <video id="result-video" controls></video>
-      </div>
-      <div class="action-buttons">
-        <button id="download-video" class="primary-btn">Letöltés</button>
-        <button id="share-video" class="secondary-btn">Megosztás</button>
-      </div>
-    </div>
-  </div>
-</main>
-
-<footer>
-  <div class="footer-container">
-    <div class="support">
-      <a href="mailto:support@video_flow.com">support@video_flow.com</a>
-    </div>
-    <div class="social">
-      <a href="https://twitter.com/videoflow">@videoflow</a>
-    </div>
-  </div>
-</footer>
-
-<script th:src="@{/js/video-burner.js}"></script>
-</body>
-</html>-->

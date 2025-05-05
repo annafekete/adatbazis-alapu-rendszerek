@@ -18,14 +18,16 @@
         </div>
         <div class="video-grid">
             <div class="video-card" th:each="video : ${videos}">
-                <div class="thumbnail-container" th:if="${video.filePath != null}">
-                    <video class="thumbnail" controls
-                           th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
-                    </video>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
-                </div>
+                <a th:href="@{'/videos/' + ${video.videoid}}">
+                    <div class="thumbnail-container" th:if="${video.filePath != null}">
+                        <video class="thumbnail" controls
+                               th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                    </div>
+                </a>
             </div>
         </div>
 </main>
