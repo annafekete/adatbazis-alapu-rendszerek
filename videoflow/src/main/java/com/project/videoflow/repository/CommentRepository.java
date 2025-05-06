@@ -10,4 +10,13 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
 
     @Query(value = "SELECT * FROM HOZZASZOLAS WHERE VIDEOID = :videoId ORDER BY COMMENTID DESC", nativeQuery = true)
     List<Comment> findCommentsByVideoId(@Param("videoId") Long videoId);
+
+    @Query(value = """
+        SELECT email 
+        FROM hozzaszolas 
+        GROUP BY email 
+        ORDER BY COUNT(*) DESC 
+        FETCH FIRST 1 ROWS ONLY
+        """, nativeQuery = true)
+    String findTopCommenterEmail();
 }

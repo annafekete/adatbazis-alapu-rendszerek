@@ -30,6 +30,12 @@
                 </a>
             </div>
         </div>
+
+    <div class="highlight-box">
+        <p><strong>Legaktívabb feltöltő:</strong> <span th:text="${topUploaderName}">Valaki</span></p>
+        <p><strong>Legaktívabb kommentelő:</strong> <span th:text="${topCommenterName}">Valaki</span></p>
+    </div>
+
 </main>
 <div th:replace="~{fractions/footer :: footer}"></div>
 </body>
