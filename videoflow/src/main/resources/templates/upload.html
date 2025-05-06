@@ -159,10 +159,6 @@
         </div>
 
         <form id="upload-form">
-            <div class="form-group">
-                <label for="email">E-mail*</label>
-                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
-            </div>
 
             <div class="form-group">
                 <label for="description">Description*</label>
@@ -177,11 +173,11 @@
             <div class="form-group">
                 <label for="category">Choose a category</label>
                 <select id="category" class="category-select">
-                    <option value="food">funny</option>
+                    <option value="funny">funny</option>
                     <option value="education">education</option>
-                    <option value="animals">music</option>
-                    <option value="sports">news</option>
-                    <option value="other">sports</option>
+                    <option value="music">music</option>
+                    <option value="news">news</option>
+                    <option value="sports">sports</option>
                 </select>
             </div>
 
@@ -250,7 +246,7 @@
 
             const formData = new FormData();
             formData.append('video', videoUpload.files[0]);
-            formData.append('email', document.getElementById('email').value);
+            //formData.append('email', document.getElementById('email').value);
             formData.append('title', document.getElementById('title').value);
             formData.append('description', document.getElementById('description').value);
             formData.append('category', document.getElementById('category').value);
