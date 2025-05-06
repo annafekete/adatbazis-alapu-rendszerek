@@ -1,11 +1,7 @@
 package com.project.videoflow.controller;
 
-import com.project.videoflow.model.Comment;
-import com.project.videoflow.model.Upload;
-import com.project.videoflow.model.Video;
-import com.project.videoflow.repository.CommentRepository;
-import com.project.videoflow.repository.UploadRepository;
-import com.project.videoflow.repository.VideoRepository;
+import com.project.videoflow.model.*;
+import com.project.videoflow.repository.*;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +12,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-import com.project.videoflow.model.User;
-import com.project.videoflow.repository.UserRepository;
-
 @Controller
 public class PageController {
 
@@ -26,21 +19,36 @@ public class PageController {
     private final UploadRepository uploadRepository;
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
+    private final ViewRepository viewRepository;
 
-    // Konstruktorba mindkét repository
-    public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository, CommentRepository commentRepository) {
+    public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository,
+                          CommentRepository commentRepository, ViewRepository viewRepository) {
         this.videoRepository = videoRepository;
         this.uploadRepository = uploadRepository;
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
+        this.viewRepository = viewRepository;
     }
 
     @GetMapping("/videos/{id}")
-    public String getVideoDetails(@PathVariable("id") Long id, Model model) {
+    public String getVideoDetails(@PathVariable("id") Long id, Model model, HttpSession session) {
         Optional<Video> videoOpt = videoRepository.findById(id);
         if (videoOpt.isEmpty()) return "redirect:/";
 
         Video video = videoOpt.get();
+
+        // ➕ Megtekintésszám növelése
+        video.setMegtekintesSzam(video.getMegtekintesSzam() + 1);
+        videoRepository.save(video);
+
+        // ➕ Néző elmentése, ha be van jelentkezve
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            Nez nez = new Nez();
+            nez.setVideoid(video.getVideoid());
+            nez.setEmail(loggedInUser.getEmail());
+            viewRepository.save(nez);
+        }
 
         // Feltöltő e-mail lekérdezése
         Optional<Upload> uploadOpt = uploadRepository.findFirstByVideoid(video.getVideoid());
