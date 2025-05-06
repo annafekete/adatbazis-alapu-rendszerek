@@ -13,7 +13,7 @@ public class Video {
     private String leiras;
     private String kulcsszo;
     private int megtekintesSzam;
-    @Column(name = "file_path")
+    @Column(name = "FILE_PATH")
     private String filePath;
 
     public Long getVideoid() {
