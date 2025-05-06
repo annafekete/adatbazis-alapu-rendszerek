@@ -17,7 +17,8 @@
 
     <form th:action="@{/videos/category}" method="get" class="navbar-category-form">
       <select name="name" class="navbar-category-select" onchange="this.form.submit()">
-        <option value=" " th:selected="${selectedCategory == null or selectedCategory == ' '}">all</option>
+        <!--<option value=" " th:selected="${selectedCategory == null or selectedCategory == ' '}">all</option>-->
+        <option value="ALL" th:selected="${selectedCategory == null or selectedCategory == 'ALL' or selectedCategory == ' '}">all</option>
         <option value="funny" th:selected="${selectedCategory == 'funny'}">funny</option>
         <option value="education" th:selected="${selectedCategory == 'education'}">education</option>
         <option value="music" th:selected="${selectedCategory == 'music'}">music</option>
@@ -28,12 +29,21 @@
         <option value="other" th:selected="${selectedCategory == 'other'}">other</option>
       </select>
     </form>
+   <!-- <form th:action="@{/videos/category}" method="get" class="navbar-filter-form">
+      <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : ''}">
+      <label for="filter">Rendezés:</label>
+      <select name="filter" id="filter" onchange="this.form.submit()">
+        <option value="none" th:selected="${filter == null || filter == 'none'}">Alapértelmezett</option>
+        <option value="topViewed" th:selected="${filter == 'topViewed'}">Legnézettebb</option>
+        <option value="newest" th:selected="${filter == 'newest'}">Legújabb</option>
+        <option value="mostLiked" th:selected="${filter == 'mostLiked'}">Legkedveltebb</option>
+      </select>
+    </form>-->
     <form th:action="@{/videos/category}" method="get" class="navbar-filter-form">
-      <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : ' '}">
-    <!--<form th:action="@{/highlights}" method="get" class="navbar-filter-form">-->
+      <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : 'ALL'}">
       <label for="filter"></label>
       <select name="filter" id="filter" onchange="this.form.submit()">
-        <option value="none" th:selected="${filter == 'none'}">none</option>
+        <option value="none" th:selected="${filter == null || filter == 'none'}">none</option>
         <option value="topViewed" th:selected="${filter == 'topViewed'}">topViewed</option>
         <option value="newest" th:selected="${filter == 'newest'}">newest</option>
         <option value="mostLiked" th:selected="${filter == 'mostLiked'}">mostLiked</option>

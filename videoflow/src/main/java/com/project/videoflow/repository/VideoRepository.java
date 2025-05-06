@@ -17,21 +17,23 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     @Query("SELECT v FROM Video v WHERE LOWER(v.kategoria) = LOWER(:kategoria)")
     List<Video> findByKategoriaIgnoreCase(@Param("kategoria") String kategoria);
 
-    @Query("SELECT v FROM Video v WHERE LOWER(v.kategoria) = LOWER(:kategoria) ORDER BY v.megtekintesSzam DESC")
+    @Query("SELECT v FROM Video v WHERE v.kategoria = :kategoria ORDER BY v.megtekintesSzam DESC")
     List<Video> findTopByCategoryOrderByViews(@Param("kategoria") String kategoria);
 
-    @Query("SELECT v FROM Video v JOIN Feltolti f ON v.videoid = f.videoid WHERE LOWER(v.kategoria) = LOWER(:kategoria) ORDER BY f.feltoltesIdeje DESC")
+    @Query("SELECT v FROM Video v JOIN Feltolti f ON v.videoid = f.videoid WHERE v.kategoria = :kategoria ORDER BY f.feltoltesIdeje DESC")
     List<Video> findTopByCategoryOrderByDate(@Param("kategoria") String kategoria);
 
-    @Query(value = "SELECT v.* FROM VIDEO v LEFT JOIN (SELECT videoid, COUNT(*) as like_count FROM KEDVELI GROUP BY videoid) k ON v.videoid = k.videoid WHERE LOWER(v.kategoria) = LOWER(:kategoria) ORDER BY NVL(k.like_count, 0) DESC", nativeQuery = true)
+
+    @Query("SELECT v FROM Video v JOIN Kedveli k ON v.videoid = k.videoid WHERE v.kategoria = :kategoria GROUP BY v ORDER BY COUNT(k) DESC")
     List<Video> findTopByCategoryOrderByLikes(@Param("kategoria") String kategoria);
 
-    @Query("SELECT v FROM Video v ORDER BY v.megtekintesSzam DESC")
-    List<Video> findAllOrderByViews();
+    @Query("SELECT v FROM Video v LEFT JOIN Kedveli k ON v.videoid = k.videoid GROUP BY v ORDER BY COUNT(k) DESC")
+    List<Video> findAllOrderByLikes();
 
+    @Query("SELECT v FROM Video v LEFT JOIN Nez n ON v.videoid = n.videoid GROUP BY v ORDER BY COUNT(n) DESC")
+    List<Video> findAllOrderByViews();
     @Query("SELECT v FROM Video v JOIN Feltolti f ON v.videoid = f.videoid ORDER BY f.feltoltesIdeje DESC")
     List<Video> findAllOrderByDate();
-
-    @Query(value = "SELECT v.* FROM VIDEO v LEFT JOIN (SELECT videoid, COUNT(*) as like_count FROM KEDVELI GROUP BY videoid) k ON v.videoid = k.videoid ORDER BY NVL(k.like_count, 0) DESC", nativeQuery = true)
-    List<Video> findAllOrderByLikes();
 }
+
+

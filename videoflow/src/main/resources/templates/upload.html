@@ -159,10 +159,6 @@
         </div>
 
         <form id="upload-form">
-            <div class="form-group">
-                <label for="email">E-mail*</label>
-                <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
-            </div>
 
             <div class="form-group">
                 <label for="description">Description*</label>
@@ -176,16 +172,16 @@
 
             <div class="form-group">
                 <label for="category">Choose a category</label>
-                <select id="category" class="category-select">
-                    <option value="funny">funny</option>
-                    <option value="education">education</option>
-                    <option value="music">music</option>
-                    <option value="food">food</option>
-                    <option value="animals">animals</option>
-                    <option value="sports">sports</option>
-                    <option value="travel">travel</option>
-                    <option value="other">other</option>
-
+                <select name="name" class="navbar-category-select" onchange="this.form.submit()">
+                    <option value=" ">all</option>
+                    <option value="funny" >funny</option>
+                    <option value="education" >education</option>
+                    <option value="music ">music</option>
+                    <option value="food" >food</option>
+                    <option value="animals" >animals</option>
+                    <option value="sports" >sports</option>
+                    <option value="travel" th>travel</option>
+                    <option value="other" >other</option>
                 </select>
             </div>
 
@@ -254,7 +250,7 @@
 
             const formData = new FormData();
             formData.append('video', videoUpload.files[0]);
-            formData.append('email', document.getElementById('email').value);
+            //formData.append('email', document.getElementById('email').value);
             formData.append('title', document.getElementById('title').value);
             formData.append('description', document.getElementById('description').value);
             formData.append('category', document.getElementById('category').value);

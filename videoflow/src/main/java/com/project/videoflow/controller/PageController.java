@@ -36,7 +36,7 @@ public class PageController {
     }
 
     @GetMapping("/videos/{id}")
-    public String getVideoDetails(@PathVariable Long id, Model model) {
+    public String getVideoDetails(@PathVariable("id") Long id, Model model) {
         Optional<Video> videoOpt = videoRepository.findById(id);
         if (videoOpt.isEmpty()) return "redirect:/";
 
@@ -67,7 +67,7 @@ public class PageController {
     }
 
     @PostMapping("/videos/{id}/comment")
-    public String postComment(@PathVariable Long id, @RequestParam String tartalom, HttpSession session) {
+    public String postComment(@PathVariable("id") Long id, @RequestParam("tartalom") String tartalom, HttpSession session) {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
         if (loggedInUser == null) return "redirect:/login";
 
