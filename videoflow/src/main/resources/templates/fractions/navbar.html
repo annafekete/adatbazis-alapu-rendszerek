@@ -1,33 +1,3 @@
-<!--
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/navbar.css}">
-    <title>Videoflow</title>
-</head>
-<body>
-
-  <div th:fragment="navbar">
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <a href="#" class="logo">VideoFlow</a>
-          <input type="text" class="search-bar" placeholder="Search">
-          <div class="nav-buttons">
-            <a href="#" class="login-btn">Log in</a>
-            <a href="#" class="signup-btn">Sign in</a>
-            <a href="#" class="videos-btn">Videos</a>
-          </div>
-        </div>
-      </div>
-    </header>
-  </div>
-
-
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -38,13 +8,43 @@
 <nav th:fragment="navbar" class="navbar">
   <div class="navbar-container">
     <a href="#" class="navbar-logo">VideoFlow</a>
-    <input type="text" class="navbar-search" placeholder="Search">
+
+
+    <form th:action="@{/videos}" method="get" class="navbar-search-form">
+      <input type="text" name="query" class="navbar-search" placeholder="Search">
+      <button type="submit" class="navbar-search-button">🔍</button>
+    </form>
+
+    <form th:action="@{/videos/category}" method="get" class="navbar-category-form">
+      <select name="name" class="navbar-category-select" onchange="this.form.submit()">
+        <option value=" " th:selected="${selectedCategory == null or selectedCategory == ' '}">all</option>
+        <option value="funny" th:selected="${selectedCategory == 'funny'}">funny</option>
+        <option value="education" th:selected="${selectedCategory == 'education'}">education</option>
+        <option value="music" th:selected="${selectedCategory == 'music'}">music</option>
+        <option value="food" th:selected="${selectedCategory == 'food'}">food</option>
+        <option value="animals" th:selected="${selectedCategory == 'animals'}">animals</option>
+        <option value="sports" th:selected="${selectedCategory == 'sports'}">sports</option>
+        <option value="travel" th:selected="${selectedCategory == 'travel'}">travel</option>
+        <option value="other" th:selected="${selectedCategory == 'other'}">other</option>
+      </select>
+    </form>
+    <form th:action="@{/videos/category}" method="get" class="navbar-filter-form">
+      <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : ' '}">
+    <!--<form th:action="@{/highlights}" method="get" class="navbar-filter-form">-->
+      <label for="filter"></label>
+      <select name="filter" id="filter" onchange="this.form.submit()">
+        <option value="none" th:selected="${filter == 'none'}">none</option>
+        <option value="topViewed" th:selected="${filter == 'topViewed'}">topViewed</option>
+        <option value="newest" th:selected="${filter == 'newest'}">newest</option>
+        <option value="mostLiked" th:selected="${filter == 'mostLiked'}">mostLiked</option>
+      </select>
+    </form>
 
     <div class="navbar-links">
-        <div>
-          <a th:if="${session.isAdmin}" th:href="@{/crud}" class="nav-btn nav-btn-primary">Data modification</a>
-          <a th:href="@{/}" class="nav-btn">Videos</a>
-        </div>
+      <div>
+        <a th:if="${session.isAdmin}" th:href="@{/crud}" class="nav-btn nav-btn-primary">Data modification</a>
+        <a th:href="@{/}" class="nav-btn">Videos</a>
+      </div>
 
       <div th:if="${session.loggedInUser != null}">
         <a th:href="@{/profile}" th:text="${session.loggedInUser.felhasznalonev}" class="nav-btn"></a>
@@ -59,5 +59,6 @@
     </div>
   </div>
 </nav>
+
 </body>
 </html>

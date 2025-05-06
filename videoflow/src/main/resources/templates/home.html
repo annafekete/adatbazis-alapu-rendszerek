@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,23 +13,32 @@
     <div th:replace="~{fractions/navbar :: navbar}"></div>
 </header>
 <main class="container">
-        <div th:if="${session.loggedInUser}" class="welcome-msg">
-            <h2 th:text="'Üdvözlünk, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
+    <div th:if="${session.loggedInUser}" class="welcome-msg">
+        <h2 th:text="'Üdvözlünk, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
+    </div>
+
+
+
+    <!-- Üzenet, ha nincs találat -->
+    <div th:if="${videos.isEmpty()}">
+        <p>no results in this category</p>
+    </div>
+
+    <!-- Videók megjelenítése -->
+    <div class="video-grid">
+        <div class="video-card" th:each="video : ${videos}">
+            <a th:href="@{'/videos/' + ${video.videoid}}">
+                <div class="thumbnail-container" th:if="${video.filePath != null}">
+                    <video class="thumbnail" controls
+                           th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+                    </video>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                </div>
+            </a>
         </div>
-        <div class="video-grid">
-            <div class="video-card" th:each="video : ${videos}">
-                <a th:href="@{'/videos/' + ${video.videoid}}">
-                    <div class="thumbnail-container" th:if="${video.filePath != null}">
-                        <video class="thumbnail" controls
-                               th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
-                        </video>
-                    </div>
-                    <div class="video-info">
-                        <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
-                    </div>
-                </a>
-            </div>
-        </div>
+    </div>
 </main>
 <div th:replace="~{fractions/footer :: footer}"></div>
 </body>
