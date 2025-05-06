@@ -29,16 +29,6 @@
         <option value="other" th:selected="${selectedCategory == 'other'}">other</option>
       </select>
     </form>
-   <!-- <form th:action="@{/videos/category}" method="get" class="navbar-filter-form">
-      <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : ''}">
-      <label for="filter">Rendezés:</label>
-      <select name="filter" id="filter" onchange="this.form.submit()">
-        <option value="none" th:selected="${filter == null || filter == 'none'}">Alapértelmezett</option>
-        <option value="topViewed" th:selected="${filter == 'topViewed'}">Legnézettebb</option>
-        <option value="newest" th:selected="${filter == 'newest'}">Legújabb</option>
-        <option value="mostLiked" th:selected="${filter == 'mostLiked'}">Legkedveltebb</option>
-      </select>
-    </form>-->
     <form th:action="@{/videos/category}" method="get" class="navbar-filter-form">
       <input type="hidden" name="name" th:value="${selectedCategory != null ? selectedCategory : 'ALL'}">
       <label for="filter"></label>

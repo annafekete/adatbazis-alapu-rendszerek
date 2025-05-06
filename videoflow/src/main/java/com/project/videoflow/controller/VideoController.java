@@ -13,7 +13,8 @@ import com.project.videoflow.model.Video;
 import com.project.videoflow.repository.VideoRepository;
 import org.springframework.ui.Model;
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Controller
 @RequestMapping("/videos")
 public class VideoController {
@@ -22,7 +23,7 @@ public class VideoController {
 
     @Autowired
     private VideoRepository videoRepository;
-
+    private static final Logger logger = LoggerFactory.getLogger(VideoController.class);
     public VideoController(VideoService videoService) {
         this.videoService = videoService;
     }
@@ -80,8 +81,10 @@ public class VideoController {
             case "topViewed":
                 if (isAllOrEmpty) {
                     videos = videoRepository.findAllOrderByViews();
+                    logger.info("Belépés az legnezettebb metódusba");
                 } else {
                     videos = videoRepository.findTopByCategoryOrderByViews(categoryName);
+                    logger.info("sikertelen az legnezettebb metódusba");
                 }
                 break;
             case "newest":
@@ -94,8 +97,10 @@ public class VideoController {
             case "mostLiked":
                 if (isAllOrEmpty) {
                     videos = videoRepository.findAllOrderByLikes();
+                    logger.info("Belépés az leglikeolt metódusba");
                 } else {
                     videos = videoRepository.findTopByCategoryOrderByLikes(categoryName);
+                    logger.info("sikertelen az leglikeolt metódusba");
                 }
                 break;
             default:
@@ -113,14 +118,14 @@ public class VideoController {
         return "home";
     }
 
-    @GetMapping("/top-viewed")
+    @GetMapping("/topviewed")
     public String getTopViewedVideos(Model model) {
         List<Video> videos = videoRepository.findAllOrderByViews();
         model.addAttribute("videos", videos);
         return "home";
     }
 
-    @GetMapping("/most-liked")
+    @GetMapping("/mostliked")
     public String getMostLikedVideos(Model model) {
         List<Video> videos = videoRepository.findAllOrderByLikes();
         model.addAttribute("videos", videos);
