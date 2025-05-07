@@ -1,0 +1,7 @@
+create or replace TRIGGER playlist_letrehozo
+AFTER INSERT ON LETREHOZ
+FOR EACH ROW
+BEGIN
+    UPDATE LEJATSZASI_LISTA SET EMAIL = :NEW.EMAIL
+    WHERE LEJATSZASI_LISTA.playlistid = :NEW.playlistid;
+END;
