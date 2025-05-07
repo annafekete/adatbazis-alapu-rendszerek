@@ -2,6 +2,8 @@ package com.project.videoflow.controller;
 
 import com.project.videoflow.model.*;
 import com.project.videoflow.repository.*;
+import com.project.videoflow.service.PlaylistService;
+
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,9 +22,14 @@ public class PageController {
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
     private final ViewRepository viewRepository;
+    private final CreatePLRepository createPLRepository;
+    private final PlaylistService playlistService;
 
     public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository,
-                          CommentRepository commentRepository, ViewRepository viewRepository) {
+                          CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,
+                          PlaylistService playlistService) {
+        this.createPLRepository = createPLRepository;
+        this.playlistService = playlistService;
         this.videoRepository = videoRepository;
         this.uploadRepository = uploadRepository;
         this.userRepository = userRepository;
@@ -59,6 +66,14 @@ public class PageController {
                 ? videoRepository.findOtherVideosByUploader(email, video.getVideoid())
                 : List.of();
 
+
+        // Feltolto lejatszasi listai
+        List<CreatePL> createdPlaylists = createPLRepository.findByEmail(email);
+        List<Long> userPlaylistIds = createdPlaylists.stream()
+            .map(CreatePL::getPlaylistid)
+            .toList();
+        List<Playlist> userPlaylists = playlistService.getPlaylistById(userPlaylistIds);
+
         User user = userRepository.findByEmail(email);
         String felhasznalonev = (user != null) ? user.getFelhasznalonev() : "Ismeretlen";
         Date feltoltesIdeje = uploadOpt.map(Upload::getFeltoltesIdeje).orElse(null);
@@ -70,6 +85,8 @@ public class PageController {
         model.addAttribute("feltoltoNev", felhasznalonev);
         model.addAttribute("video", video);
         model.addAttribute("otherVideos", otherVideos);
+        model.addAttribute("playlists", userPlaylists);
+
 
         return "video"; // video.html sablonhoz
     }
