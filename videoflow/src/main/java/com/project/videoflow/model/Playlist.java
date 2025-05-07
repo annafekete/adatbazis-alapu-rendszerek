@@ -1,5 +1,8 @@
 package com.project.videoflow.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +14,9 @@ public class Playlist {
 
     private String playlistnev;
 
+    @ManyToMany
+    @JoinTable(name = "HOZZAAD", joinColumns = @JoinColumn(name = "playlistid"), inverseJoinColumns = @JoinColumn(name = "videoid"))
+    private List<Video> videos = new ArrayList<>();
 
     public Long getPlaylistid() {
         return this.playlistid;

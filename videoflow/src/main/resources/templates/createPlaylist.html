@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Playlist létrehozása</title>
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" th:href="@{/css/footer.css}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        form { max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 1em; }
+        input[type="text"] { width: 100%; padding: 0.5em; }
+        button { margin-top: 1em; padding: 0.5em 1em; }
+        .message { margin-top: 1em; color: green; }
+        .error { margin-top: 1em; color: red; }
+    </style>
+</head>
+<body>
+    <header>
+        <div th:replace="~{fractions/navbar :: navbar}"></div>
+    </header>
+    <h1>Playlist létrehozása</h1>
+    <form id="createPlaylistForm" th:action="@{/createPlaylist}" method="post">
+        <label for="playlistnev">Playlist neve:</label>
+        <input type="text" id="playlistnev" name="playlistnev" required>
+        <button type="submit">Létrehozás</button>
+    </form>
+    <div id="responseMessage"></div>
+    
+    <div th:replace="~{fractions/footer :: footer}"></div>
+</body>
+</html>

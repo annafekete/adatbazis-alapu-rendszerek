@@ -15,6 +15,7 @@
 
             // Add click event to each tab button
             tabButtons.forEach(button => {
+                if(button.getAttribute('data-tab') !== 'createPlaylist') {
                 button.addEventListener('click', function() {
                     // Remove active class from all buttons and contents
                     tabButtons.forEach(btn => btn.classList.remove('active'));
@@ -27,8 +28,31 @@
                     const tabId = this.getAttribute('data-tab');
                     document.getElementById(tabId).classList.add('active');
                 });
+            }
             });
+            document.querySelectorAll('.delete-tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const playlistId = this.getAttribute('data-playlist-id');
+                if (confirm('Are you sure you want to delete this playlist?')) {
+                    fetch('/deletePlaylist/' + playlistId, {
+                        method: 'DELETE'
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Remove tab and content from DOM or reload page
+                            window.location.reload();
+                        } else {
+                            alert('Failed to delete playlist.');
+                        }
+                });
+                
+    }
+
+    
         });
+    });
+            
+    });
     </script>
 </head>
 <body>
@@ -45,15 +69,22 @@
                      <img src="/images/playlists.jpg" alt="Playlist">
                 </div>
                 <div class="tabs">
-                    <button class="tab-btn active" data-tab="playlist1">Playlist01</button>
-                    <button class="tab-btn" data-tab="playlist2">Playlist02</button>
-                    <button class="tab-btn" data-tab="playlist3">Playlist03</button>
-                    <button class="tab-btn" data-tab="playlist4">Playlist04</button>
+                    <button class="tab-btn active" data-tab="kedveltek">Kedveltek</button>
+                    <button class="tab-btn" th:each="playlist : ${playlists}" th:text="${playlist.playlistnev}" th:attr="data-tab='playlist' + ${playlist.playlistid}"></button>
+                    <button class="tab-btn" data-tab="createPlaylist" th:onclick="'window.location.href=\'' + @{/createPlaylist} + '\';'">+</button>
                 </div>
             </div>
         </div>
 
         <div class="playlist-content">
+            <div th:each="playlist : ${playlists}" th:id="'playlist' + ${playlist.playlistid}" class="tab-content">
+                <div class="placeholder-message">
+                    <p th:text="'Playlist ' + ${playlist.playlistnev} + ' tartalma itt jelenik meg.'"></p>
+                </div>
+                <button class="delete-tab-btn" th:attr="data-playlist-id=${playlist.playlistid}">Delete Playlist</button>
+            </div>
+            
+
             <div id="playlist1" class="tab-content active">
                 <div class="video-item">
 

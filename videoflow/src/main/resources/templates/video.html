@@ -171,6 +171,17 @@
       <p><strong>Kulcsszó:</strong> <span th:text="${video.kulcsszo}"></span></p>
       <p><strong>Leírás:</strong></p>
       <p th:text="${video.leiras}"></p>
+      <form th:action="@{'/playlist/addVideo'}" method="post">
+            <input type="hidden" name="videoId" th:value="${video.videoid}" />
+            <select name="playlistId" required>
+              <option
+                th:each="pl : ${playlists}"
+                th:value="${pl.playlistid}"
+                th:text="${pl.playlistnev}"
+              ></option>
+            </select>
+            <button type="submit">Add to Playlist</button>
+        </form>
     </div>
   </div>
 

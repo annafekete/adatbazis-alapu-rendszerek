@@ -3,28 +3,30 @@ package com.project.videoflow.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "HOZZAAD")
-@IdClass(AddtoPLId.class)
-public class AddtoPL {
+@Table(name = "LETREHOZ")
+@IdClass(CreatePLId.class)
+public class CreatePL {
     @Id
-    private Long videoid;
+    private String email;
 
     @Id
     private Long playlistid;
 
-    public Long getVideoid() {
-        return videoid;
+
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setVideoid(Long videoid) {
-        this.videoid = videoid;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Long getPlaylistid() {
-        return playlistid;
+        return this.playlistid;
     }
 
     public void setPlaylistid(Long playlistid) {
         this.playlistid = playlistid;
     }
+
 }
