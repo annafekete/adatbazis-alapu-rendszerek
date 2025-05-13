@@ -21,7 +21,7 @@
         </div>
 
         <div class="username">
-            <h1>Eva04</h1>
+            <h1 th:text="${username}"></h1>
         </div>
 
         <div class="profile-actions">
@@ -34,7 +34,7 @@
             <a class="action-btn" th:href="@{/profile}">
                 <img src="/images/details.svg" alt="details">
             </a>
-            <a class="action-btn" th:href="@{/upload}">
+            <a class="action-btn" th:href="@{/upload}" th:if="${role == 'content_creator' or role == 'admin' or role == 'superadmin'}">
                 <img src="/images/upload.png" alt="Upload video">
             </a>
         </div>

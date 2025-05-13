@@ -26,7 +26,10 @@ public class ProfileController {
     public String showProfile(Model model, HttpSession session) {
         User user = (User) session.getAttribute("loggedInUser");
         if (user == null) return "redirect:/login";
-
+        String role = user.getSzerepkor().getSzerepkornev();
+        model.addAttribute("role", role);
+        String username = user.getFelhasznalonev();
+        model.addAttribute("username", username);
         ProfileDto profile = userService.getProfileByUser(user);
         model.addAttribute("profile", profile);
         return "profile";
