@@ -18,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 @Service
 public class VideoService {
@@ -56,4 +57,7 @@ public class VideoService {
         }
     }
 
+    public List<Video> getVideosById(List<Long> videoids) {
+        return videoRepository.findAllById(videoids);
+    }
 }

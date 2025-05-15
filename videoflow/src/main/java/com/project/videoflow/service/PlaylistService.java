@@ -15,6 +15,8 @@ import com.project.videoflow.repository.CreatePLRepository;
 import com.project.videoflow.repository.PlaylistRepository;
 import com.project.videoflow.repository.VideoRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class PlaylistService {
     
@@ -80,6 +82,12 @@ public class PlaylistService {
         addtoPL.setPlaylistid(playlistId);
         addtoPL.setVideoid(videoId);
         addtoPLRepository.save(addtoPL);
+        
+    }
+
+    @Transactional
+    public void removeVideoFromPlaylist(Long videoId, Long playlistId) {
+        addtoPLRepository.deleteByVideoidAndPlaylistid(videoId, playlistId);
         
     }
 }

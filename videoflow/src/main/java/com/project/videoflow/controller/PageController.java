@@ -68,7 +68,8 @@ public class PageController {
 
 
         // Feltolto lejatszasi listai
-        List<CreatePL> createdPlaylists = createPLRepository.findByEmail(email);
+        String userEmail = loggedInUser != null ? loggedInUser.getEmail() : null;
+        List<CreatePL> createdPlaylists = createPLRepository.findByEmail(userEmail);
         List<Long> userPlaylistIds = createdPlaylists.stream()
             .map(CreatePL::getPlaylistid)
             .toList();

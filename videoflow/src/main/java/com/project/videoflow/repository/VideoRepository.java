@@ -35,7 +35,7 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     @Query("SELECT v FROM Video v JOIN Feltolti f ON v.videoid = f.videoid ORDER BY f.feltoltesIdeje DESC")
     List<Video> findAllOrderByDate();
 
-
+    Video findByVideoid(Long videoid);
 }
 
 

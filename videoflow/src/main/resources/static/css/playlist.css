@@ -1,193 +1,277 @@
 /* General Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Header Styles */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 20px;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
 .search-bar input {
-    padding: 8px 15px;
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    background-color: #f5f5f5;
+  padding: 8px 15px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #f5f5f5;
 }
 
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .videos-link {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .profile-img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .logout-btn {
-    padding: 8px 15px;
-    background-color: #222;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 8px 15px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 /* Content Styles */
 .content {
-    flex: 1;
-    background-color: #a9c6e3;
-    padding: 20px;
+  flex: 1;
+  background-color: #a9c6e3;
+  padding: 20px;
 }
 
 /* Playlist Tabs */
 .playlist-tabs {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .tab-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 .playlist-icon img {
-    width: 50px;
-    height: 50px;
-    background-color: white;
-    border-radius: 50%;
-    padding: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
 }
 
 .tabs {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
 
 .tab-btn {
-    padding: 8px 15px;
-    background-color: transparent;
-    border: none;
-    border-radius: 5px 5px 0 0;
-    cursor: pointer;
-    font-weight: bold;
+  padding: 8px 15px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .tab-btn.active {
-    background-color: white;
+  background-color: white;
 }
 
 /* Playlist Content */
 .tab-content {
-    display: none;
+  display: none;
 }
 
 .tab-content.active {
-    display: block;
+  display: block;
 }
 
 .video-item {
-    display: flex;
-    background-color: white;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    overflow: hidden;
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
 }
 
 .video-thumbnail {
-    position: relative;
-    width: 150px;
-    height: 100px;
-    flex-shrink: 0;
+  position: relative;
+  width: 150px;
+  height: 100px;
+  flex-shrink: 0;
 }
 
 .video-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-actions {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.delete-btn, .add-btn {
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
+.delete-btn,
+.add-btn {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.delete-btn img, .add-btn img {
-    width: 12px;
-    height: 12px;
+.delete-btn img,
+.add-btn img {
+  width: 12px;
+  height: 12px;
 }
 .delete-btn:hover {
-    background-color: red;
-    border-color: black;
+  background-color: red;
+  border-color: black;
 }
 .add-btn:hover {
-    background-color: #92c1e9;
-        border-color: black;
-    }
+  background-color: #92c1e9;
+  border-color: black;
+}
 
-    .delete-btn:hover img, .add-btn:hover img {
-        filter: brightness(0) invert(1);
-    }
+.delete-btn:hover img,
+.add-btn:hover img {
+  filter: brightness(0) invert(1);
+}
 
-    .video-description {
-        padding: 15px;
-        flex: 1;
-    }
+.video-description {
+  padding: 15px;
+  flex: 1;
+}
 
-    .placeholder-message {
-        background-color: white;
-        padding: 20px;
-        text-align: center;
-        border-radius: 8px;
-    }
+.placeholder-message {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-left: 10px;
+}
 
+.video-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.video-item a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 22px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.video-item video {
+  border-radius: 8px;
+}
+
+.video-item p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.remove-video-btn {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.remove-video-btn:hover {
+  background-color: red;
+  border-color: black;
+}
+
+.remove-video-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.delete-tab-btn {
+  background-color: red;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+
+}
+
+.delete-tab-btn:hover {
+  background-color: darkred;
+}
+
+#createPlaylistBtn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+#createPlaylistBtn:hover {
+  background-color: white;
+}

@@ -1,6 +1,7 @@
 package com.project.videoflow.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +23,7 @@ import com.project.videoflow.repository.AddtoPLRepository;
 import com.project.videoflow.repository.CreatePLRepository;
 import com.project.videoflow.repository.VideoRepository;
 import com.project.videoflow.service.PlaylistService;
+import com.project.videoflow.service.VideoService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -32,16 +34,21 @@ public class PlaylistController {
     private final CreatePLRepository createPLRepository;
     private final AddtoPLRepository addtoPLRepository;
     private final VideoRepository videoRepository;
+    private final VideoService videoService;
 
-    public PlaylistController(PlaylistService playlistService, CreatePLRepository createPLRepository, AddtoPLRepository addtoPLRepository, VideoRepository videoRepository) {
+    public PlaylistController(PlaylistService playlistService, CreatePLRepository createPLRepository,
+            AddtoPLRepository addtoPLRepository, VideoRepository videoRepository, VideoService videoService) {
+        this.videoService = videoService;
         this.videoRepository = videoRepository;
         this.addtoPLRepository = addtoPLRepository;
         this.playlistService = playlistService;
         this.createPLRepository = createPLRepository;
+
     }
 
     @GetMapping("/playlist")
-    public String playlist(HttpSession session, Model model) {
+    public String playlist(HttpSession session, Model model,
+            @RequestParam(value = "playlistId", required = false) Long playlistId) {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
         if (loggedInUser == null) {
             model.addAttribute("error", "Nem vagy bejelentkezve! Kérlek jelentkezz be a feltöltéshez.");
@@ -55,6 +62,12 @@ public class PlaylistController {
         List<Playlist> userPlaylists = playlistService.getPlaylistById(userPlaylistIds);
         model.addAttribute("playlists", userPlaylists);
 
+        List<AddtoPL> addtoPLs = addtoPLRepository.findByPlaylistid(playlistId);
+        List<Long> videoids = addtoPLs.stream()
+                .map(AddtoPL::getVideoid)
+                .toList();
+        List<Video> videos = videoService.getVideosById(videoids);
+        model.addAttribute("videos", videos);
         return "playlist";
     }
 
@@ -94,8 +107,10 @@ public class PlaylistController {
         playlistService.deletePlaylist(id);
         return ResponseEntity.ok().build();
     }
+
     @PostMapping("/playlist/addVideo")
-    public String addVideoToPlaylist(@RequestParam("playlistId") Long playlistid, @RequestParam("videoId") Long videoid, HttpSession session, Model model) {
+    public String addVideoToPlaylist(@RequestParam("playlistId") Long playlistid, @RequestParam("videoId") Long videoid,
+            HttpSession session, Model model) {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
         if (loggedInUser == null) {
             return "redirect:/login";
@@ -107,5 +122,28 @@ public class PlaylistController {
             return "redirect:/playlist?error=" + e.getMessage();
         }
 
+    }
+
+    @DeleteMapping("/playlist/removeVideo")
+    @ResponseBody
+    public ResponseEntity<?> removeVideoFromPlaylist(@RequestParam("videoId") Long videoid, @RequestParam("playlistId") Long playlistid, HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
+        try {
+            playlistService.removeVideoFromPlaylist(videoid, playlistid);
+            return ResponseEntity.ok().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
+    }
+
+    @GetMapping("/playlist/videos")
+    @ResponseBody
+    public List<Video> getPlaylistVideos(@RequestParam("playlistId") Long playlistId) {
+        List<AddtoPL> addtoPLs = addtoPLRepository.findByPlaylistid(playlistId);
+        List<Long> videoids = addtoPLs.stream().map(AddtoPL::getVideoid).toList();
+        return videoService.getVideosById(videoids);
     }
 }
