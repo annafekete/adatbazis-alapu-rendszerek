@@ -1,25 +1,17 @@
 package com.project.videoflow.dto;
 
 public class ProfileDto {
-    private String firstName;
-    private String lastName;
+    private String username;
     private String email;
     private String avatarUrl;
+    private String password;
 
-    public String getFirstName() {
-        return firstName;
+
+    public String getUsername() {
+        return username;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -36,5 +28,12 @@ public class ProfileDto {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

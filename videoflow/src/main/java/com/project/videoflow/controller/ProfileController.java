@@ -1,10 +1,14 @@
 package com.project.videoflow.controller;
 
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 import com.project.videoflow.dto.ProfileDto;
+import com.project.videoflow.dto.UpdateProfileRequest;
 import com.project.videoflow.model.User;
 import com.project.videoflow.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,50 +23,78 @@ import java.io.IOException;
 @Controller
 public class ProfileController {
 
+    private final BCryptPasswordEncoder passwordEncoder;
+    
+
     @Autowired
     private UserService userService;
+
+    ProfileController() {
+        this.passwordEncoder = new BCryptPasswordEncoder();
+    }
 
     @GetMapping("/profile")
     public String showProfile(Model model, HttpSession session) {
         User user = (User) session.getAttribute("loggedInUser");
-        if (user == null) return "redirect:/login";
+        if (user == null)
+            return "redirect:/login";
         String role = user.getSzerepkor().getSzerepkornev();
         model.addAttribute("role", role);
-        String username = user.getFelhasznalonev();
-        model.addAttribute("username", username);
+        String felhasznalonev = user.getFelhasznalonev();
+        model.addAttribute("username", felhasznalonev);
         ProfileDto profile = userService.getProfileByUser(user);
         model.addAttribute("profile", profile);
         return "profile";
     }
 
-
-
     // Profil frissítés form
     @GetMapping("/profile/update")
     public String updateProfileForm(Model model, HttpSession session) {
         if (session.getAttribute("loggedInUser") == null) {
-            return "redirect:/login";}
-        ProfileDto profile = userService.getCurrentUserProfile();  // Lekéri az aktuális felhasználói adatokat
-        model.addAttribute("profile", profile);  // Átadja az adatokat a formhoz
-        return "update";  // Update oldal betöltése
+            return "redirect:/login";
+        }
+        ProfileDto profile = userService.getCurrentUserProfile(); // Lekéri az aktuális felhasználói adatokat
+        UpdateProfileRequest updateProfileRequest = new UpdateProfileRequest(); // Új objektum létrehozása
+        updateProfileRequest.setUsername(profile.getUsername()); // Beállítja a felhasználónevet
+        updateProfileRequest.setPassword(profile.getPassword()); // Beállítja a jelszót
+        // model.addAttribute("updateProfileRequest", updateProfileRequest); // Átadja
+        // az adatokat a formhoz
+        model.addAttribute("profile", profile); // Átadja az adatokat a formhoz
+        return "update"; // Update oldal betöltése
     }
 
     // Profil frissítése
-    public String updateProfile(@ModelAttribute("profile") ProfileDto profileDto, HttpSession session) {
-        if (session.getAttribute("loggedInUser") == null) {
-            return "redirect:/login";}
-        userService.updateUser(profileDto);
+    @PostMapping("/profile/update")
+    public String updateProfile(@ModelAttribute("profile") ProfileDto profileDto, HttpSession session,Model model) {
+        User user = (User) session.getAttribute("loggedInUser");
+        if (user == null) {
+            return "redirect:/login";
+        }
+        UpdateProfileRequest updateProfileRequest = new UpdateProfileRequest();
+        updateProfileRequest.setUsername(profileDto.getUsername());
+        updateProfileRequest.setPassword(profileDto.getPassword());
+        if (!passwordEncoder.matches(updateProfileRequest.getPassword(), user.getJelszo())) {
+            model.addAttribute("error", "Incorrect password.");
+            model.addAttribute("updateProfileRequest", updateProfileRequest);
+            return "profile";
+        }
+
+        userService.updateProfile(user, updateProfileRequest);
         return "redirect:/profile";
     }
 
     @PostMapping("/profile/update/picture")
-    public String updateProfilePicture(@RequestParam("file") MultipartFile file, HttpSession session) throws IOException {
+    public String updateProfilePicture(@RequestParam("file") MultipartFile file, HttpSession session)
+            throws IOException {
         if (session.getAttribute("loggedInUser") == null) {
-            return "redirect:/login";}
+            return "redirect:/login";
+        }
         if (!file.isEmpty()) {
             String uploadDir = "src/main/resources/static/images/";
             String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();
             file.transferTo(new File(uploadDir + fileName));
-            userService.updateProfilePicture("/images/" + fileName);}
-        return "redirect:/profile";}
+            userService.updateProfilePicture("/images/" + fileName);
+        }
+        return "redirect:/profile";
+    }
 }

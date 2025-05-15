@@ -5,15 +5,18 @@ package com.project.videoflow.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "FELHASZNALO")
 public class User {
     @Id
     @Column(name = "EMAIL", nullable = false, unique = true)
+    @NotNull
     private String email;
 
     @Column(name = "FELHASZNALONEV", nullable = false, unique = true)
+    @NotNull
     private String felhasznalonev;
 
     @Column(name = "JELSZO", nullable = false)

@@ -18,7 +18,7 @@ public class SecurityConfig {
                         .anyRequest().permitAll()  // ⬅️ mindenki mindent elérhet
                 )
                 .formLogin(form -> form
-                        .loginPage("/log")
+                        .loginPage("/login")
                         .loginProcessingUrl("/log")
                         .defaultSuccessUrl("/profile", true)
                         .permitAll()

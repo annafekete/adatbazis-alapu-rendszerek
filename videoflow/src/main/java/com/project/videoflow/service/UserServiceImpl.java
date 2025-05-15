@@ -1,6 +1,7 @@
 package com.project.videoflow.service;
 
 import com.project.videoflow.dto.ProfileDto;
+import com.project.videoflow.dto.UpdateProfileRequest;
 import com.project.videoflow.model.User;
 import com.project.videoflow.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +31,7 @@ public class UserServiceImpl implements UserService {
 
         ProfileDto profileDto = new ProfileDto();
         profileDto.setEmail(user.getEmail());
-        profileDto.setFirstName(user.getFelhasznalonev()); // vagy ha lesz külön firstName meződ, azt is kezelhetjük
+        profileDto.setUsername(user.getFelhasznalonev()); // vagy ha lesz külön firstName meződ, azt is kezelhetjük
         profileDto.setAvatarUrl(user.getAvatarUrl());
 
         return profileDto;
@@ -40,19 +41,15 @@ public class UserServiceImpl implements UserService {
     public ProfileDto getProfileByUser(User user) {
         ProfileDto profileDto = new ProfileDto();
         profileDto.setEmail(user.getEmail());
-        profileDto.setFirstName(user.getFelhasznalonev());
+        profileDto.setUsername(user.getFelhasznalonev());
         profileDto.setAvatarUrl(user.getAvatarUrl());
         return profileDto;
     }
 
 
     @Override
-    public void updateUser(ProfileDto profileDto) {
-        User user = getLoggedInUser();
-
-        user.setEmail(profileDto.getEmail());
-        user.setFelhasznalonev(profileDto.getFirstName()); // új név átírása
-
+    public void updateProfile(User user, UpdateProfileRequest updateProfileRequest) {
+        user.setFelhasznalonev(updateProfileRequest.getUsername()); // új név átírása
         userRepository.save(user);
     }
 

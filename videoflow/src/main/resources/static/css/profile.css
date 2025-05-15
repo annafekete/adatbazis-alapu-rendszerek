@@ -142,6 +142,7 @@ main {
 
 .form-row {
     display: flex;
+    flex-direction: column;
     gap: 15px;
     margin-bottom: 15px;
 }
@@ -183,6 +184,13 @@ label {
 
 .submit-btn:hover {
     background-color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 16x;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .details-active {
