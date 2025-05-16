@@ -36,6 +36,12 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     List<Video> findAllOrderByDate();
 
     Video findByVideoid(Long videoid);
+    @Query("SELECT v FROM Video v WHERE v.kategoria = :kategoria AND v.videoid <> :excludeId")
+    List<Video> findSimilarVideosByCategory(@Param("kategoria") String kategoria, @Param("excludeId") Long excludeId);
+
+    @Query("SELECT v FROM Video v WHERE v.kulcsszo = :kulcsszo AND v.videoid <> :excludeId")
+    List<Video> findSimilarVideosByKeyword(@Param("kulcsszo") String kulcsszo, @Param("excludeId") Long excludeId);
+
 }
 
 

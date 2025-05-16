@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ac170e-6ed7-40c3-a7aa-3d86bb0560d5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - Dokumentáció 3.mérföldkő.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - Dokumentáció 3.mérföldkő.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - doksi 4 .mérföldkő.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - doksi 4 .mérföldkő.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller/UserCrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller/UserCrudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/KedveliId.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/KedveliId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/UploadId.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/UploadId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow/src/main/resources/templates/user-crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/resources/templates/user-crud.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +45,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -48,6 +56,9 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -59,38 +70,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Build videoflow.executor": "Run",
-    "Gradle.Download Sources.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.VideoflowApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Mirella/Desktop/projektmunka/adatbazis-alapu-rendszerek",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Build videoflow.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.VideoflowApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mirella/Desktop/projektmunka/adatbazis-alapu-rendszerek&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/videoflow/src/main/resources/templates" />
@@ -99,7 +110,7 @@
       <recent name="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Database Script.videomegoszto.sql">
+  <component name="RunManager">
     <configuration name="videomegoszto.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/dokumentacio/videomegoszto.sql" />
       <script-mode>FILE</script-mode>
@@ -141,6 +152,10 @@
       <workItem from="1745404110769" duration="16000" />
       <workItem from="1745404135676" duration="17733000" />
       <workItem from="1746500423438" duration="25000" />
+      <workItem from="1746564348071" duration="655000" />
+      <workItem from="1746618765188" duration="2290000" />
+      <workItem from="1747124542445" duration="284000" />
+      <workItem from="1747401255637" duration="2860000" />
     </task>
     <servers />
   </component>
