@@ -164,6 +164,20 @@
     </video>
 
     <div class="video-meta">
+      <div class="like-section">
+        <form th:action="@{'/videos/' + ${video.videoid} + '/like'}" method="post"
+              th:if="${loggedIn} and ${!alreadyLiked}">
+          <button type="submit">Kedvelés</button>
+        </form>
+
+        <div th:if="${loggedIn} and ${alreadyLiked}">
+          <p>Már kedvelted ezt a videót.</p>
+        </div>
+
+
+        <p><strong>Kedvelések:</strong> <span th:text="${likeCount}"></span></p>
+      </div>
+
       <p><strong>Feltöltő:</strong> <span th:text="${feltoltoNev}"></span></p>
       <p><strong>Feltöltés ideje:</strong>
         <span th:text="${#dates.format(feltoltesIdeje, 'yyyy.MM.dd HH:mm')}"></span>

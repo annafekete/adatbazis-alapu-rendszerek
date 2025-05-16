@@ -5,6 +5,7 @@ import com.project.videoflow.repository.*;
 import com.project.videoflow.service.PlaylistService;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +25,11 @@ public class PageController {
     private final ViewRepository viewRepository;
     private final CreatePLRepository createPLRepository;
     private final PlaylistService playlistService;
+    private LikeRepository likeRepository;
 
     public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository,
                           CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,
-                          PlaylistService playlistService) {
+                          PlaylistService playlistService, LikeRepository likeRepository) {
         this.createPLRepository = createPLRepository;
         this.playlistService = playlistService;
         this.videoRepository = videoRepository;
@@ -35,6 +37,7 @@ public class PageController {
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
         this.viewRepository = viewRepository;
+        this.likeRepository = likeRepository;
     }
 
   /*  @GetMapping("/videos/{id}")
@@ -103,8 +106,10 @@ public class PageController {
         video.setMegtekintesSzam(video.getMegtekintesSzam() + 1);
         videoRepository.save(video);
 
-        // Néző elmentése, ha be van jelentkezve
+        // Felhasználó lekérése session-ből
         User loggedInUser = (User) session.getAttribute("loggedInUser");
+
+        // Néző mentése, ha be van jelentkezve
         if (loggedInUser != null) {
             Nez nez = new Nez();
             nez.setVideoid(video.getVideoid());
@@ -112,19 +117,25 @@ public class PageController {
             viewRepository.save(nez);
         }
 
-        // Feltöltő e-mail lekérdezése
+        // Feltöltő adatok
         Optional<Upload> uploadOpt = uploadRepository.findFirstByVideoid(video.getVideoid());
         String email = uploadOpt.map(Upload::getEmail).orElse(null);
+        User uploader = userRepository.findByEmail(email);
+        String feltoltoNev = uploader != null ? uploader.getFelhasznalonev() : "Ismeretlen";
+        Date feltoltesIdeje = uploadOpt.map(Upload::getFeltoltesIdeje).orElse(null);
 
-        // Feltöltő egyéb videói (ha szeretnéd, ha nem, ezt ki lehet hagyni)
+        // Hozzászólások
+        List<Comment> hozzaszolasok = commentRepository.findCommentsByVideoId(id);
+
+        // Más videók a feltöltőtől
         List<Video> otherVideos = email != null
                 ? videoRepository.findOtherVideosByUploader(email, video.getVideoid())
                 : List.of();
 
-        // --- Csak kulcsszó alapján hasonló videók ---
+        // Hasonló videók kulcsszó alapján
         List<Video> similarKeywordVideos = videoRepository.findSimilarVideosByKeyword(video.getKulcsszo(), video.getVideoid());
 
-        // Egyéb model attribútumok
+        // Playlist-ek
         String userEmail = loggedInUser != null ? loggedInUser.getEmail() : null;
         List<CreatePL> createdPlaylists = createPLRepository.findByEmail(userEmail);
         List<Long> userPlaylistIds = createdPlaylists.stream()
@@ -132,20 +143,31 @@ public class PageController {
                 .toList();
         List<Playlist> userPlaylists = playlistService.getPlaylistById(userPlaylistIds);
 
-        User user = userRepository.findByEmail(email);
-        String felhasznalonev = (user != null) ? user.getFelhasznalonev() : "Ismeretlen";
-        Date feltoltesIdeje = uploadOpt.map(Upload::getFeltoltesIdeje).orElse(null);
-        List<Comment> hozzaszolasok = commentRepository.findCommentsByVideoId(id);
+        // ✅ LIKE funkcióhoz szükséges változók
+        boolean loggedIn = loggedInUser != null;
+        boolean alreadyLiked = false;
 
+        if (loggedIn) {
+            alreadyLiked = likeRepository.existsByEmailAndVideoid(loggedInUser.getEmail(), id);
+        }
+
+        int likeCount = likeRepository.countByVideoid(id);
+
+        // Model attribútumok
         model.addAttribute("video", video);
-        model.addAttribute("hozzaszolasok", hozzaszolasok);
+        model.addAttribute("feltoltoNev", feltoltoNev);
         model.addAttribute("feltoltesIdeje", feltoltesIdeje);
-        model.addAttribute("feltoltoNev", felhasznalonev);
+        model.addAttribute("hozzaszolasok", hozzaszolasok);
         model.addAttribute("otherVideos", otherVideos);
         model.addAttribute("similarKeywordVideos", similarKeywordVideos);
         model.addAttribute("playlists", userPlaylists);
 
-        return "video"; // video.html sablonhoz
+        // ➕ LIKE funkcióhoz
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("alreadyLiked", alreadyLiked);
+        model.addAttribute("likeCount", likeCount);
+
+        return "video";
     }
 
     @PostMapping("/videos/{id}/comment")
@@ -162,5 +184,31 @@ public class PageController {
 
         return "redirect:/videos/" + id;
     }
+
+    @GetMapping("/videos/{id}/view")
+    public String viewVideo(@PathVariable Long id, Model model, HttpSession session) {
+        Video video = videoRepository.findById(id).orElse(null);
+        if (video == null) return "redirect:/videos";
+
+        User user = (User) session.getAttribute("loggedInUser");
+
+        boolean loggedIn = user != null;
+        boolean alreadyLiked = false;
+
+        if (loggedIn) {
+            alreadyLiked = likeRepository.existsByEmailAndVideoid(user.getEmail(), id);
+        }
+
+        int likeCount = likeRepository.countByVideoid(id);
+
+        model.addAttribute("video", video);
+        model.addAttribute("likeCount", likeCount);
+        model.addAttribute("alreadyLiked", alreadyLiked);
+        model.addAttribute("loggedIn", loggedIn);
+
+        return "video";
+    }
+
+
 
 }
