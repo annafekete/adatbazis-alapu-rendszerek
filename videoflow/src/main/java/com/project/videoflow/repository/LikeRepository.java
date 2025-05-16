@@ -9,11 +9,8 @@ import java.util.List;
 
 public interface LikeRepository extends JpaRepository<Kedveli, KedveliId> {
 
-    // Egy felhasználó összes kedvelt videója
-    List<Kedveli> findByEmail(String email);
-
-    // Egy videó kedveléseinek lekérdezése
-    List<Kedveli> findByVideoid(Long videoid);
+    boolean existsByEmailAndVideoid(String email, Long videoid);
+    int countByVideoid(Long videoid);
 
     // Legtöbb kedvelést adó felhasználó
     @Query(value = """

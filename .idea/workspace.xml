@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4ac170e-6ed7-40c3-a7aa-3d86bb0560d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - Dokumentáció 3.mérföldkő.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - Dokumentáció 3.mérföldkő.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - doksi 4 .mérföldkő.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - doksi 4 .mérföldkő.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller/UserCrudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller/UserCrudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/KedveliId.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/KedveliId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/UploadId.java" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/model/UploadId.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoflow/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/videoflow/src/main/resources/templates/user-crud.html" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow/src/main/resources/templates/user-crud.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - dokumentáció 3.mérföldkő.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/dokumentacio/Videómegosztó oldal - dokumentáció 3.mérföldkő.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/videoflow.log" beforeDir="false" afterPath="$PROJECT_DIR$/videoflow.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +105,7 @@
       <recent name="$PROJECT_DIR$/videoflow/src/main/java/com/project/videoflow/controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VideoflowApplication">
     <configuration name="videomegoszto.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/dokumentacio/videomegoszto.sql" />
       <script-mode>FILE</script-mode>
