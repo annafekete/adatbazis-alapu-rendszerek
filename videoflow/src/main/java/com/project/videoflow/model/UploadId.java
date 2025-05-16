@@ -22,4 +22,9 @@ public class UploadId implements Serializable {
         return Objects.hash(videoid, email);
     }
 
+    public void setEmail(String email) {
+    }
+
+    public void setVideoid(Long videoid) {
+    }
 }

@@ -26,5 +26,11 @@ public class KedveliId implements Serializable {
     public int hashCode() {
         return Objects.hash(email, videoid);
     }
+
+    public void setEmail(String email) {
+    }
+
+    public void setVideoid(Long videoid) {
+    }
 }
 
