@@ -16,6 +16,27 @@
         <div th:if="${session.loggedInUser}" class="welcome-msg">
             <h2 th:text="'Üdvözlünk, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
         </div>
+    <section>
+        <br><br>
+        <h2>Most liked videos</h2>
+        <br><br>
+        <div class="top-liked-video-grid">
+            <div class="video-card" th:each="video : ${topLikedVideos}">
+                <a th:href="@{'/videos/' + ${video.videoid}}">
+                    <div class="thumbnail-container" th:if="${video.filePath != null}">
+                        <video class="thumbnail" controls
+                               th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+                        </video>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <h2>Videos</h2>
         <div class="video-grid">
             <div class="video-card" th:each="video : ${videos}">
                 <a th:href="@{'/videos/' + ${video.videoid}}">
@@ -35,6 +56,7 @@
         <p><strong>Legaktívabb feltöltő:</strong> <span th:text="${topUploaderName}">Valaki</span></p>
         <p><strong>Legaktívabb kommentelő:</strong> <span th:text="${topCommenterName}">Valaki</span></p>
         <p><strong>Legtöbb videót megtekintette:</strong> <span th:text="${topViewerName}">Valaki</span></p>
+        <p><strong>Legtöbb kedvelést adott:</strong> <span th:text="${topLikerName}">Valaki</span></p>
     </div>
 
 </main>

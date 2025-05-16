@@ -48,4 +48,13 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
 
     List<Video> findAllByVideoid(Long videoid);
 
+    @Query(value = "SELECT v.videoid, v.videocim, v.kategoria, v.megtekintes_szam, v.kulcsszo, v.leiras, v.file_path " +
+            "FROM VIDEO v " +
+            "LEFT JOIN KEDVELI k ON v.videoid = k.videoid " +
+            "GROUP BY v.videoid, v.videocim, v.kategoria, v.megtekintes_szam, v.kulcsszo, v.leiras, v.file_path " +
+            "ORDER BY COUNT(k.email) DESC, v.videocim ASC " +
+            "FETCH FIRST 4 ROWS ONLY",
+            nativeQuery = true)
+    List<Video> findTop4MostLikedVideos();
+
 }
