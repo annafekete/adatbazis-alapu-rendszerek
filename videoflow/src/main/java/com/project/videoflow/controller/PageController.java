@@ -25,7 +25,7 @@ public class PageController {
     private final ViewRepository viewRepository;
     private final CreatePLRepository createPLRepository;
     private final PlaylistService playlistService;
-    private LikeRepository likeRepository;
+    private final LikeRepository likeRepository;
 
     public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository,
                           CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,

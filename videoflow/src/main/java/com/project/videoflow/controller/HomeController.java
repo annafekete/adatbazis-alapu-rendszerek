@@ -17,17 +17,20 @@ public class HomeController {
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
     private final ViewRepository viewRepository;
+    private final LikeRepository likeRepository;
 
     public HomeController(VideoRepository videoRepository,
                           UploadRepository uploadRepository,
                           UserRepository userRepository,
                           CommentRepository commentRepository,
-                          ViewRepository viewRepository) {
+                          ViewRepository viewRepository,
+                          LikeRepository likeRepository) {
         this.videoRepository = videoRepository;
         this.uploadRepository = uploadRepository;
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
         this.viewRepository = viewRepository;
+        this.likeRepository = likeRepository;
     }
 
     @GetMapping("/")
@@ -45,6 +48,12 @@ public class HomeController {
 
         // Legaktívabb megtekintő lekérdezés
         String topViewerName = viewRepository.findTopViewerUsername();
+
+        // Legaktívabb kedvelő lekérdezés
+        String likerEmail = likeRepository.findTopLiker();
+        User likerUser = userRepository.findByEmail(likerEmail);
+        String topLikerName = (likerUser != null) ? likerUser.getFelhasznalonev() : "ismeretlen";
+        model.addAttribute("topLikerName", topLikerName);
 
         model.addAttribute("topViewerName", topViewerName);
         model.addAttribute("topCommenterName", topCommenterName);
