@@ -1,12 +1,14 @@
 package com.project.videoflow.controller;
 
 import com.project.videoflow.model.User;
+import com.project.videoflow.model.Video;
 import com.project.videoflow.repository.*;
 import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -45,6 +47,9 @@ public class HomeController {
 
         // Legaktívabb megtekintő lekérdezés
         String topViewerName = viewRepository.findTopViewerUsername();
+
+        List<Video> topLikedVideos = videoRepository.findTop4MostLikedVideos();
+        model.addAttribute("topLikedVideos", topLikedVideos);
 
         model.addAttribute("topViewerName", topViewerName);
         model.addAttribute("topCommenterName", topCommenterName);

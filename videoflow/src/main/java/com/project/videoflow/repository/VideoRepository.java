@@ -42,6 +42,15 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
     @Query("SELECT v FROM Video v WHERE v.kulcsszo = :kulcsszo AND v.videoid <> :excludeId")
     List<Video> findSimilarVideosByKeyword(@Param("kulcsszo") String kulcsszo, @Param("excludeId") Long excludeId);
 
+    @Query(value = "SELECT v.videoid, v.videocim, v.kategoria, v.megtekintes_szam, v.kulcsszo, v.leiras, v.file_path " +
+            "FROM VIDEO v " +
+            "LEFT JOIN KEDVELI k ON v.videoid = k.videoid " +
+            "GROUP BY v.videoid, v.videocim, v.kategoria, v.megtekintes_szam, v.kulcsszo, v.leiras, v.file_path " +
+            "ORDER BY COUNT(k.email) DESC, v.videocim ASC " +
+            "FETCH FIRST 4 ROWS ONLY",
+            nativeQuery = true)
+    List<Video> findTop4MostLikedVideos();
+
 }
 
 
