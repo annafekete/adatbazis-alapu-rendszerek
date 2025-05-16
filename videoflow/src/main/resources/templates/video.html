@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title th:text="${video.videocim}">Videó lejátszása</title>
@@ -146,110 +147,139 @@
       background-color: #155ab6;
     }
 
+    select {
+      padding: 8px 18px;
+      border: 1px solid #1a73e8;
+      border-radius: 6px;
+    }
 
+    .usersAdded {
+      margin-top: 20px;
+      color: #555;
+    }
+
+    li {
+      list-style: none;
+      margin: 5px 0;
+      color: #555;
+    }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div th:replace="~{fractions/navbar :: navbar}"></div>
-</header>
+  <header>
+    <div th:replace="~{fractions/navbar :: navbar}"></div>
+  </header>
 
-<main>
-  <div class="video-container">
-    <h1 th:text="${video.videocim}">Videó címe</h1>
+  <main>
+    <div class="video-container">
+      <h1 th:text="${video.videocim}">Videó címe</h1>
 
-    <video controls th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
-      A böngésződ nem támogatja a videólejátszást.
-    </video>
+      <video controls
+        th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+        A böngésződ nem támogatja a videólejátszást.
+      </video>
 
-    <div class="video-meta">
-      <div class="like-section">
-        <form th:action="@{'/videos/' + ${video.videoid} + '/like'}" method="post"
-              th:if="${loggedIn} and ${!alreadyLiked}">
-          <button type="submit">Kedvelés</button>
-        </form>
+      <div class="video-meta">
+        <div class="like-section">
+          <form th:action="@{'/videos/' + ${video.videoid} + '/like'}" method="post"
+            th:if="${loggedIn} and ${!alreadyLiked}">
+            <button type="submit">Kedvelés</button>
+          </form>
 
-        <div th:if="${loggedIn} and ${alreadyLiked}">
-          <p>Már kedvelted ezt a videót.</p>
+          <div th:if="${loggedIn} and ${alreadyLiked}">
+            <p>Már kedvelted ezt a videót.</p>
+          </div>
+
+
+          <p><strong>Kedvelések:</strong> <span th:text="${likeCount}"></span></p>
         </div>
 
-
-        <p><strong>Kedvelések:</strong> <span th:text="${likeCount}"></span></p>
-      </div>
-
-      <p><strong>Feltöltő:</strong> <span th:text="${feltoltoNev}"></span></p>
-      <p><strong>Feltöltés ideje:</strong>
-        <span th:text="${#dates.format(feltoltesIdeje, 'yyyy.MM.dd HH:mm')}"></span>
-      <p><strong>Kategória:</strong> <span th:text="${video.kategoria}"></span></p>
-      <p><strong>Kulcsszó:</strong> <span th:text="${video.kulcsszo}"></span></p>
-      <p><strong>Leírás:</strong></p>
-      <p th:text="${video.leiras}"></p>
-      <form th:action="@{'/playlist/addVideo'}" method="post">
-            <input type="hidden" name="videoId" th:value="${video.videoid}" />
-            <select name="playlistId" required>
-              <option
-                th:each="pl : ${playlists}"
-                th:value="${pl.playlistid}"
-                th:text="${pl.playlistnev}"
-              ></option>
-            </select>
-            <button type="submit">Add to Playlist</button>
+        <p><strong>Feltöltő:</strong> <span th:text="${feltoltoNev}"></span></p>
+        <p><strong>Feltöltés ideje:</strong>
+          <span th:text="${#dates.format(feltoltesIdeje, 'yyyy.MM.dd HH:mm')}"></span>
+        <p><strong>Kategória:</strong> <span th:text="${video.kategoria}"></span></p>
+        <p><strong>Kulcsszó:</strong> <span th:text="${video.kulcsszo}"></span></p>
+        <p><strong>Leírás:</strong></p>
+        <p th:text="${video.leiras}"></p>
+        <form th:action="@{'/playlist/addVideo'}" method="post">
+          <input type="hidden" name="videoId" th:value="${video.videoid}" />
+          <select name="playlistId" required>
+            <option th:each="pl : ${playlists}" th:value="${pl.playlistid}" th:text="${pl.playlistnev}"></option>
+          </select>
+          <button type="submit">Add to Playlist</button>
         </form>
-    </div>
-  </div>
-
-  <section class="comments">
-    <h3>Hozzászólások</h3>
-    <div th:each="komment : ${hozzaszolasok}" class="comment">
-      <p><strong th:text="${komment.email}">email</strong></p>
-      <p th:text="${komment.tartalom}">Tartalom</p>
-    </div>
-
-    <form th:action="@{'/videos/' + ${video.videoid} + '/comment'}" method="post">
-      <textarea name="tartalom" required></textarea>
-      <button type="submit">Küldés</button>
-    </form>
-  </section>
-
-
-  <div class="other-videos">
-    <h3 class="other-h3">További videók ettől a feltöltőtől</h3>
-    <div class="video-grid">
-      <div class="video-card" th:each="video : ${otherVideos}">
-        <a th:href="@{'/videos/' + ${video.videoid}}">
-          <div class="thumbnail-container" th:if="${video.filePath != null}">
-            <video class="thumbnail" controls
-                   th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
-            </video>
-          </div>
-          <div class="video-info">
-            <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
-          </div>
-        </a>
+        <form th:action="@{/playlist/create-uploader}" method="post">
+          <input type="hidden" name="feltoltoEmail" th:value="${feltoltoEmail}" />
+          <button type="submit">Uploader's videos to playlist</button>
+        </form>
+        <form th:action="@{/playlist/create-category}" method="post">
+          <input type="hidden" name="kategoria" th:value="${video.kategoria}" />
+          <button type="submit">Category videos to playlist</button>
+        </form>
+      </div>
+      <div>
+        <p class="usersAdded"><strong>Felhasználók, akik ezt a videót lejátszási listához adták</strong></p>
+        <p th:if="${usernames.size() == 0}">Nincs felhasználó, aki ezt a videót lejátszási listához adta volna.</p>
+        <ul>
+          <li th:each="user : ${usernames}" th:text="${user}"></li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="other-videos">
-    <h3>Hasonló videók kulcsszó alapján</h3>
-    <div class="video-grid">
-      <div class="video-card" th:each="video : ${similarKeywordVideos}">
-        <a th:href="@{'/videos/' + ${video.videoid}}">
-          <div class="thumbnail-container" th:if="${video.filePath != null}">
-            <video class="thumbnail" controls
-                   th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
-            </video>
-          </div>
-          <div class="video-info">
-            <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
-          </div>
-        </a>
+
+    <section class="comments">
+      <h3>Hozzászólások</h3>
+      <div th:each="komment : ${hozzaszolasok}" class="comment">
+        <p><strong th:text="${komment.email}">email</strong></p>
+        <p th:text="${komment.tartalom}">Tartalom</p>
+      </div>
+
+      <form th:action="@{'/videos/' + ${video.videoid} + '/comment'}" method="post">
+        <textarea name="tartalom" required></textarea>
+        <button type="submit">Küldés</button>
+      </form>
+    </section>
+
+
+    <div class="other-videos">
+      <h3 class="other-h3">További videók ettől a feltöltőtől</h3>
+      <div class="video-grid">
+        <div class="video-card" th:each="video : ${otherVideos}">
+          <a th:href="@{'/videos/' + ${video.videoid}}">
+            <div class="thumbnail-container" th:if="${video.filePath != null}">
+              <video class="thumbnail" controls
+                th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+              </video>
+            </div>
+            <div class="video-info">
+              <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</main>
+    <div class="other-videos">
+      <h3>Hasonló videók kulcsszó alapján</h3>
+      <div class="video-grid">
+        <div class="video-card" th:each="video : ${similarKeywordVideos}">
+          <a th:href="@{'/videos/' + ${video.videoid}}">
+            <div class="thumbnail-container" th:if="${video.filePath != null}">
+              <video class="thumbnail" controls
+                th:src="@{'/uploads/' + ${#strings.substring(video.filePath, video.filePath.lastIndexOf('/') + 1)} }">
+              </video>
+            </div>
+            <div class="video-info">
+              <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
 
-<footer th:replace="~{fractions/footer :: footer}"></footer>
+  <footer th:replace="~{fractions/footer :: footer}"></footer>
 
 </body>
+
 </html>

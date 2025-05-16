@@ -31,7 +31,7 @@ public class PlaylistService {
         this.createPLRepository = createPLRepository;
         this.playlistRepository = playlistRepository;
     }
-    public void createPlaylist(String playlistnev, String email) {
+    public Playlist createPlaylist(String playlistnev, String email) {
         Playlist playlist = new Playlist();
         if(playlistnev == null) {
             throw new IllegalArgumentException("A lejatszasi lista neve nem lehet ures");
@@ -44,6 +44,8 @@ public class PlaylistService {
         createPL.setEmail(email);
         createPL.setPlaylistid(savedPlaylist.getPlaylistid());
         createPLRepository.save(createPL);
+
+        return savedPlaylist;
     }
 
     public List<Playlist> getAllPlaylists() {

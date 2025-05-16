@@ -21,4 +21,6 @@ public interface LikeRepository extends JpaRepository<Kedveli, KedveliId> {
         FETCH FIRST 1 ROWS ONLY
         """, nativeQuery = true)
     String findTopLiker();
+
+    List<Kedveli> findByEmail(String email);
 }

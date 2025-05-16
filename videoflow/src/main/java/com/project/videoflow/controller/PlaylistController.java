@@ -16,11 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.project.videoflow.model.AddtoPL;
 import com.project.videoflow.model.CreatePL;
+import com.project.videoflow.model.Kedveli;
 import com.project.videoflow.model.Playlist;
 import com.project.videoflow.model.User;
 import com.project.videoflow.model.Video;
 import com.project.videoflow.repository.AddtoPLRepository;
 import com.project.videoflow.repository.CreatePLRepository;
+import com.project.videoflow.repository.LikeRepository;
 import com.project.videoflow.repository.VideoRepository;
 import com.project.videoflow.service.PlaylistService;
 import com.project.videoflow.service.VideoService;
@@ -35,9 +37,11 @@ public class PlaylistController {
     private final AddtoPLRepository addtoPLRepository;
     private final VideoRepository videoRepository;
     private final VideoService videoService;
+    private final LikeRepository likeRepository;
 
     public PlaylistController(PlaylistService playlistService, CreatePLRepository createPLRepository,
-            AddtoPLRepository addtoPLRepository, VideoRepository videoRepository, VideoService videoService) {
+            AddtoPLRepository addtoPLRepository, VideoRepository videoRepository, VideoService videoService, LikeRepository likeRepository) {
+        this.likeRepository = likeRepository;
         this.videoService = videoService;
         this.videoRepository = videoRepository;
         this.addtoPLRepository = addtoPLRepository;
@@ -67,6 +71,13 @@ public class PlaylistController {
                 .map(AddtoPL::getVideoid)
                 .toList();
         List<Video> videos = videoService.getVideosById(videoids);
+
+        List<Kedveli> kedveltVideok = likeRepository.findByEmail(loggedInUser.getEmail());
+        List<Long> videoIds = kedveltVideok.stream()
+                .map(Kedveli::getVideoid)
+                .toList();
+        List<Video> likedVideos = videoRepository.findAllById(videoIds);
+        model.addAttribute("likedVideos", likedVideos);
         model.addAttribute("videos", videos);
         return "playlist";
     }

@@ -10,65 +10,84 @@
     <link rel="stylesheet" th:href="@{/css/footer.css}" />
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Get all tab buttons and content
             const tabButtons = document.querySelectorAll(".tab-btn");
             const tabContents = document.querySelectorAll(".tab-content");
             const dynamicVideos = document.getElementById("dynamic-videos");
             const deleteBtn = document.getElementById("delete-playlist-btn");
 
+            // Tab switching logic
             tabButtons.forEach((button) => {
-                if (button.getAttribute("data-tab") && button.getAttribute("data-tab").startsWith("playlist")) {
-                    button.addEventListener("click", function () {
-                        const tabId = this.getAttribute("data-tab");
+                button.addEventListener("click", function () {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach((btn) => btn.classList.remove("active"));
+                    tabContents.forEach((content) => content.classList.remove("active"));
+
+                    // Add active class to clicked button
+                    this.classList.add("active");
+
+                    // Show corresponding content
+                    const tabId = this.getAttribute("data-tab");
+                    if (tabId && document.getElementById(tabId)) {
+                        document.getElementById(tabId).classList.add("active");
+                    }
+
+                    // Playlist tab logic
+                    if (tabId && tabId.startsWith("playlist")) {
+                        // Show dynamic-videos and delete button
+                        dynamicVideos.style.display = "block";
+                        deleteBtn.style.display = "block";
                         const playlistId = tabId.replace("playlist", "");
                         fetch(`/playlist/videos?playlistId=${playlistId}`)
                             .then((res) => res.json())
                             .then((videos) => {
                                 dynamicVideos.innerHTML = videos.map(video =>
                                     `<div class="video-item">
-                                        <video controls height="270">
-                                            <source src="${video.filePath}" type=video/webm>
-                                            Your browser does not support the video tag.
-                                        </video>
-                                        <div class="video-details">
-                                            <a href="/videos/${video.videoid}">${video.videocim}</a><br>
-                                            <p>${video.leiras}</p><br>
-                                            <p>Kategória: ${video.kategoria}</p>
-                                            <p>Megtekintések száma: ${video.megtekintesSzam}</p>
-                                        </div>
-                                        <button class='remove-video-btn'data-video-id="${video.videoid}"><img src="/images/trash.png" alt="Delete" /></button>
-                                    </div>`
+                                <video controls height="270">
+                                    <source src="${video.filePath}" type="video/webm">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="video-details">
+                                    <a href="/videos/${video.videoid}">${video.videocim}</a><br>
+                                    <p>${video.leiras}</p><br>
+                                    <p>Kategória: ${video.kategoria}</p>
+                                    <p>Megtekintések száma: ${video.megtekintesSzam}</p>
+                                </div>
+                                <button class='remove-video-btn' data-video-id="${video.videoid}">
+                                    <img src="/images/trash.png" alt="Delete" />
+                                </button>
+                            </div>`
                                 ).join('');
 
-                                deleteBtn.style.display = "block";
                                 deleteBtn.setAttribute("data-playlist-id", playlistId);
-                                const removeVideoBtns = document.querySelectorAll(".remove-video-btn");
 
+                                // Remove video from playlist
+                                const removeVideoBtns = document.querySelectorAll(".remove-video-btn");
                                 removeVideoBtns.forEach(button => {
                                     button.addEventListener('click', function () {
                                         const videoId = this.getAttribute('data-video-id');
-                                        const playlistId = deleteBtn.getAttribute('data-playlist-id');
-                                        if (!videoId || !playlistId) return;
                                         fetch(`/playlist/removeVideo?playlistId=${playlistId}&videoId=${videoId}`, {
                                             method: 'DELETE'
                                         }).then(res => {
                                             if (res.ok) {
-                                                // Remove the video from the DOM
                                                 this.closest('.video-item').remove();
                                             } else {
                                                 alert('Failed to remove video.');
                                             }
                                         });
-
                                     });
                                 });
                             });
-                    });
-                }
+                    } else {
+                        // Hide dynamic-videos and delete button for non-playlist tabs
+                        dynamicVideos.innerHTML = "";
+                        dynamicVideos.style.display = "none";
+                        deleteBtn.style.display = "none";
+                        deleteBtn.removeAttribute("data-playlist-id");
+                    }
+                });
             });
 
-            // Delete button
-
+            // Delete playlist button
             deleteBtn.addEventListener("click", function () {
                 const playlistId = this.getAttribute("data-playlist-id");
                 if (!playlistId) return;
@@ -79,7 +98,6 @@
                     })
                         .then(response => {
                             if (response.ok) {
-                                // Optionally refresh the page or remove the playlist tab
                                 window.location.reload();
                             } else {
                                 alert("Failed to delete playlist.");
@@ -88,44 +106,15 @@
                 }
             });
 
-            // Add click event to each tab button
-            tabButtons.forEach((button) => {
-                if (button.getAttribute("data-tab") !== "createPlaylist") {
-                    button.addEventListener("click", function () {
-                        // Remove active class from all buttons and contents
-                        tabButtons.forEach((btn) => btn.classList.remove("active"));
-                        tabContents.forEach((content) =>
-                            content.classList.remove("active")
-                        );
-
-                        // Add active class to clicked button
-                        this.classList.add("active");
-
-                        // Show corresponding content
-                        const tabId = this.getAttribute("data-tab");
-                        document.getElementById(tabId).classList.add("active");
-
-                        if (tabId.startsWith("playlist")) {
-                            const playlistId = tabId.replace("playlist", "");
-                            const url = new URL(window.location);
-                            url.searchParams.set("playlistId", playlistId);
-                            window.history.replaceState({}, "", url);
-                        }
-                    });
-                }
-            });
-
-            tabButtons.forEach((button) => {
-                button.addEventListener("click", function () {
-                    const tabId = this.getAttribute("data-tab");
-                    if (!tabId || !tabId.startsWith("playlist")) {
-                        deleteBtn.style.display = "none";
-                        deleteBtn.removeAttribute("data-playlist-id");
-                    }
-                });
-            });
-            // After rendering videos
-
+            // On page load, show dynamic-videos only if a playlist tab is active
+            const activeTab = document.querySelector(".tab-btn.active");
+            if (activeTab && activeTab.getAttribute("data-tab").startsWith("playlist")) {
+                dynamicVideos.style.display = "block";
+                deleteBtn.style.display = "block";
+            } else {
+                dynamicVideos.style.display = "none";
+                deleteBtn.style.display = "none";
+            }
         });
     </script>
 </head>
@@ -155,6 +144,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="playlist-content">
+                <div id="kedveltek" class="tab-content active">
+                    <div class="video-item" th:each="video : ${likedVideos}">
+                        <video controls height="270">
+                            <source src="${video.filePath}">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="video-details">
+                            <a href="/videos/${video.videoid}" th:text="${video.videocim}"></a>
+                            <p th:text="${video.leiras}"></p><br>
+                            <p>Kategória: <span th:text="${video.kategoria}"></span></p>
+                            <p>Megtekintések száma: <span th:text="${video.megtekintesSzam}"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="playlist-content">
                 <div class="playlist-content">

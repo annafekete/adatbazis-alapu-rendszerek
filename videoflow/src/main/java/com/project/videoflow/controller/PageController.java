@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Controller
 public class PageController {
@@ -26,10 +28,13 @@ public class PageController {
     private final CreatePLRepository createPLRepository;
     private final PlaylistService playlistService;
     private LikeRepository likeRepository;
+    private AddtoPLRepository addtoPLRepository;
 
-    public PageController(VideoRepository videoRepository, UploadRepository uploadRepository, UserRepository userRepository,
-                          CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,
-                          PlaylistService playlistService, LikeRepository likeRepository) {
+    public PageController(VideoRepository videoRepository, UploadRepository uploadRepository,
+            UserRepository userRepository,
+            CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,
+            PlaylistService playlistService, LikeRepository likeRepository, AddtoPLRepository addtoPLRepository) {
+        this.addtoPLRepository = addtoPLRepository;
         this.createPLRepository = createPLRepository;
         this.playlistService = playlistService;
         this.videoRepository = videoRepository;
@@ -40,65 +45,72 @@ public class PageController {
         this.likeRepository = likeRepository;
     }
 
-  /*  @GetMapping("/videos/{id}")
-    public String getVideoDetails(@PathVariable("id") Long id, Model model, HttpSession session) {
-        Optional<Video> videoOpt = videoRepository.findById(id);
-        if (videoOpt.isEmpty()) return "redirect:/";
-
-        Video video = videoOpt.get();
-
-        // ➕ Megtekintésszám növelése
-        video.setMegtekintesSzam(video.getMegtekintesSzam() + 1);
-        videoRepository.save(video);
-
-        // ➕ Néző elmentése, ha be van jelentkezve
-        User loggedInUser = (User) session.getAttribute("loggedInUser");
-        if (loggedInUser != null) {
-            Nez nez = new Nez();
-            nez.setVideoid(video.getVideoid());
-            nez.setEmail(loggedInUser.getEmail());
-            viewRepository.save(nez);
-        }
-
-        // Feltöltő e-mail lekérdezése
-        Optional<Upload> uploadOpt = uploadRepository.findFirstByVideoid(video.getVideoid());
-        String email = uploadOpt.map(Upload::getEmail).orElse(null);
-
-        // Feltöltő egyéb videói
-        List<Video> otherVideos = email != null
-                ? videoRepository.findOtherVideosByUploader(email, video.getVideoid())
-                : List.of();
-
-
-        // Feltolto lejatszasi listai
-        String userEmail = loggedInUser != null ? loggedInUser.getEmail() : null;
-        List<CreatePL> createdPlaylists = createPLRepository.findByEmail(userEmail);
-        List<Long> userPlaylistIds = createdPlaylists.stream()
-            .map(CreatePL::getPlaylistid)
-            .toList();
-        List<Playlist> userPlaylists = playlistService.getPlaylistById(userPlaylistIds);
-
-        User user = userRepository.findByEmail(email);
-        String felhasznalonev = (user != null) ? user.getFelhasznalonev() : "Ismeretlen";
-        Date feltoltesIdeje = uploadOpt.map(Upload::getFeltoltesIdeje).orElse(null);
-        List<Comment> hozzaszolasok = commentRepository.findCommentsByVideoId(id);
-
-        model.addAttribute("video", video);
-        model.addAttribute("hozzaszolasok", hozzaszolasok);
-        model.addAttribute("feltoltesIdeje", feltoltesIdeje);
-        model.addAttribute("feltoltoNev", felhasznalonev);
-        model.addAttribute("video", video);
-        model.addAttribute("otherVideos", otherVideos);
-        model.addAttribute("playlists", userPlaylists);
-
-
-        return "video"; // video.html sablonhoz
-    }*/
+    /*
+     * @GetMapping("/videos/{id}")
+     * public String getVideoDetails(@PathVariable("id") Long id, Model model,
+     * HttpSession session) {
+     * Optional<Video> videoOpt = videoRepository.findById(id);
+     * if (videoOpt.isEmpty()) return "redirect:/";
+     * 
+     * Video video = videoOpt.get();
+     * 
+     * // ➕ Megtekintésszám növelése
+     * video.setMegtekintesSzam(video.getMegtekintesSzam() + 1);
+     * videoRepository.save(video);
+     * 
+     * // ➕ Néző elmentése, ha be van jelentkezve
+     * User loggedInUser = (User) session.getAttribute("loggedInUser");
+     * if (loggedInUser != null) {
+     * Nez nez = new Nez();
+     * nez.setVideoid(video.getVideoid());
+     * nez.setEmail(loggedInUser.getEmail());
+     * viewRepository.save(nez);
+     * }
+     * 
+     * // Feltöltő e-mail lekérdezése
+     * Optional<Upload> uploadOpt =
+     * uploadRepository.findFirstByVideoid(video.getVideoid());
+     * String email = uploadOpt.map(Upload::getEmail).orElse(null);
+     * 
+     * // Feltöltő egyéb videói
+     * List<Video> otherVideos = email != null
+     * ? videoRepository.findOtherVideosByUploader(email, video.getVideoid())
+     * : List.of();
+     * 
+     * 
+     * // Feltolto lejatszasi listai
+     * String userEmail = loggedInUser != null ? loggedInUser.getEmail() : null;
+     * List<CreatePL> createdPlaylists = createPLRepository.findByEmail(userEmail);
+     * List<Long> userPlaylistIds = createdPlaylists.stream()
+     * .map(CreatePL::getPlaylistid)
+     * .toList();
+     * List<Playlist> userPlaylists =
+     * playlistService.getPlaylistById(userPlaylistIds);
+     * 
+     * User user = userRepository.findByEmail(email);
+     * String felhasznalonev = (user != null) ? user.getFelhasznalonev() :
+     * "Ismeretlen";
+     * Date feltoltesIdeje = uploadOpt.map(Upload::getFeltoltesIdeje).orElse(null);
+     * List<Comment> hozzaszolasok = commentRepository.findCommentsByVideoId(id);
+     * 
+     * model.addAttribute("video", video);
+     * model.addAttribute("hozzaszolasok", hozzaszolasok);
+     * model.addAttribute("feltoltesIdeje", feltoltesIdeje);
+     * model.addAttribute("feltoltoNev", felhasznalonev);
+     * model.addAttribute("video", video);
+     * model.addAttribute("otherVideos", otherVideos);
+     * model.addAttribute("playlists", userPlaylists);
+     * 
+     * 
+     * return "video"; // video.html sablonhoz
+     * }
+     */
 
     @GetMapping("/videos/{id}")
     public String getVideoDetails(@PathVariable("id") Long id, Model model, HttpSession session) {
         Optional<Video> videoOpt = videoRepository.findById(id);
-        if (videoOpt.isEmpty()) return "redirect:/";
+        if (videoOpt.isEmpty())
+            return "redirect:/";
 
         Video video = videoOpt.get();
 
@@ -133,7 +145,8 @@ public class PageController {
                 : List.of();
 
         // Hasonló videók kulcsszó alapján
-        List<Video> similarKeywordVideos = videoRepository.findSimilarVideosByKeyword(video.getKulcsszo(), video.getVideoid());
+        List<Video> similarKeywordVideos = videoRepository.findSimilarVideosByKeyword(video.getKulcsszo(),
+                video.getVideoid());
 
         // Playlist-ek
         String userEmail = loggedInUser != null ? loggedInUser.getEmail() : null;
@@ -153,6 +166,25 @@ public class PageController {
 
         int likeCount = likeRepository.countByVideoid(id);
 
+        // Felhasznalok akik lejatszasi listahoz adtak a videot
+        List<AddtoPL> addtoPLs = addtoPLRepository.findByVideoid(id);
+
+        Set<String> userEmails = new HashSet<>();
+        for (AddtoPL addtoPL : addtoPLs) {
+            Long playlistId = addtoPL.getPlaylistid();
+            CreatePL createPL = createPLRepository.findByPlaylistid(playlistId);
+            if (createPL != null) {
+                String userEmailFromPL = createPL.getEmail();
+                userEmails.add(userEmailFromPL);
+            }
+        }
+
+        List<User> users = userRepository.findAllByEmailIn(userEmails);
+
+        List<String> usernames = users.stream()
+                .map(User::getFelhasznalonev)
+                .toList();
+
         // Model attribútumok
         model.addAttribute("video", video);
         model.addAttribute("feltoltoNev", feltoltoNev);
@@ -161,6 +193,8 @@ public class PageController {
         model.addAttribute("otherVideos", otherVideos);
         model.addAttribute("similarKeywordVideos", similarKeywordVideos);
         model.addAttribute("playlists", userPlaylists);
+        model.addAttribute("feltoltoEmail", email);
+        model.addAttribute("usernames", usernames);
 
         // ➕ LIKE funkcióhoz
         model.addAttribute("loggedIn", loggedIn);
@@ -171,9 +205,11 @@ public class PageController {
     }
 
     @PostMapping("/videos/{id}/comment")
-    public String postComment(@PathVariable("id") Long id, @RequestParam("tartalom") String tartalom, HttpSession session) {
+    public String postComment(@PathVariable("id") Long id, @RequestParam("tartalom") String tartalom,
+            HttpSession session) {
         User loggedInUser = (User) session.getAttribute("loggedInUser");
-        if (loggedInUser == null) return "redirect:/login";
+        if (loggedInUser == null)
+            return "redirect:/login";
 
         Comment komment = new Comment();
         komment.setVideoid(id);
@@ -186,9 +222,10 @@ public class PageController {
     }
 
     @GetMapping("/videos/{id}/view")
-    public String viewVideo(@PathVariable Long id, Model model, HttpSession session) {
+    public String viewVideo(@PathVariable("id") Long id, Model model, HttpSession session) {
         Video video = videoRepository.findById(id).orElse(null);
-        if (video == null) return "redirect:/videos";
+        if (video == null)
+            return "redirect:/videos";
 
         User user = (User) session.getAttribute("loggedInUser");
 
@@ -209,6 +246,64 @@ public class PageController {
         return "video";
     }
 
+    @PostMapping("/playlist/create-uploader")
+    public String createPlaylistWithUploaderVideos(@RequestParam("feltoltoEmail") String feltoltoEmail, HttpSession session) {
+        User uploader = userRepository.findByEmail(feltoltoEmail);
 
+        if (uploader == null) {
+            System.out.println("Feltöltő nem található.");
+            return "redirect:/";
+        }
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser == null) {
+            System.out.println("Nincs bejelentkezve felhasználó.");
+            return "redirect:/login";
+        }
 
+        List<Upload> videos = uploadRepository.findAllByEmail(uploader.getEmail());
+        if (videos.isEmpty()) {
+            System.out.println("Nincsenek feltöltött videók.");
+            return "redirect:/";
+        }
+    
+        Playlist playlist = new Playlist();
+        playlist.setPlaylistnev(uploader.getFelhasznalonev() + " feltöltött videói");
+        Playlist savedPlaylist = playlistService.createPlaylist(playlist.getPlaylistnev(), loggedInUser.getEmail());
+        
+
+        for (Upload video : videos) {
+            playlistService.addVideoToPlaylist(savedPlaylist.getPlaylistid(), video.getVideoid());
+        }
+        System.out.println("Playlist created with videos from: " + uploader.getFelhasznalonev());
+        return "redirect:/playlist";
+    }
+
+    @PostMapping("/playlist/create-category")
+    public String createPlaylistWithCategoryVideos(@RequestParam("kategoria") String kategoria, HttpSession session) {
+        if (kategoria == null || kategoria.isEmpty()) {
+            System.out.println("Kategória nem található.");
+            return "redirect:/";
+        }
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser == null) {
+            System.out.println("Nincs bejelentkezve felhasználó.");
+            return "redirect:/login";
+        }
+
+        List<Video> videos = videoRepository.findByKategoria(kategoria);
+        if (videos.isEmpty()) {
+            System.out.println("Nincsenek feltöltött videók.");
+            return "redirect:/";
+        }
+
+        Playlist playlist = new Playlist();
+        playlist.setPlaylistnev("Kategoria: " + kategoria);
+        Playlist savedPlaylist = playlistService.createPlaylist(playlist.getPlaylistnev(), loggedInUser.getEmail());
+
+        for (Video v : videos) {
+            playlistService.addVideoToPlaylist(savedPlaylist.getPlaylistid(), v.getVideoid());
+        }
+        System.out.println("Playlist created with videos from category: " + kategoria);
+        return "redirect:/playlist";
+    }
 }
