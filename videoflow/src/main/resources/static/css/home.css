@@ -104,6 +104,23 @@ body {
 .highlight-box strong {
     color: #2a5ea3;
 }
+.top-liked-video-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.top-liked-video-grid .video-card {
+    max-width: 100%;
+}
+
+.top-liked-video-grid .thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+}
 
 
 /* Media queries for responsiveness */
