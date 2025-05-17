@@ -271,6 +271,7 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: bold;
+  text-decoration: none;
 }
 #createPlaylistBtn:hover {
   background-color: white;

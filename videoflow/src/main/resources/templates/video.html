@@ -191,9 +191,18 @@
           <div th:if="${loggedIn} and ${alreadyLiked}">
             <p>You have already liked this video.</p>
           </div>
-
-
           <p><strong>Likes:</strong> <span th:text="${likeCount}"></span></p>
+
+          <p th:if="${likers.size() == 0}">Noone liked the video yet</p>
+          <p th:if="${likers.size() == 2 or likers.size() == 1}">
+            <span th:text="${#strings.arrayJoin(likers, ', ')}"></span> liked this video.
+          </p>
+          <p th:if="${likers.size() > 2}">
+            <span th:each="liker, iterStat : ${likers}" th:if="${iterStat.index < 2}">
+              <span th:text="${liker}"></span><span th:if="${iterStat.index == 0}">, </span>
+            </span>
+            and <span th:text="${likers.size() - 2}"></span> others liked this video.
+          </p>
         </div>
 
         <p><strong>Uploader:</strong> <span th:text="${feltoltoNev}"></span></p>
