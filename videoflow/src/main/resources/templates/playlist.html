@@ -133,12 +133,12 @@
                     </div>
                     <div class="tabs">
                         <button class="tab-btn active" data-tab="kedveltek">
-                            Kedveltek
+                            Liked
                         </button>
                         <button class="tab-btn" th:each="playlist : ${playlists}" th:text="${playlist.playlistnev}"
                             th:attr="data-tab='playlist' + ${playlist.playlistid}"></button>
                         <button class="tab-btn" data-tab="createPlaylist" id="createPlaylistBtn"
-                            th:onclick="'window.location.href=\'' + @{/createPlaylist} + '\';'">
+                            th:onclick="'window.location.href=\'' + ${createPlaylist} + '\';'">
                             +
                         </button>
                     </div>
@@ -155,8 +155,8 @@
                         <div class="video-details">
                             <a href="/videos/${video.videoid}" th:text="${video.videocim}"></a>
                             <p th:text="${video.leiras}"></p><br>
-                            <p>Kategória: <span th:text="${video.kategoria}"></span></p>
-                            <p>Megtekintések száma: <span th:text="${video.megtekintesSzam}"></span></p>
+                            <p>Category: <span th:text="${video.kategoria}"></span></p>
+                            <p>Number of views: <span th:text="${video.megtekintesSzam}"></span></p>
                         </div>
                     </div>
                 </div>

@@ -14,32 +14,13 @@
 </header>
 <main class="container">
         <div th:if="${session.loggedInUser}" class="welcome-msg">
-            <h2 th:text="'Üdvözlünk, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
+            <h2 th:text="'Welcome, ' + ${session.loggedInUser.felhasznalonev} + '!'"></h2>
         </div>
     <section>
         <br><br>
         <h2>Most liked videos  <a href="/top-categories">
             <button>📊</button>
         </a> </h2>
-       <!-- <button onclick="loadTopCategories()">📊 </button>
-
-        <div id="topCategoriesBox" style="display: none;"></div>
-
-        <script>
-            function loadTopCategories() {
-                fetch('/top-categories')
-                    .then(response => response.text())
-                    .then(html => {
-                        document.getElementById('topCategoriesBox').innerHTML = html;
-                        document.getElementById('topCategoriesBox').style.display = 'block';
-                    })
-                    .catch(error => {
-                        console.error('Hiba történt:', error);
-                    });
-            }
-        </script>-->
-
-
         <br><br>
         <div class="top-liked-video-grid">
             <div class="video-card" th:each="video : ${topLikedVideos}">
@@ -50,7 +31,7 @@
                         </video>
                     </div>
                     <div class="video-info">
-                        <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                        <h3 class="video-title" th:text="${video.videocim}">Video title</h3>
                     </div>
                 </a>
             </div>
@@ -67,17 +48,17 @@
                         </video>
                     </div>
                     <div class="video-info">
-                        <h3 class="video-title" th:text="${video.videocim}">Videó címe</h3>
+                        <h3 class="video-title" th:text="${video.videocim}">Video title</h3>
                     </div>
                 </a>
             </div>
         </div>
 
     <div class="highlight-box">
-        <p><strong>Legaktívabb feltöltő:</strong> <span th:text="${topUploaderName}">Valaki</span></p>
-        <p><strong>Legaktívabb kommentelő:</strong> <span th:text="${topCommenterName}">Valaki</span></p>
-        <p><strong>Legtöbb videót megtekintette:</strong> <span th:text="${topViewerName}">Valaki</span></p>
-        <p><strong>Legtöbb kedvelést adott:</strong> <span th:text="${topLikerName}">Valaki</span></p>
+        <p><strong>Most active uploader:</strong> <span th:text="${topUploaderName}">Someone</span></p>
+        <p><strong>Most active commenter:</strong> <span th:text="${topCommenterName}">Someone</span></p>
+        <p><strong>Most active commenter:</strong> <span th:text="${topViewerName}">Someone</span></p>
+        <p><strong>Most likes given:</strong> <span th:text="${topLikerName}">Someone</span></p>
     </div>
 
 </main>

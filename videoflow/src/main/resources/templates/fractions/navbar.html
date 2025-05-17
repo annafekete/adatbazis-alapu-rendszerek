@@ -17,7 +17,6 @@
 
     <form th:action="@{/videos/category}" method="get" class="navbar-category-form">
       <select name="name" class="navbar-category-select" onchange="this.form.submit()">
-        <!--<option value=" " th:selected="${selectedCategory == null or selectedCategory == ' '}">all</option>-->
         <option value="ALL" th:selected="${selectedCategory == null or selectedCategory == 'ALL' or selectedCategory == ' '}">all</option>
         <option value="funny" th:selected="${selectedCategory == 'funny'}">funny</option>
         <option value="education" th:selected="${selectedCategory == 'education'}">education</option>

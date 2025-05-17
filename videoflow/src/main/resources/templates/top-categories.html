@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Legkedveltebb kategóriák</title>
+    <title>Most liked and viewed categories</title>
 </head>
 <body>
-<h1>Legnézetebb kategóriák</h1>
+<h1>Most viewed categories</h1>
 <ul>
     <li th:each="category : ${topCategoriesByViews}">
-        <span th:text="${category[0]}">Kategória</span> -
-        <span th:text="${category[1]}">Megtekintések</span>
+        <span th:text="${category[0]}">category</span> -
+        <span th:text="${category[1]}">views</span>
     </li>
 </ul>
-<h1>Legkedveltebb kategóriák </h1>
+<h1>Most liked categories </h1>
 <ul>
     <li th:each="category : ${topCategoriesByLikes}">
-        <span th:text="${category[0]}">Kategória</span> -
-        <span th:text="${category[1]}">Kedvelések</span>
+        <span th:text="${category[0]}">category</span> -
+        <span th:text="${category[1]}">likes</span>
     </li>
 </ul>
 <a href="/" class="btn">Home</a>

@@ -28030,3 +28030,1086 @@ This generated password is for development use only. Your security configuration
 2025-05-17T15:28:58.498+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-17T15:28:58.499+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-05-17T15:28:58.500+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-17T15:42:23.900+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 42 class path changes (0 additions, 0 deletions, 42 modifications)
+2025-05-17T15:42:23.902+02:00  INFO 6464 --- [videoflow] [Thread-150] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:42:24.476+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:42:24.481+02:00  INFO 6464 --- [videoflow] [Thread-150] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:42:24.482+02:00  INFO 6464 --- [videoflow] [Thread-150] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2025-05-17T15:42:24.509+02:00  INFO 6464 --- [videoflow] [Thread-150] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2025-05-17T15:42:24.675+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:42:24.675+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:42:25.021+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:42:25.070+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:42:25.860+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:42:25.864+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:42:25.864+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:42:25.928+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:42:25.929+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1251 ms
+2025-05-17T15:42:26.086+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:42:26.125+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:42:26.162+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:42:26.465+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2025-05-17T15:42:26.641+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-16 - Added connection oracle.jdbc.driver.T4CConnection@6287bd24
+2025-05-17T15:42:26.641+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2025-05-17T15:42:26.654+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:42:26.654+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:42:26.661+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-16)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:42:26.895+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:42:27.198+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:42:27.477+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:42:27.486+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 9b76cbd9-09f2-4d08-9bf4-3f8c8a6e58e0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:42:27.487+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:42:27.664+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:42:27.748+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:42:27.770+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:42:27.776+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.145 seconds (process running for 2792.186)
+2025-05-17T15:42:27.777+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:54:08.448+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:54:08.451+02:00  INFO 6464 --- [videoflow] [Thread-176] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:54:09.869+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:54:09.873+02:00  INFO 6464 --- [videoflow] [Thread-176] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:09.875+02:00  INFO 6464 --- [videoflow] [Thread-176] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2025-05-17T15:54:09.909+02:00  INFO 6464 --- [videoflow] [Thread-176] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2025-05-17T15:54:10.088+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:54:10.088+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:54:10.537+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:54:10.619+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:54:10.899+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:54:10.900+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:54:10.900+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:54:10.945+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:54:10.945+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 854 ms
+2025-05-17T15:54:11.007+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:54:11.013+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:54:11.033+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:54:11.035+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2025-05-17T15:54:11.164+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-17 - Added connection oracle.jdbc.driver.T4CConnection@73f40362
+2025-05-17T15:54:11.165+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2025-05-17T15:54:11.175+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:54:11.175+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:54:11.180+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-17)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:54:11.367+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:54:11.681+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:12.589+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:54:12.621+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6aa4e819-b94e-44fc-b3d4-bed4c64f4057
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:54:12.632+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:54:13.130+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:54:13.430+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:54:14.331+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:54:14.349+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 4.299 seconds (process running for 3498.759)
+2025-05-17T15:54:14.358+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:54:17.829+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:54:17.832+02:00  INFO 6464 --- [videoflow] [Thread-181] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:54:21.448+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:54:21.452+02:00  INFO 6464 --- [videoflow] [Thread-181] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:21.453+02:00  INFO 6464 --- [videoflow] [Thread-181] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2025-05-17T15:54:21.584+02:00  INFO 6464 --- [videoflow] [Thread-181] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2025-05-17T15:54:21.835+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:54:21.835+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:54:24.697+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:54:24.817+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 117 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:54:25.295+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:54:25.296+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:54:25.297+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:54:25.347+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:54:25.347+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3508 ms
+2025-05-17T15:54:25.470+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:54:25.484+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:54:25.511+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:54:25.520+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2025-05-17T15:54:25.762+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-18 - Added connection oracle.jdbc.driver.T4CConnection@345d5ad0
+2025-05-17T15:54:25.762+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2025-05-17T15:54:25.773+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:54:25.773+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:54:25.780+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-18)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:54:26.664+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:54:31.559+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:32.355+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:54:32.375+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 37fdf37c-a9cb-4a81-9e72-07439c209689
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:54:32.378+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:54:32.755+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:54:32.962+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:54:33.044+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:54:33.066+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 11.306 seconds (process running for 3517.476)
+2025-05-17T15:54:33.070+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:54:35.427+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:54:35.436+02:00  INFO 6464 --- [videoflow] [Thread-186] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:54:38.397+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:54:38.411+02:00  INFO 6464 --- [videoflow] [Thread-186] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:38.412+02:00  INFO 6464 --- [videoflow] [Thread-186] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2025-05-17T15:54:38.632+02:00  INFO 6464 --- [videoflow] [Thread-186] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2025-05-17T15:54:39.327+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:54:39.328+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:54:40.506+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:54:40.551+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:54:40.710+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:54:40.711+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:54:40.712+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:54:40.741+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:54:40.741+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1402 ms
+2025-05-17T15:54:40.797+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:54:40.802+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:54:40.815+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:54:40.817+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2025-05-17T15:54:40.935+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-19 - Added connection oracle.jdbc.driver.T4CConnection@29aad868
+2025-05-17T15:54:40.935+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2025-05-17T15:54:40.944+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:54:40.945+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:54:40.951+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-19)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:54:41.242+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:54:41.790+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:42.537+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:54:42.566+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 26283b38-cc88-43a9-9ef8-21766135bce8
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:54:42.570+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:54:42.847+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:54:42.958+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:54:42.987+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:54:43.001+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.772 seconds (process running for 3527.411)
+2025-05-17T15:54:43.004+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:54:54.167+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:54:54.168+02:00  INFO 6464 --- [videoflow] [Thread-192] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:54:55.024+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:54:55.029+02:00  INFO 6464 --- [videoflow] [Thread-192] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:55.030+02:00  INFO 6464 --- [videoflow] [Thread-192] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2025-05-17T15:54:55.185+02:00  INFO 6464 --- [videoflow] [Thread-192] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2025-05-17T15:54:55.505+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:54:55.505+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:54:57.217+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:54:57.260+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:54:57.393+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:54:57.393+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:54:57.394+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:54:57.421+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:54:57.421+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1910 ms
+2025-05-17T15:54:57.473+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:54:57.479+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:54:57.501+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:54:57.502+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2025-05-17T15:54:57.626+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-20 - Added connection oracle.jdbc.driver.T4CConnection@6c20e082
+2025-05-17T15:54:57.626+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2025-05-17T15:54:57.636+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:54:57.636+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:54:57.643+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-20)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:54:57.905+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:54:58.248+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:54:58.676+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:54:58.686+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: f3f8e31b-e95b-46e7-a956-40b400e36876
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:54:58.689+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:54:58.850+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:54:58.915+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:54:58.936+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:54:58.937+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T15:54:58.937+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T15:54:58.940+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-17T15:54:58.944+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.559 seconds (process running for 3543.354)
+2025-05-17T15:54:58.946+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:56:03.127+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:56:03.128+02:00  INFO 6464 --- [videoflow] [Thread-197] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:56:03.767+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:56:03.771+02:00  INFO 6464 --- [videoflow] [Thread-197] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:56:03.771+02:00  INFO 6464 --- [videoflow] [Thread-197] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2025-05-17T15:56:03.800+02:00  INFO 6464 --- [videoflow] [Thread-197] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2025-05-17T15:56:03.997+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:56:03.997+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:56:04.806+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:56:05.302+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 494 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:56:05.734+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:56:05.735+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:56:05.735+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:56:05.785+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:56:05.786+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1784 ms
+2025-05-17T15:56:05.845+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:56:05.852+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:56:05.866+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:56:05.868+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2025-05-17T15:56:05.981+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-21 - Added connection oracle.jdbc.driver.T4CConnection@4f79df98
+2025-05-17T15:56:05.982+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2025-05-17T15:56:05.994+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:56:05.994+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:56:06.001+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-21)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:56:06.180+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:56:06.765+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:56:07.047+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:56:07.060+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 89a2cb12-144e-42d5-8937-41ae6679d84b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:56:07.062+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:56:07.215+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:56:07.275+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:56:07.294+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:56:07.301+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.353 seconds (process running for 3611.712)
+2025-05-17T15:56:07.303+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:56:07.430+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T15:56:07.430+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T15:56:07.433+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-17T15:56:30.527+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:56:30.528+02:00  INFO 6464 --- [videoflow] [Thread-207] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:56:31.281+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:56:31.284+02:00  INFO 6464 --- [videoflow] [Thread-207] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:56:31.284+02:00  INFO 6464 --- [videoflow] [Thread-207] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2025-05-17T15:56:31.309+02:00  INFO 6464 --- [videoflow] [Thread-207] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+2025-05-17T15:56:31.512+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:56:31.513+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:56:31.912+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:56:31.951+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:56:32.229+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:56:32.231+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:56:32.231+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:56:32.334+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:56:32.334+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2025-05-17T15:56:32.726+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:56:32.740+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:56:32.770+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:56:32.772+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2025-05-17T15:56:32.909+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-22 - Added connection oracle.jdbc.driver.T4CConnection@2f10e679
+2025-05-17T15:56:32.909+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2025-05-17T15:56:32.919+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:56:32.919+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:56:32.925+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-22)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:56:33.251+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:56:33.558+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:56:33.915+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:56:33.935+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2f1d243a-5b01-42fd-b7a9-cc5cd5dee3c0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:56:33.938+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:56:34.109+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:56:34.182+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:56:34.259+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:56:34.273+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.814 seconds (process running for 3638.684)
+2025-05-17T15:56:34.276+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:56:34.442+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T15:56:34.442+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T15:56:34.444+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-17T15:57:39.426+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:57:39.428+02:00  INFO 6464 --- [videoflow] [Thread-225] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:57:40.290+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:57:40.294+02:00  INFO 6464 --- [videoflow] [Thread-225] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:57:40.294+02:00  INFO 6464 --- [videoflow] [Thread-225] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown initiated...
+2025-05-17T15:57:40.547+02:00  INFO 6464 --- [videoflow] [Thread-225] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown completed.
+2025-05-17T15:57:41.423+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:57:41.423+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:57:43.221+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:57:43.318+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 95 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:57:44.125+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:57:44.127+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:57:44.127+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:57:44.251+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:57:44.251+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2719 ms
+2025-05-17T15:57:44.429+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:57:44.454+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:57:44.509+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:57:44.513+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Starting...
+2025-05-17T15:57:45.020+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-23 - Added connection oracle.jdbc.driver.T4CConnection@74276533
+2025-05-17T15:57:45.020+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Start completed.
+2025-05-17T15:57:45.049+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:57:45.050+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:57:45.106+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-23)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:57:45.522+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:57:46.556+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:57:46.903+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:57:46.916+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 26f37f4c-e6d2-450e-841d-fa0897d2407f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:57:46.922+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:57:47.101+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:57:47.217+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:57:47.280+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:57:47.290+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 6.562 seconds (process running for 3711.701)
+2025-05-17T15:57:47.295+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:58:16.749+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:58:16.750+02:00  INFO 6464 --- [videoflow] [Thread-237] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:58:17.642+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:58:17.645+02:00  INFO 6464 --- [videoflow] [Thread-237] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:58:17.646+02:00  INFO 6464 --- [videoflow] [Thread-237] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown initiated...
+2025-05-17T15:58:17.671+02:00  INFO 6464 --- [videoflow] [Thread-237] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown completed.
+2025-05-17T15:58:17.828+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:58:17.828+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:58:18.774+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:58:18.821+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:58:19.166+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:58:19.167+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:58:19.167+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:58:19.208+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:58:19.208+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1376 ms
+2025-05-17T15:58:19.287+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:58:19.297+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:58:19.343+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:58:19.345+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Starting...
+2025-05-17T15:58:19.472+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-24 - Added connection oracle.jdbc.driver.T4CConnection@1c0de460
+2025-05-17T15:58:19.472+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Start completed.
+2025-05-17T15:58:19.480+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:58:19.481+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:58:19.486+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-24)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:58:19.714+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:58:19.978+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:58:20.277+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:58:20.289+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 19eb5b18-7e2c-42c2-9e1d-d2ecd101dc2f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:58:20.291+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:58:20.421+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:58:20.490+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:58:20.516+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:58:20.521+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.727 seconds (process running for 3744.932)
+2025-05-17T15:58:20.523+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:58:45.347+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T15:58:45.348+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T15:58:45.350+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-17T15:59:53.231+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T15:59:53.279+02:00  INFO 6464 --- [videoflow] [Thread-242] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T15:59:54.114+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T15:59:54.119+02:00  INFO 6464 --- [videoflow] [Thread-242] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:59:54.120+02:00  INFO 6464 --- [videoflow] [Thread-242] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown initiated...
+2025-05-17T15:59:54.145+02:00  INFO 6464 --- [videoflow] [Thread-242] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown completed.
+2025-05-17T15:59:54.409+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T15:59:54.409+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T15:59:55.172+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T15:59:55.239+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 10 JPA repository interfaces.
+2025-05-17T15:59:56.247+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T15:59:56.249+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T15:59:56.250+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T15:59:56.295+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T15:59:56.296+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1884 ms
+2025-05-17T15:59:56.402+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T15:59:56.409+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T15:59:56.438+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T15:59:56.441+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Starting...
+2025-05-17T15:59:56.555+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-25 - Added connection oracle.jdbc.driver.T4CConnection@5457de9d
+2025-05-17T15:59:56.555+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Start completed.
+2025-05-17T15:59:56.563+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T15:59:56.563+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T15:59:56.569+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-25)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T15:59:56.800+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T15:59:57.096+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T15:59:57.363+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T15:59:57.372+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: ce07f63d-f8d9-4a8f-bc35-1e136825be8a
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T15:59:57.374+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T15:59:57.509+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T15:59:57.593+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T15:59:57.610+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T15:59:57.617+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.262 seconds (process running for 3842.028)
+2025-05-17T15:59:57.619+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T15:59:57.709+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T15:59:57.709+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T15:59:57.710+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-17T16:01:02.767+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:01:02.768+02:00  INFO 6464 --- [videoflow] [Thread-253] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:01:03.453+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:01:03.456+02:00  INFO 6464 --- [videoflow] [Thread-253] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:01:03.457+02:00  INFO 6464 --- [videoflow] [Thread-253] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown initiated...
+2025-05-17T16:01:03.484+02:00  INFO 6464 --- [videoflow] [Thread-253] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown completed.
+2025-05-17T16:01:03.681+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:01:03.681+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:01:04.037+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:01:04.084+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:01:04.340+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:01:04.342+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:01:04.344+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:01:04.450+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:01:04.450+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 766 ms
+2025-05-17T16:01:04.635+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:01:04.679+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:01:04.760+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:01:04.766+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Starting...
+2025-05-17T16:01:05.197+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-26 - Added connection oracle.jdbc.driver.T4CConnection@4398a21d
+2025-05-17T16:01:05.198+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Start completed.
+2025-05-17T16:01:05.207+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:01:05.207+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:01:05.215+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-26)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:01:05.597+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:01:06.016+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:01:06.383+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:01:06.391+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a6efa0ac-6fb0-4951-b747-f989478dc007
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:01:06.392+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:01:06.814+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:01:06.963+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:01:06.997+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:01:07.031+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.41 seconds (process running for 3911.442)
+2025-05-17T16:01:07.035+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:01:48.538+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:01:48.540+02:00  INFO 6464 --- [videoflow] [Thread-263] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:01:49.420+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:01:49.425+02:00  INFO 6464 --- [videoflow] [Thread-263] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:01:49.425+02:00  INFO 6464 --- [videoflow] [Thread-263] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown initiated...
+2025-05-17T16:01:49.466+02:00  INFO 6464 --- [videoflow] [Thread-263] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown completed.
+2025-05-17T16:01:49.763+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:01:49.764+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:01:50.583+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:01:50.636+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:01:50.888+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:01:50.889+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:01:50.889+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:01:50.934+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:01:50.934+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1166 ms
+2025-05-17T16:01:51.018+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:01:51.029+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:01:51.051+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:01:51.052+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Starting...
+2025-05-17T16:01:51.214+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-27 - Added connection oracle.jdbc.driver.T4CConnection@3de156f4
+2025-05-17T16:01:51.214+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Start completed.
+2025-05-17T16:01:51.223+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:01:51.224+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:01:51.230+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-27)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:01:51.482+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:01:51.972+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:01:52.381+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:01:52.414+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0fa66034-bce1-4b41-9ac7-4b0f737f0f0c
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:01:52.418+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:01:52.661+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:01:52.790+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:01:52.840+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:01:52.849+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.177 seconds (process running for 3957.259)
+2025-05-17T16:01:52.851+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:02:25.947+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:02:25.948+02:00  INFO 6464 --- [videoflow] [Thread-268] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:02:26.576+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:02:26.579+02:00  INFO 6464 --- [videoflow] [Thread-268] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:02:26.579+02:00  INFO 6464 --- [videoflow] [Thread-268] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Shutdown initiated...
+2025-05-17T16:02:26.606+02:00  INFO 6464 --- [videoflow] [Thread-268] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Shutdown completed.
+2025-05-17T16:02:26.807+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:02:26.807+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:02:27.726+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:02:27.889+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 161 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:02:28.351+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:02:28.353+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:02:28.353+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:02:28.415+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:02:28.415+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1604 ms
+2025-05-17T16:02:28.523+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:02:28.534+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:02:28.564+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:02:28.567+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Starting...
+2025-05-17T16:02:28.763+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-28 - Added connection oracle.jdbc.driver.T4CConnection@605ce4c4
+2025-05-17T16:02:28.763+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Start completed.
+2025-05-17T16:02:28.773+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:02:28.773+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:02:28.779+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-28)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:02:29.053+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:02:29.528+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:02:29.932+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:02:29.947+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b4a654d6-a5cb-4e17-acc9-0891a24974d2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:02:29.950+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:02:30.167+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:02:30.248+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:02:30.285+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:02:30.295+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.536 seconds (process running for 3994.705)
+2025-05-17T16:02:30.297+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:02:56.815+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:02:56.816+02:00  INFO 6464 --- [videoflow] [Thread-273] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:02:57.483+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:02:57.485+02:00  INFO 6464 --- [videoflow] [Thread-273] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:02:57.486+02:00  INFO 6464 --- [videoflow] [Thread-273] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown initiated...
+2025-05-17T16:02:57.513+02:00  INFO 6464 --- [videoflow] [Thread-273] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown completed.
+2025-05-17T16:02:57.745+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:02:57.745+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:02:58.495+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:02:58.631+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:02:59.038+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:02:59.040+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:02:59.040+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:02:59.105+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:02:59.105+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1354 ms
+2025-05-17T16:02:59.196+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:02:59.204+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:02:59.225+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:02:59.227+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Starting...
+2025-05-17T16:02:59.370+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-29 - Added connection oracle.jdbc.driver.T4CConnection@2ae304d0
+2025-05-17T16:02:59.370+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Start completed.
+2025-05-17T16:02:59.381+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:02:59.381+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:02:59.388+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-29)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:02:59.649+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:02:59.954+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:00.268+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:03:00.278+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d079eea5-3a1d-4a4b-91d6-95ce9c42cac6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:03:00.280+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:03:00.406+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:03:00.604+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:03:00.659+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:03:00.672+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.977 seconds (process running for 4025.082)
+2025-05-17T16:03:00.679+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:03:12.345+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:03:12.380+02:00  INFO 6464 --- [videoflow] [Thread-278] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:03:14.612+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:03:14.616+02:00  INFO 6464 --- [videoflow] [Thread-278] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:14.617+02:00  INFO 6464 --- [videoflow] [Thread-278] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Shutdown initiated...
+2025-05-17T16:03:14.763+02:00  INFO 6464 --- [videoflow] [Thread-278] com.zaxxer.hikari.HikariDataSource       : HikariPool-29 - Shutdown completed.
+2025-05-17T16:03:15.588+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:03:15.591+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:03:16.434+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:03:16.487+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:03:16.662+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:03:16.663+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:03:16.663+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:03:16.699+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:03:16.699+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1100 ms
+2025-05-17T16:03:16.755+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:03:16.760+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:03:16.774+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:03:16.776+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Starting...
+2025-05-17T16:03:16.905+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-30 - Added connection oracle.jdbc.driver.T4CConnection@7fcf3b7c
+2025-05-17T16:03:16.905+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Start completed.
+2025-05-17T16:03:16.914+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:03:16.915+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:03:16.921+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-30)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:03:17.104+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:03:17.460+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:19.085+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:03:19.116+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 55528a41-ea98-4697-947b-96960453d849
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:03:19.120+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:03:19.877+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:03:20.058+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:03:20.122+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:03:20.131+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 4.624 seconds (process running for 4044.542)
+2025-05-17T16:03:20.137+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:03:23.066+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:03:23.302+02:00  INFO 6464 --- [videoflow] [Thread-283] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:03:25.651+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:03:25.681+02:00  INFO 6464 --- [videoflow] [Thread-283] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:25.822+02:00  INFO 6464 --- [videoflow] [Thread-283] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown initiated...
+2025-05-17T16:03:25.981+02:00  INFO 6464 --- [videoflow] [Thread-283] com.zaxxer.hikari.HikariDataSource       : HikariPool-30 - Shutdown completed.
+2025-05-17T16:03:26.294+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:03:26.294+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:03:26.757+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:03:26.795+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:03:26.931+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:03:26.932+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:03:26.932+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:03:26.958+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:03:26.958+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 661 ms
+2025-05-17T16:03:27.024+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:03:27.035+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:03:27.056+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:03:27.059+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Starting...
+2025-05-17T16:03:27.554+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-31 - Added connection oracle.jdbc.driver.T4CConnection@122cf8ce
+2025-05-17T16:03:27.554+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Start completed.
+2025-05-17T16:03:27.563+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:03:27.564+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:03:27.570+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-31)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:03:27.745+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:03:28.063+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:28.380+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:03:28.395+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3cb1f434-f0a1-4802-bd31-a2e9f9482b47
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:03:28.398+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:03:28.613+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:03:28.699+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:03:28.718+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:03:28.725+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.477 seconds (process running for 4053.136)
+2025-05-17T16:03:28.728+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:03:44.640+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:03:44.680+02:00  INFO 6464 --- [videoflow] [Thread-288] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:03:46.951+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:03:46.955+02:00  INFO 6464 --- [videoflow] [Thread-288] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:46.956+02:00  INFO 6464 --- [videoflow] [Thread-288] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown initiated...
+2025-05-17T16:03:46.987+02:00  INFO 6464 --- [videoflow] [Thread-288] com.zaxxer.hikari.HikariDataSource       : HikariPool-31 - Shutdown completed.
+2025-05-17T16:03:47.232+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:03:47.232+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:03:47.674+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:03:47.714+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:03:47.887+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:03:47.889+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:03:47.889+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:03:47.915+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:03:47.915+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 679 ms
+2025-05-17T16:03:47.971+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:03:47.977+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:03:47.992+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:03:47.993+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Starting...
+2025-05-17T16:03:48.091+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-32 - Added connection oracle.jdbc.driver.T4CConnection@27c29375
+2025-05-17T16:03:48.091+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Start completed.
+2025-05-17T16:03:48.100+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:03:48.100+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:03:48.107+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-32)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:03:48.290+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:03:48.553+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:03:49.018+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:03:49.033+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 77e34667-9d2c-48c9-9b17-66db7ce5b901
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:03:49.035+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:03:49.259+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:03:49.392+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:03:49.416+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:03:49.424+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.253 seconds (process running for 4073.834)
+2025-05-17T16:03:49.426+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:04:17.189+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:04:17.192+02:00  INFO 6464 --- [videoflow] [Thread-293] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:04:17.936+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:04:17.940+02:00  INFO 6464 --- [videoflow] [Thread-293] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:04:17.941+02:00  INFO 6464 --- [videoflow] [Thread-293] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Shutdown initiated...
+2025-05-17T16:04:17.971+02:00  INFO 6464 --- [videoflow] [Thread-293] com.zaxxer.hikari.HikariDataSource       : HikariPool-32 - Shutdown completed.
+2025-05-17T16:04:18.225+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:04:18.225+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:04:19.008+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:04:19.106+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:04:19.429+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:04:19.430+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:04:19.430+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:04:19.458+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:04:19.458+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1227 ms
+2025-05-17T16:04:19.523+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:04:19.529+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:04:19.547+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:04:19.549+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Starting...
+2025-05-17T16:04:19.653+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-33 - Added connection oracle.jdbc.driver.T4CConnection@6f3c6094
+2025-05-17T16:04:19.654+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Start completed.
+2025-05-17T16:04:19.662+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:04:19.663+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:04:19.668+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-33)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:04:19.895+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:04:20.290+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:04:20.622+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:04:20.638+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 0c23d2f8-8111-4504-bb31-5d73389af4fe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:04:20.641+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:04:20.837+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:04:20.943+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:04:20.969+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:04:20.979+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.807 seconds (process running for 4105.389)
+2025-05-17T16:04:20.982+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:04:43.209+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:04:43.213+02:00  INFO 6464 --- [videoflow] [Thread-298] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:04:44.078+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:04:44.082+02:00  INFO 6464 --- [videoflow] [Thread-298] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:04:44.083+02:00  INFO 6464 --- [videoflow] [Thread-298] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Shutdown initiated...
+2025-05-17T16:04:44.116+02:00  INFO 6464 --- [videoflow] [Thread-298] com.zaxxer.hikari.HikariDataSource       : HikariPool-33 - Shutdown completed.
+2025-05-17T16:04:44.398+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:04:44.398+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:04:45.354+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:04:45.449+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:04:45.830+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:04:45.831+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:04:45.831+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:04:45.877+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:04:45.878+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1477 ms
+2025-05-17T16:04:45.975+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:04:45.984+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:04:46.007+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:04:46.009+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Starting...
+2025-05-17T16:04:46.148+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-34 - Added connection oracle.jdbc.driver.T4CConnection@51d668e5
+2025-05-17T16:04:46.149+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Start completed.
+2025-05-17T16:04:46.157+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:04:46.158+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:04:46.163+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-34)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:04:46.387+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:04:46.772+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:04:47.153+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:04:47.162+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 68c041b0-d894-4ada-b993-0adab17c73b3
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:04:47.164+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:04:47.358+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:04:47.429+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:04:47.478+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:04:47.495+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.154 seconds (process running for 4131.906)
+2025-05-17T16:04:47.498+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:05:02.141+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T16:05:02.141+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T16:05:02.144+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-17T16:05:03.664+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:05:04.273+02:00  INFO 6464 --- [videoflow] [Thread-303] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:05:06.326+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:05:06.331+02:00  INFO 6464 --- [videoflow] [Thread-303] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:05:06.332+02:00  INFO 6464 --- [videoflow] [Thread-303] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Shutdown initiated...
+2025-05-17T16:05:06.364+02:00  INFO 6464 --- [videoflow] [Thread-303] com.zaxxer.hikari.HikariDataSource       : HikariPool-34 - Shutdown completed.
+2025-05-17T16:05:06.627+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:05:06.627+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:05:07.126+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:05:07.168+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:05:07.312+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:05:07.312+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:05:07.313+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:05:07.353+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:05:07.353+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 722 ms
+2025-05-17T16:05:07.417+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:05:07.425+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:05:07.451+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:05:07.453+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Starting...
+2025-05-17T16:05:07.555+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-35 - Added connection oracle.jdbc.driver.T4CConnection@6ae1fd63
+2025-05-17T16:05:07.556+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Start completed.
+2025-05-17T16:05:07.564+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:05:07.564+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:05:07.570+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-35)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:05:07.779+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:05:08.074+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:05:08.359+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:05:08.367+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1c93e219-637d-4bea-ad0b-6b89c4735912
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:05:08.368+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:05:08.519+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:05:08.582+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:05:08.599+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:05:08.604+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 2.037 seconds (process running for 4153.015)
+2025-05-17T16:05:08.606+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:05:21.910+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T16:05:21.910+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T16:05:21.912+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-05-17T16:05:22.007+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] c.p.v.controller.VideoController         : Belépés az leglikeolt metódusba
+2025-05-17T16:06:34.927+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:06:34.929+02:00  INFO 6464 --- [videoflow] [Thread-313] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:06:35.546+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:06:35.549+02:00  INFO 6464 --- [videoflow] [Thread-313] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:06:35.549+02:00  INFO 6464 --- [videoflow] [Thread-313] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Shutdown initiated...
+2025-05-17T16:06:35.576+02:00  INFO 6464 --- [videoflow] [Thread-313] com.zaxxer.hikari.HikariDataSource       : HikariPool-35 - Shutdown completed.
+2025-05-17T16:06:35.764+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:06:35.764+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:06:36.231+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:06:36.311+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 78 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:06:36.839+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:06:36.841+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:06:36.841+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:06:36.899+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:06:36.899+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1132 ms
+2025-05-17T16:06:37.057+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:06:37.076+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:06:37.105+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:06:37.107+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Starting...
+2025-05-17T16:06:37.267+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-36 - Added connection oracle.jdbc.driver.T4CConnection@5baf6216
+2025-05-17T16:06:37.268+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Start completed.
+2025-05-17T16:06:37.281+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:06:37.281+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:06:37.291+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-36)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:06:38.052+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:06:39.406+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:06:39.933+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:06:40.030+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e61f3028-d0d7-4391-b915-9f3c12d5e3fe
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:06:40.033+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:06:40.190+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:06:40.299+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:06:40.348+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:06:40.357+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 4.632 seconds (process running for 4244.768)
+2025-05-17T16:06:40.359+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:06:42.322+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-17T16:06:42.322+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-17T16:06:42.325+02:00  INFO 6464 --- [videoflow] [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-05-17T16:07:56.027+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:07:56.031+02:00  INFO 6464 --- [videoflow] [Thread-355] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:07:56.665+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:07:56.668+02:00  INFO 6464 --- [videoflow] [Thread-355] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:07:56.668+02:00  INFO 6464 --- [videoflow] [Thread-355] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown initiated...
+2025-05-17T16:07:56.696+02:00  INFO 6464 --- [videoflow] [Thread-355] com.zaxxer.hikari.HikariDataSource       : HikariPool-36 - Shutdown completed.
+2025-05-17T16:07:56.970+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:07:56.970+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:07:57.453+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:07:57.554+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 98 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:07:58.942+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:07:58.944+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:07:58.944+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:07:59.011+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:07:59.012+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2039 ms
+2025-05-17T16:07:59.147+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:07:59.159+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:07:59.191+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:07:59.196+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Starting...
+2025-05-17T16:07:59.311+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-37 - Added connection oracle.jdbc.driver.T4CConnection@76060834
+2025-05-17T16:07:59.311+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Start completed.
+2025-05-17T16:07:59.321+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:07:59.321+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:07:59.327+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-37)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:07:59.665+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:08:00.039+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:08:00.321+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:08:00.333+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: c4382f26-f388-434a-bf8e-9258214d03be
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:08:00.334+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:08:00.475+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:08:00.555+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:08:00.610+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:08:00.622+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 3.701 seconds (process running for 4325.033)
+2025-05-17T16:08:00.648+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-17T16:08:11.430+02:00  INFO 6464 --- [videoflow] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 41 class path changes (0 additions, 0 deletions, 41 modifications)
+2025-05-17T16:08:11.432+02:00  INFO 6464 --- [videoflow] [Thread-383] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-17T16:08:13.699+02:00  INFO 6464 --- [videoflow] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-17T16:08:13.703+02:00  INFO 6464 --- [videoflow] [Thread-383] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:08:13.704+02:00  INFO 6464 --- [videoflow] [Thread-383] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown initiated...
+2025-05-17T16:08:13.735+02:00  INFO 6464 --- [videoflow] [Thread-383] com.zaxxer.hikari.HikariDataSource       : HikariPool-37 - Shutdown completed.
+2025-05-17T16:08:13.975+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Starting VideoflowApplication using Java 17.0.15 with PID 6464 (C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow\build\classes\java\main started by Mirella in C:\Users\Mirella\Desktop\05.17\adatbazis-alapu-rendszerek\videoflow)
+2025-05-17T16:08:13.976+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-05-17T16:08:15.205+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-17T16:08:15.301+02:00  INFO 6464 --- [videoflow] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 93 ms. Found 10 JPA repository interfaces.
+2025-05-17T16:08:16.057+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-05-17T16:08:16.058+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-17T16:08:16.058+02:00  INFO 6464 --- [videoflow] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-17T16:08:16.135+02:00  INFO 6464 --- [videoflow] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-17T16:08:16.135+02:00  INFO 6464 --- [videoflow] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2155 ms
+2025-05-17T16:08:16.273+02:00  INFO 6464 --- [videoflow] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-17T16:08:16.291+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-17T16:08:16.322+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-17T16:08:16.324+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Starting...
+2025-05-17T16:08:16.533+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-38 - Added connection oracle.jdbc.driver.T4CConnection@7946fac5
+2025-05-17T16:08:16.533+02:00  INFO 6464 --- [videoflow] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-38 - Start completed.
+2025-05-17T16:08:16.544+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.dialect.Dialect            : HHH000511: The 12.1.0 version for [org.hibernate.dialect.OracleDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 19.0.0. Check the community dialects project for available legacy versions.
+2025-05-17T16:08:16.544+02:00  WARN 6464 --- [videoflow] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: OracleDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-17T16:08:16.551+02:00  INFO 6464 --- [videoflow] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-38)']
+	Database driver: undefined/unknown
+	Database version: 12.1
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-17T16:08:17.017+02:00  INFO 6464 --- [videoflow] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-17T16:08:17.875+02:00  INFO 6464 --- [videoflow] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-17T16:08:19.223+02:00  WARN 6464 --- [videoflow] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-17T16:08:19.241+02:00  WARN 6464 --- [videoflow] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: a663ca75-5d75-48d5-a4e4-c4a8ee7dfec7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-05-17T16:08:19.247+02:00  INFO 6464 --- [videoflow] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-05-17T16:08:19.535+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-05-17T16:08:19.720+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-17T16:08:19.769+02:00  INFO 6464 --- [videoflow] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-05-17T16:08:19.785+02:00  INFO 6464 --- [videoflow] [restartedMain] c.p.videoflow.VideoflowApplication       : Started VideoflowApplication in 5.856 seconds (process running for 4344.196)
+2025-05-17T16:08:19.801+02:00  INFO 6464 --- [videoflow] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

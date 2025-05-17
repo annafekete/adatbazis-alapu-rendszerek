@@ -73,13 +73,13 @@ public class HomeController {
     }
     @GetMapping("/top-categories")
     public String showTopCategories(Model model) {
-        // Lekérdezed a kategóriákat nézettség alapján (repository-ból)
+
         List<Object[]> topCategoriesByViews = videoRepository.findTopCategoriesByViews();
         List<Object[]> topCategoriesByLikes = videoRepository.findTopCategoriesByLikes();
 
         model.addAttribute("topCategoriesByViews", topCategoriesByViews);
         model.addAttribute("topCategoriesByLikes", topCategoriesByLikes);
-        return "top-categories"; // -> src/main/resources/templates/top-categories.html
+        return "top-categories";
     }
 
 }
