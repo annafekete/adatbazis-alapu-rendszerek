@@ -2,9 +2,11 @@ package com.project.videoflow.service;
 
 import com.project.videoflow.model.Upload;
 import com.project.videoflow.model.Video;
+import com.project.videoflow.repository.AjanlottVideoRepository;
 import com.project.videoflow.repository.UploadRepository;
 import com.project.videoflow.repository.VideoRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -56,6 +58,15 @@ public class VideoService {
             throw new RuntimeException("Hiba történt a fájl feltöltése során", e);
         }
     }
+
+    @Autowired
+    private AjanlottVideoRepository ajanlottVideoRepository;
+
+    public List<Video> getRecommendedVideos(String email) {
+        List<Long> videoIds = ajanlottVideoRepository.findRecommendedVideoIdsByEmail(email);
+        return videoRepository.findAllById(videoIds);
+    }
+
 
     public List<Video> getVideosById(List<Long> videoids) {
         return videoRepository.findAllById(videoids);

@@ -1,0 +1,17 @@
+create or replace TRIGGER trg_after_login
+AFTER UPDATE OF LAST_LOGIN ON FELHASZNALO
+    FOR EACH ROW
+BEGIN
+  -- Töröljük a korábbi ajánlásokat
+DELETE FROM AJANLOTT_VIDEO
+WHERE EMAIL = :NEW.EMAIL;
+
+-- Ajánljunk 4 videót, amiket még nem kedvelt a felhasználó
+INSERT INTO AJANLOTT_VIDEO (EMAIL, VIDEOID)
+SELECT :NEW.EMAIL, v.VIDEOID
+FROM VIDEO v
+WHERE v.VIDEOID NOT IN (
+    SELECT k.VIDEOID FROM KEDVELI k WHERE k.EMAIL = :NEW.EMAIL
+)
+  AND ROWNUM <= 4;
+END;

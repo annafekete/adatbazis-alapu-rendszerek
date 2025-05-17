@@ -3,6 +3,7 @@ package com.project.videoflow.controller;
 import com.project.videoflow.model.User;
 import com.project.videoflow.model.Video;
 import com.project.videoflow.repository.*;
+import com.project.videoflow.service.VideoService;
 import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -21,19 +22,22 @@ public class HomeController {
     private final CommentRepository commentRepository;
     private final ViewRepository viewRepository;
     private final LikeRepository likeRepository;
+    private final VideoService videoService;
 
     public HomeController(VideoRepository videoRepository,
                           UploadRepository uploadRepository,
                           UserRepository userRepository,
                           CommentRepository commentRepository,
                           ViewRepository viewRepository,
-                          LikeRepository likeRepository) {
+                          LikeRepository likeRepository,
+                          VideoService videoService) {
         this.videoRepository = videoRepository;
         this.uploadRepository = uploadRepository;
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
         this.viewRepository = viewRepository;
         this.likeRepository = likeRepository;
+        this.videoService = videoService;
     }
 
     @GetMapping("/")
@@ -59,6 +63,12 @@ public class HomeController {
         // Legtöbbet kedvelt videók
         List<Video> topLikedVideos = videoRepository.findTop4MostLikedVideos();
 
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            String loggedInEmail = loggedInUser.getEmail();
+            List<Video> ajanlottak = videoService.getRecommendedVideos(loggedInEmail);
+            model.addAttribute("ajanlottVideok", ajanlottak);
+        }
 
         // 🔽 Model attribútumok
         model.addAttribute("topViewerName", topViewerName);

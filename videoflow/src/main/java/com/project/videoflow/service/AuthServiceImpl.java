@@ -3,6 +3,7 @@ package com.project.videoflow.service;
 import com.project.videoflow.dto.LoginRequest;
 import com.project.videoflow.model.User;
 import com.project.videoflow.repository.UserRepository;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +12,12 @@ public class AuthServiceImpl implements AuthService {
 
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
+    private final JdbcTemplate jdbcTemplate;
 
-    public AuthServiceImpl(UserRepository userRepository) {
+    public AuthServiceImpl(UserRepository userRepository, JdbcTemplate jdbcTemplate) {
         this.userRepository = userRepository;
         this.passwordEncoder = new BCryptPasswordEncoder();
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
@@ -33,7 +36,10 @@ public class AuthServiceImpl implements AuthService {
         }
 
         System.out.println("Sikeres azonosítás!");
+
+        // ✅ Trigger kiváltása az email alapján
+        jdbcTemplate.update("UPDATE FELHASZNALO SET LAST_LOGIN = SYSDATE WHERE EMAIL = ?", user.getEmail());
         return user;
     }
-
 }
+
