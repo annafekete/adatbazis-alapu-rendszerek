@@ -114,10 +114,6 @@ public class PageController {
 
         Video video = videoOpt.get();
 
-        // Megtekintésszám növelése
-        video.setMegtekintesSzam(video.getMegtekintesSzam() + 1);
-        videoRepository.save(video);
-
         // Felhasználó lekérése session-ből
         User loggedInUser = (User) session.getAttribute("loggedInUser");
 
