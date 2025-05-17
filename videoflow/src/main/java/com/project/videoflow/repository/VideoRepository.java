@@ -57,4 +57,14 @@ public interface VideoRepository extends JpaRepository<Video, Long> {
             nativeQuery = true)
     List<Video> findTop4MostLikedVideos();
 
+    @Query("SELECT v.kategoria, SUM(v.megtekintesSzam) FROM Video v WHERE v.kategoria IS NOT NULL GROUP BY v.kategoria ORDER BY SUM(v.megtekintesSzam) DESC")
+    List<Object[]> findTopCategoriesByViews();
+
+    @Query("SELECT v.kategoria, COUNT(k) " +
+            "FROM Video v LEFT JOIN Kedveli k ON v.videoid = k.videoid " +
+            "WHERE v.kategoria IS NOT NULL " +
+            "GROUP BY v.kategoria " +
+            "ORDER BY COUNT(k) DESC")
+    List<Object[]> findTopCategoriesByLikes();
+
 }

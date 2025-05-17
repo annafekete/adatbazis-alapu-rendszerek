@@ -260,7 +260,7 @@
       </div>
     </div>
     <div class="other-videos">
-      <h3>Hasonló videók kulcsszó alapján</h3>
+      <h3 class="other-h3">Hasonló videók</h3>
       <div class="video-grid">
         <div class="video-card" th:each="video : ${similarKeywordVideos}">
           <a th:href="@{'/videos/' + ${video.videoid}}">

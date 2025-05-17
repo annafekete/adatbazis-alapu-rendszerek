@@ -18,7 +18,28 @@
         </div>
     <section>
         <br><br>
-        <h2>Most liked videos</h2>
+        <h2>Most liked videos  <a href="/top-categories">
+            <button>📊</button>
+        </a> </h2>
+       <!-- <button onclick="loadTopCategories()">📊 </button>
+
+        <div id="topCategoriesBox" style="display: none;"></div>
+
+        <script>
+            function loadTopCategories() {
+                fetch('/top-categories')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('topCategoriesBox').innerHTML = html;
+                        document.getElementById('topCategoriesBox').style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.error('Hiba történt:', error);
+                    });
+            }
+        </script>-->
+
+
         <br><br>
         <div class="top-liked-video-grid">
             <div class="video-card" th:each="video : ${topLikedVideos}">

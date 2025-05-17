@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -58,6 +59,7 @@ public class HomeController {
         // Legtöbbet kedvelt videók
         List<Video> topLikedVideos = videoRepository.findTop4MostLikedVideos();
 
+
         // 🔽 Model attribútumok
         model.addAttribute("topViewerName", topViewerName);
         model.addAttribute("topCommenterName", topCommenterName);
@@ -68,6 +70,16 @@ public class HomeController {
         model.addAttribute("session", session);
 
         return "home";
+    }
+    @GetMapping("/top-categories")
+    public String showTopCategories(Model model) {
+        // Lekérdezed a kategóriákat nézettség alapján (repository-ból)
+        List<Object[]> topCategoriesByViews = videoRepository.findTopCategoriesByViews();
+        List<Object[]> topCategoriesByLikes = videoRepository.findTopCategoriesByLikes();
+
+        model.addAttribute("topCategoriesByViews", topCategoriesByViews);
+        model.addAttribute("topCategoriesByLikes", topCategoriesByLikes);
+        return "top-categories"; // -> src/main/resources/templates/top-categories.html
     }
 
 }
