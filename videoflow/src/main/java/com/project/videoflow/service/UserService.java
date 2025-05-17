@@ -12,6 +12,6 @@ public interface UserService {
 
     void updateProfile(User user, UpdateProfileRequest updateProfileRequest);
     void updateProfilePicture(String imageUrl);
+    void updateUser(User user);
 
-    
 }

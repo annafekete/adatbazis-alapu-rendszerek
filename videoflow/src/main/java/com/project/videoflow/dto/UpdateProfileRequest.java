@@ -5,12 +5,11 @@ import jakarta.validation.constraints.NotNull;
 public class UpdateProfileRequest {
     private String username;
     private String password;
-
+    private String email;
 
     public String getUsername() {
         return this.username;
     }
-
     public void setUsername(String felhasznalonev) {
         this.username = felhasznalonev;
     }

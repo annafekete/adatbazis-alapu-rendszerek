@@ -40,21 +40,13 @@
         </div>
 
 
-        <form th:action="@{/profile/update}" method="post" th:object="${profile}">
-            <div class="form-row">
-                <div class="form-group full-width">
-                    <label for="username">Username</label>
-                    <input class="input" type="text" th:field="*{username}" id="username" placeholder="Jane" />
-                </div>
+        <form th:action="@{/profile}" method="post" th:object="${profile}">
 
-                <div class="form-group full-width">
-                    <label for="password">Enter password</label>
-                    <input class="input" type="password" th:field="*{password}" id="password" placeholder="********" />
-                </div>
-            </div>
-
-            <button type="submit" class="submit-btn">Save changes</button>
-            <div th:if="${error}" class="error-message" th:text="${error}"></div>
+        <div class="user-info">
+            <p><strong>Username:</strong> <span th:text="${username}">Someone</span></p>
+            <p><strong>Email:</strong> <span th:text="${email}">someone@gmail.com</span></p>
+            <p><strong>Role:</strong> <span th:text="${role}">user</span></p>
+        </div>
         </form>
     </div>
 </main>
