@@ -28,4 +28,6 @@ public interface LikeRepository extends JpaRepository<Kedveli, KedveliId> {
     String findTopLiker();
 
     List<Kedveli> findByEmail(String email);
+
+    List<Kedveli> findByVideoid(Long videoid);
 }

@@ -27,6 +27,10 @@
 
                     // Show corresponding content
                     const tabId = this.getAttribute("data-tab");
+                    if(tabId === "createPlaylist") {
+                        window.location.href = "/createPlaylist";
+                        return;
+                    }
                     if (tabId && document.getElementById(tabId)) {
                         document.getElementById(tabId).classList.add("active");
                     }
@@ -137,10 +141,7 @@
                         </button>
                         <button class="tab-btn" th:each="playlist : ${playlists}" th:text="${playlist.playlistnev}"
                             th:attr="data-tab='playlist' + ${playlist.playlistid}"></button>
-                        <button class="tab-btn" data-tab="createPlaylist" id="createPlaylistBtn"
-                            th:onclick="'window.location.href=\'' + ${createPlaylist} + '\';'">
-                            +
-                        </button>
+                        <a th:href="@{/createPlaylist}" class="tab-btn" data-tab="createPlaylist" id="createPlaylistBtn">+</a>
                     </div>
                 </div>
             </div>

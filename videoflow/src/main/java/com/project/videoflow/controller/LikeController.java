@@ -42,6 +42,6 @@ public class LikeController {
             likeRepository.save(like);
         }
 
-        return "redirect:/videos/" + id + "/view";
+        return "redirect:/videos/" + id;
     }
 }

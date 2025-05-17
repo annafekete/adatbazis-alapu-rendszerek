@@ -169,6 +169,8 @@ public class PageController {
         // Felhasznalok akik lejatszasi listahoz adtak a videot
         List<AddtoPL> addtoPLs = addtoPLRepository.findByVideoid(id);
 
+        
+
         Set<String> userEmails = new HashSet<>();
         for (AddtoPL addtoPL : addtoPLs) {
             Long playlistId = addtoPL.getPlaylistid();
@@ -179,9 +181,21 @@ public class PageController {
             }
         }
 
-        List<User> users = userRepository.findAllByEmailIn(userEmails);
+        List<User> PLusers = userRepository.findAllByEmailIn(userEmails);
 
-        List<String> usernames = users.stream()
+        List<String> PLusernames = PLusers.stream()
+                .map(User::getFelhasznalonev)
+                .toList();
+
+        //Felhasznalok akik kedveltek a videot
+        List<Kedveli> likes = likeRepository.findByVideoid(id);
+        Set<String> likers = new HashSet<>();
+        for (Kedveli like : likes) {
+            String emailFromLike = like.getEmail();
+            likers.add(emailFromLike);
+        }
+        List<User> likersUsers = userRepository.findAllByEmailIn(likers);
+        List<String> likersUsernames = likersUsers.stream()
                 .map(User::getFelhasznalonev)
                 .toList();
 
@@ -194,7 +208,8 @@ public class PageController {
         model.addAttribute("similarKeywordVideos", similarKeywordVideos);
         model.addAttribute("playlists", userPlaylists);
         model.addAttribute("feltoltoEmail", email);
-        model.addAttribute("usernames", usernames);
+        model.addAttribute("usernames", PLusernames);
+        model.addAttribute("likers", likersUsernames);
 
         // ➕ LIKE funkcióhoz
         model.addAttribute("loggedIn", loggedIn);
