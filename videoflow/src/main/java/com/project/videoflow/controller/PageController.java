@@ -4,6 +4,7 @@ import com.project.videoflow.model.*;
 import com.project.videoflow.repository.*;
 import com.project.videoflow.service.PlaylistService;
 
+import com.project.videoflow.service.ViewService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,16 +25,16 @@ public class PageController {
     private final UploadRepository uploadRepository;
     private final UserRepository userRepository;
     private final CommentRepository commentRepository;
-    private final ViewRepository viewRepository;
     private final CreatePLRepository createPLRepository;
     private final PlaylistService playlistService;
     private LikeRepository likeRepository;
     private AddtoPLRepository addtoPLRepository;
+    private final ViewService viewService;
 
     public PageController(VideoRepository videoRepository, UploadRepository uploadRepository,
-            UserRepository userRepository,
-            CommentRepository commentRepository, ViewRepository viewRepository, CreatePLRepository createPLRepository,
-            PlaylistService playlistService, LikeRepository likeRepository, AddtoPLRepository addtoPLRepository) {
+                          UserRepository userRepository,
+                          CommentRepository commentRepository, CreatePLRepository createPLRepository,
+                          PlaylistService playlistService, LikeRepository likeRepository, AddtoPLRepository addtoPLRepository, ViewService viewService) {
         this.addtoPLRepository = addtoPLRepository;
         this.createPLRepository = createPLRepository;
         this.playlistService = playlistService;
@@ -41,8 +42,8 @@ public class PageController {
         this.uploadRepository = uploadRepository;
         this.userRepository = userRepository;
         this.commentRepository = commentRepository;
-        this.viewRepository = viewRepository;
         this.likeRepository = likeRepository;
+        this.viewService = viewService;
     }
 
     /*
@@ -117,12 +118,9 @@ public class PageController {
         // Felhasználó lekérése session-ből
         User loggedInUser = (User) session.getAttribute("loggedInUser");
 
-        // Néző mentése, ha be van jelentkezve
+        // Néző rögzítése eljárással
         if (loggedInUser != null) {
-            Nez nez = new Nez();
-            nez.setVideoid(video.getVideoid());
-            nez.setEmail(loggedInUser.getEmail());
-            viewRepository.save(nez);
+            viewService.rogzitNezest(loggedInUser.getEmail(), video.getVideoid());
         }
 
         // Feltöltő adatok

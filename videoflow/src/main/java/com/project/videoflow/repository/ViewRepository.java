@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ViewRepository extends JpaRepository<Nez, Long> {
 
+    
+
     //legaktívabb videómegtekintő
     @Query(value = """
         SELECT u.felhasznalonev
