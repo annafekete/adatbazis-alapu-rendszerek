@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Adatbázis kezelő</title>
+    <title>Database manager</title>
     <style>
         body { font-family: Arial; margin: 2rem; background-color: #92c1e9; }
         table { border-collapse: collapse; width: 100%; margin-bottom: 2rem; }
@@ -12,24 +12,24 @@
 </head>
 <body>
 
-<h1>Felhasználók kezelése</h1>
+<h1>User Management</h1>
 
-<h2>Új felhasználó</h2>
+<h2>New user</h2>
 <form th:action="@{/crud/add}" method="post" th:object="${newUser}">
     Email: <input th:field="*{email}" required>
-    Felhasználónév: <input th:field="*{felhasznalonev}" required>
-    Jelszó: <input th:field="*{jelszo}" required>
-    Szerepkör:
+    Username: <input th:field="*{felhasznalonev}" required>
+    Password: <input th:field="*{jelszo}" required>
+    Role:
     <select th:field="*{szerepkor}" required>
         <option th:each="role : ${roles}" th:value="${role}" th:text="${role.szerepkornev}"></option>
     </select>
-    <button type="submit">Hozzáadás</button>
+    <button type="submit">Add</button>
 </form>
 
-<h2>Felhasználók</h2>
+<h2>Users</h2>
 <table>
     <thead>
-    <tr><th>Email</th><th>Felhasználónév</th><th>Szerepkör</th><th>Művelet</th></tr>
+    <tr><th>Email</th><th>Username</th><th>Role</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="user : ${users}">
@@ -45,25 +45,25 @@
                 </select>
             </td>
             <td>
-                <input type="text" name="jelszo" placeholder="Új jelszó">
-                <button type="submit">Mentés</button>
-                <a th:href="@{/crud/delete/{email}(email=${user.email})}" onclick="return confirm('Biztosan törlöd?')">Törlés</a>
+                <input type="text" name="jelszo" placeholder="New password">
+                <button type="submit">Save</button>
+                <a th:href="@{/crud/delete/{email}(email=${user.email})}" onclick="return confirm('Delete?')">Delete</a>
             </td>
         </form>
     </tr>
     </tbody>
 </table>
 
-<h2>Hozzászólások</h2>
+<h2>Comments</h2>
 <form th:action="@{/crud/comments/add}" method="post" th:object="${newComment}">
-    Videó ID: <input th:field="*{videoid}" required>
+    Video ID: <input th:field="*{videoid}" required>
     Email: <input th:field="*{email}" required>
-    Tartalom: <input th:field="*{tartalom}" required>
-    <button type="submit">Hozzáadás</button>
+    Content: <input th:field="*{tartalom}" required>
+    <button type="submit">Add</button>
 </form>
 <table>
     <thead>
-    <tr><th>Videó ID</th><th>Email</th><th>Tartalom</th><th>Művelet</th></tr>
+    <tr><th>Video ID</th><th>Email</th><th>Content</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="comment : ${comments}">
@@ -72,8 +72,8 @@
             <td><input type="text" name="email" th:value="${comment.email}" required></td>
             <td><input type="text" name="tartalom" th:value="${comment.tartalom}" required></td>
             <td>
-                <button type="submit">Mentés</button>
-                <a th:href="@{/crud/comments/delete/{id}(id=${comment.commentid})}" onclick="return confirm('Törlöd?')">Törlés</a>
+                <button type="submit">Save</button>
+                <a th:href="@{/crud/comments/delete/{id}(id=${comment.commentid})}" onclick="return confirm('Delete?')">Delete</a>
             </td>
         </form>
     </tr>
@@ -82,15 +82,15 @@
 
 <h2>Videók</h2>
 <form th:action="@{/crud/videos/add}" method="post" th:object="${newVideo}">
-    Cím: <input th:field="*{videocim}" required>
-    Kategória: <input th:field="*{kategoria}" required>
-    Leírás: <input th:field="*{leiras}" required>
-    Kulcsszó: <input th:field="*{kulcsszo}" required>
-    <button type="submit">Hozzáadás</button>
+    Title: <input th:field="*{videocim}" required>
+    Category: <input th:field="*{kategoria}" required>
+    Description: <input th:field="*{leiras}" required>
+    Keyword: <input th:field="*{kulcsszo}" required>
+    <button type="submit">Add</button>
 </form>
 <table>
     <thead>
-    <tr><th>Cím</th><th>Kategória</th><th>Leírás</th><th>Kulcsszó</th><th>Művelet</th></tr>
+    <tr><th>Title</th><th>Category</th><th>Description</th><th>Keyword</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="video : ${videos}">
@@ -100,23 +100,23 @@
             <td><input name="leiras" th:value="${video.leiras}" required></td>
             <td><input name="kulcsszo" th:value="${video.kulcsszo}" required></td>
             <td>
-                <button type="submit">Mentés</button>
-                <a th:href="@{/crud/videos/delete/{id}(id=${video.videoid})}" onclick="return confirm('Törlöd?')">Törlés</a>
+                <button type="submit">Save</button>
+                <a th:href="@{/crud/videos/delete/{id}(id=${video.videoid})}" onclick="return confirm('Delete?')">Delete</a>
             </td>
         </form>
     </tr>
     </tbody>
 </table>
 
-<h2>Feltöltések</h2>
+<h2>Uploads</h2>
 <form th:action="@{/crud/uploads/add}" method="post">
     Email: <input name="email" required>
-    Videó ID: <input name="videoid" type="number" required>
-    <button type="submit">Hozzáadás</button>
+    Video ID: <input name="videoid" type="number" required>
+    <button type="submit">Add</button>
 </form>
 <table>
     <thead>
-    <tr><th>Email</th><th>Videó ID</th><th>Feltöltés ideje</th><th>Művelet</th></tr>
+    <tr><th>Email</th><th>Video ID</th><th>Upload date</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="upload : ${uploads}">
@@ -126,21 +126,21 @@
             <td th:text="${upload.feltoltesIdeje}"></td>
             <input type="hidden" name="email" th:value="${upload.email}">
             <input type="hidden" name="videoid" th:value="${upload.videoid}">
-            <td><button type="submit" onclick="return confirm('Törlöd?')">Törlés</button></td>
+            <td><button type="submit" onclick="return confirm('Delete?')">Delete</button></td>
         </form>
     </tr>
     </tbody>
 </table>
 
-<h2>Kedvelések</h2>
+<h2>Likes</h2>
 <form th:action="@{/crud/likes/add}" method="post">
     Email: <input name="email" required>
-    Videó ID: <input name="videoid" type="number" required>
-    <button type="submit">Hozzáadás</button>
+    Video ID: <input name="videoid" type="number" required>
+    <button type="submit">Add</button>
 </form>
 <table>
     <thead>
-    <tr><th>Email</th><th>Videó ID</th><th>Művelet</th></tr>
+    <tr><th>Email</th><th>Video ID</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="like : ${likes}">
@@ -149,7 +149,7 @@
             <td th:text="${like.videoid}"></td>
             <input type="hidden" name="email" th:value="${like.email}">
             <input type="hidden" name="videoid" th:value="${like.videoid}">
-            <td><button type="submit" onclick="return confirm('Törlöd?')">Delete</button></td>
+            <td><button type="submit" onclick="return confirm('Delete?')">Delete</button></td>
         </form>
     </tr>
     </tbody>
