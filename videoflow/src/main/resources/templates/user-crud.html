@@ -20,8 +20,8 @@
     Username: <input th:field="*{felhasznalonev}" required>
     Password: <input th:field="*{jelszo}" required>
     Role:
-    <select th:field="*{szerepkor}" required>
-        <option th:each="role : ${roles}" th:value="${role}" th:text="${role.szerepkornev}"></option>
+    <select th:field="*{szerepkor.szerepkorid}" required>
+        <option th:each="role : ${roles}" th:value="${role.szerepkorid}" th:text="${role.szerepkornev}"></option>
     </select>
     <button type="submit">Add</button>
 </form>
@@ -86,11 +86,12 @@
     Category: <input th:field="*{kategoria}" required>
     Description: <input th:field="*{leiras}" required>
     Keyword: <input th:field="*{kulcsszo}" required>
+    File path: <input th:field="*{filePath}" required>
     <button type="submit">Add</button>
 </form>
 <table>
     <thead>
-    <tr><th>Title</th><th>Category</th><th>Description</th><th>Keyword</th><th>Action</th></tr>
+    <tr><th>Title</th><th>Category</th><th>Description</th><th>Keyword</th><th>File path</th><th>Action</th></tr>
     </thead>
     <tbody>
     <tr th:each="video : ${videos}">
@@ -99,6 +100,7 @@
             <td><input name="kategoria" th:value="${video.kategoria}" required></td>
             <td><input name="leiras" th:value="${video.leiras}" required></td>
             <td><input name="kulcsszo" th:value="${video.kulcsszo}" required></td>
+            <td><input name="filePath" th:value="${video.filePath}" required></td>
             <td>
                 <button type="submit">Save</button>
                 <a th:href="@{/crud/videos/delete/{id}(id=${video.videoid})}" onclick="return confirm('Delete?')">Delete</a>

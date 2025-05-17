@@ -117,13 +117,15 @@ public class UserCrudController {
                             @RequestParam String videocim,
                             @RequestParam String kategoria,
                             @RequestParam String leiras,
-                            @RequestParam String kulcsszo) {
+                            @RequestParam String kulcsszo,
+                            @RequestParam String filePath) {
         Video v = videoRepository.findById(id).orElse(null);
         if (v != null) {
             v.setVideocim(videocim);
             v.setKategoria(kategoria);
             v.setLeiras(leiras);
             v.setKulcsszo(kulcsszo);
+            v.setFilePath(filePath);
             videoRepository.save(v);
         }
         return "redirect:/crud";
